@@ -1,10 +1,11 @@
 package com.roma.elettorale.fascicoli.service;
 
-import com.roma.elettorale.fascicoli.entity.EstrattoNascita;
-import com.roma.elettorale.fascicoli.entity.RichiestaEstratto;
-import com.roma.elettorale.fascicoli.entity.VERICODRESPONSE;
-import com.roma.elettorale.fascicoli.entity.VeriData;
-import com.roma.elettorale.fascicoli.entity.TransformationFile;
+
+import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
+import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
+import com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE;
+import com.roma.elettorale.fascicoli.entity.veri.VeriData;
+import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import org.apache.poi.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ public class ElaborazioneEstratti {
     @Autowired
     TransformationFile transformationFile;
 
-    Logger logger = LoggerFactory.getLogger(TransformationFile.class);
+    Logger logger = LoggerFactory.getLogger(ElaborazioneEstratti.class);
 
     public byte[] getEstrattoNascita(String codiceindividuale, VERICODRESPONSE.Verifica verifica, String msg) {
         byte[] result = null;

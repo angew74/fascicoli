@@ -45,7 +45,7 @@ public class FascicoliApplication {
     @Bean
     public CommandLineRunner run(ApplicationContext appContext) {
         return args -> {
-            elaborazioneRichieste.createCertificato();
+            /*elaborazioneRichieste.createCertificato();
             String folderin = env.getProperty("folderin");
             String folderout = env.getProperty("folderout");
             List<File> filesInFolder = Files.walk(Paths.get(folderin))
@@ -60,7 +60,7 @@ public class FascicoliApplication {
                             (new File(folderout + f.getName()));
                     f.delete();
                 }
-            }
+            }*/
         };
     }
 

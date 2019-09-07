@@ -1,10 +1,10 @@
 package com.roma.elettorale.fascicoli.service;
 
+import com.roma.elettorale.fascicoli.entity.unidoc.*;
+import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusfiles;
-import com.roma.elettorale.fascicoli.entity.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.unidocmetadata;
 import com.roma.elettorale.fascicoli.helpers.enumerators.unidoctype;
-import com.roma.elettorale.fascicoli.service.serviceproxy.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +37,7 @@ public class UnidocClient extends WebServiceGatewaySupport {
     Verifica che esista già un documento del genere per quella persona se è negativo risponde con una stringa vuota
     altrimenti restistuisce l'id del file già in archivio
      */
+
     public String controlFileVersion(unidoctype unidoctypeid, unidocmetadata idmetadata, String codInd, statusfiles statusRichiesta) {
 
         String service = env.getProperty("servizioverifica");

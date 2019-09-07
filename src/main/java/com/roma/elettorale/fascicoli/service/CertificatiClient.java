@@ -1,6 +1,7 @@
 package com.roma.elettorale.fascicoli.service;
 
-import com.roma.elettorale.fascicoli.service.serviceproxy.*;
+
+import com.roma.elettorale.fascicoli.entity.certi.*;
 import org.dom4j.util.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,8 +1,7 @@
 package com.roma.elettorale.fascicoli.service;
 
-import com.roma.elettorale.fascicoli.entity.VERICODRESPONSE;
+
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusoperazione;
-import com.roma.elettorale.fascicoli.entity.TransformationFile;
 import com.roma.elettorale.fascicoli.sviluppo.contract.ICaricamentoService;
 import com.roma.elettorale.fascicoli.sviluppo.entity.caricamento;
 import org.slf4j.Logger;
@@ -16,7 +15,7 @@ import java.util.List;
 @Component
 public class ElaborazioneRichieste {
 
-
+/*
     Logger logger = LoggerFactory.getLogger(ManageFiles.class);
 
     @Autowired
@@ -105,5 +104,5 @@ public class ElaborazioneRichieste {
 
         }
 
-    }
+    }*/
 }

@@ -1,8 +1,7 @@
 package com.roma.elettorale.fascicoli.service;
 
 
-import com.roma.elettorale.fascicoli.entity.Ricerca;
-import com.roma.elettorale.fascicoli.entity.RichiestaEstratto;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;

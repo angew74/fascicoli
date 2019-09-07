@@ -1,11 +1,11 @@
 package com.roma.elettorale.fascicoli.service;
 
-import com.roma.elettorale.fascicoli.entity.ObjectFactory;
-import com.roma.elettorale.fascicoli.entity.Ricerca;
-import com.roma.elettorale.fascicoli.entity.RichiestaEstratto;
-import com.roma.elettorale.fascicoli.entity.TransformationFile;
-import com.roma.elettorale.fascicoli.service.serviceproxy.CallMapperWebMethod;
-import com.roma.elettorale.fascicoli.service.serviceproxy.CallMapperWebMethodResponse;
+import com.roma.elettorale.fascicoli.entity.anagrafe.CallMapperWebMethod;
+import com.roma.elettorale.fascicoli.entity.anagrafe.CallMapperWebMethodResponse;
+import com.roma.elettorale.fascicoli.entity.anagrafe.ObjectFactory;
+import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
+import com.roma.elettorale.fascicoli.entity.veri.Ricerca;
+import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +13,8 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import org.w3c.dom.Document;
-
 import javax.xml.bind.JAXBElement;
+import javax.xml.namespace.QName;
 
 @Component
 public class AnagrafeClient extends WebServiceGatewaySupport {
@@ -44,7 +44,9 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
         Ricerca ricerca = new Ricerca();
         Ricerca.Parametri parametri = new Ricerca.Parametri();
         ObjectFactory factory = new ObjectFactory();
-       JAXBElement<String> codElement = factory.createBasePersonaAnagCodiceIndiv(codiceindividuale);
+        JAXBElement<String> codElement = new JAXBElement<String>(new QName("http://tempuri.org/VERICOD.xsd"),
+                String.class, codiceindividuale);
+       // factory.createBasePersonaAnagCodiceIndiv(codiceindividuale);
         parametri.setCodInd(codElement);
         ricerca.setParametri(parametri);
         ricerca.setTipoRicerca("1");
