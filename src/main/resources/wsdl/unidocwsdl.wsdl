@@ -1,0 +1,1793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+<s:import/>
+<s:element name="WorkflowGetStatus">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="wfIstanceId" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WorkflowGetStatusResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="WorkflowGetStatusResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WorkflowStart">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="idFile" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="workflowCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="customId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="startStatus" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WorkflowStartResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="WorkflowStartResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WorkflowChangeStatus">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="wfInstanceID" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="currentStatus" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="newStatus" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="refIdFile" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WorkflowChangeStatusResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="WorkflowChangeStatusResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WfDetach">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="wf_instance_id" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="WfDetachResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="WfDetachResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetFileUrl">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idFile" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetFileUrlResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetFileUrlResult" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="nomeOriginale" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddFile">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="request"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddFileResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="AddFileResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetInfoAboutFile">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idDoc" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="versione" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetInfoAboutFileResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="GetInfoAboutFileResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCodiceIndividuale">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="codiceFiscale" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCodiceIndividualeResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCodiceIndividualeResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreaNuovaCartella">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="request"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CreaNuovaCartellaResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="CreaNuovaCartellaResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AssociaFileFolder">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="file"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AssociaFileFolderResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="AssociaFileFolderResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetMetadatiByTipoDoc">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="id_tipoDoc" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetMetadatiByTipoDocResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="GetMetadatiByTipoDocResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getDocumentiByArea">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="id_area" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getDocumentiByAreaResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getDocumentiByAreaResult" type="tns:ArrayOfDocumentiPerAree"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfDocumentiPerAree">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="DocumentiPerAree" nillable="true" type="tns:DocumentiPerAree"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="DocumentiPerAree">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="refIdDoc" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="refIdArea" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="flgAssociazione" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="denDoc" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="aggiungiMetadato">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="m" type="tns:UnidocsMetadata"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="UnidocsMetadata">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idMetadata" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="nomeMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="labelMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="descrizioneMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="datatype" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="indice" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdFile" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdVersioneDoc" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="valueMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="nomeBreve" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="nullable" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="cardinalita" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="versioningIdx" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="namingIdx" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="refIdType" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="aggiungiMetadatoResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="aggiungiMetadatoResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getFilesFromIdFolder">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idFolder" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getFilesFromIdFolderResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getFilesFromIdFolderResult" type="tns:ArrayOfFileResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfFileResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FileResponse" nillable="true" type="FileResponse"/>
+</s:sequence>
+</s:complexType>
+<s:element name="getFilesFromPathFolder">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="path" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getFilesFromPathFolderResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getFilesFromPathFolderResult" type="tns:ArrayOfFileResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getFoldersByArea">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="area" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getFoldersByAreaResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getFoldersByAreaResult" type="tns:ArrayOfFolderResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfFolderResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FolderResponse" nillable="true" type="FolderResponse"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetFolderTree">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="startNode" type="s:long"/>
+<s:element minOccurs="0" maxOccurs="1" name="area" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="livelli" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetFolderTreeResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetFolderTreeResult" type="tns:ArrayOfSimpleTreeItem"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfSimpleTreeItem">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="SimpleTreeItem" nillable="true" type="tns:SimpleTreeItem"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="SimpleTreeItem">
+<s:complexContent mixed="false">
+<s:extension base="tns:BaseResultItem">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Padre" type="s:string"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="BaseResultItem">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SubType" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Source" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="moveFile">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="id_file" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="id_folder" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="moveFileResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="moveFileResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="deleteFile">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="request"/>
+<s:element minOccurs="1" maxOccurs="1" name="lastVersion" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="deleteFileResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="deleteFileResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetFileDetails">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="request"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetFileDetailsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="GetFileDetailsResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="modificaMetadato">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="request"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="modificaMetadatoResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="modificaMetadatoResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="creaNuovoRegistro">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="denArea" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="codRegistro" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="creaNuovoRegistroResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="creaNuovoRegistroResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="creaRootDirectories">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="root" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="dirs" type="tns:ArrayOfStrings"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfStrings">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="creaRootDirectoriesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="creaRootDirectoriesResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getSubFoldersFromIdFolder">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idFolder" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getSubFoldersFromIdFolderResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getSubFoldersFromIdFolderResult" type="tns:ArrayOfFolderResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getRegistriByFiltroCodice">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getRegistriByFiltroCodiceResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="getRegistriByFiltroCodiceResult" type="tns:ArrayOfAreaResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfAreaResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="AreaResponse" nillable="true" type="AreaResponse"/>
+</s:sequence>
+</s:complexType>
+<s:element name="signDocument">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="firma"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="signDocumentResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="signDocumentResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="sendMail">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="Email"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="sendMailResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="sendMailResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UpdateMerge">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="fileToSave"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="UpdateMergeResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="UpdateMergeResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getPagedFilesFromIdFolder">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idFolder" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="da" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="per" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getPagedFilesFromIdFolderResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="getPagedFilesFromIdFolderResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getPagedFilesFromIdFolderStatus">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idFolder" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="status" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="da" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="per" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="getPagedFilesFromIdFolderStatusResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="getPagedFilesFromIdFolderStatusResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="searchFiles">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="folders" type="tns:ArrayOfUnidocFolder"/>
+<s:element minOccurs="0" maxOccurs="1" name="types" type="tns:ArrayOfUnidocTypes"/>
+<s:element minOccurs="0" maxOccurs="1" name="metadata" type="tns:ArrayOfArrayOfUnidocsMetadata"/>
+<s:element minOccurs="0" maxOccurs="1" name="operatore" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="status" type="tns:ArrayOfStrings"/>
+<s:element minOccurs="1" maxOccurs="1" name="da" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="per" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfUnidocFolder">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UnidocFolder" nillable="true" type="tns:UnidocFolder"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocFolder">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Cercami" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdRegistro" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdPadre" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFolder" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFolder" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Area" type="tns:Area"/>
+<s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Area">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Root" type="tns:UnidocFolder"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdArea" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="DenominazioneArea" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="FlgAttivo" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="CodRegistro" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfUnidocTypes">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UnidocTypes" nillable="true" type="tns:UnidocTypes"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocTypes">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="FlgVersioned" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="FlgAttivo" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="DenDoc" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdType" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfArrayOfUnidocsMetadata">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="ArrayOfUnidocsMetadata" nillable="true" type="tns:ArrayOfUnidocsMetadata"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfUnidocsMetadata">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UnidocsMetadata" nillable="true" type="tns:UnidocsMetadata"/>
+</s:sequence>
+</s:complexType>
+<s:element name="searchFilesResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="searchFilesResult"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+<s:schema elementFormDefault="qualified">
+<s:element name="WorkflowGetStatusResult" type="WorkFlow"/>
+<s:complexType name="WorkFlow">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Messaggio" type="Messaggio"/>
+<s:element minOccurs="0" maxOccurs="1" name="Workflow" type="Wf"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Messaggio">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Esito" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Attore" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="LivelloMessagio" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="DettaglioMessagio" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Wf">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="WfStatusList" type="ArrayOfWfStatus"/>
+<s:element minOccurs="0" maxOccurs="1" name="FileWfList" type="ArrayOfFileWf"/>
+<s:element minOccurs="0" maxOccurs="1" name="DescrizioneWf" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeWf" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="CodeWf" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdWf" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfWfStatus">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="WfStatus" nillable="true" type="WfStatus"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="WfStatus">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="FinalStatus" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="StartStatus" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Codice" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdWf" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdStatus" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfFileWf">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FileWf" nillable="true" type="FileWf"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="FileWf">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="UnidocFileList" type="ArrayOfUnidocFiles"/>
+<s:element minOccurs="1" maxOccurs="1" name="WfDeleted" type="s:boolean"/>
+<s:element minOccurs="1" maxOccurs="1" name="StatusDate" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="StatusPrevId" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="StatusIsCurrent" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="WfGroupCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="WfInstanceCode" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdDoc" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdWf" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdFile" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfUnidocFiles">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UnidocFiles" nillable="true" type="UnidocFiles"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocFiles">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="VerDetails" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="ListaMetadati" type="ArrayOfUnidocsMetadatas"/>
+<s:element minOccurs="0" maxOccurs="1" name="UtenteCancellazione" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFile" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdFile" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Versione" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Ext" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Hash" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeOriginale" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UtenteInserimento" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime"/>
+<s:element minOccurs="0" maxOccurs="1" name="PgmInserimento" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdDoc" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="FlgStatus" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="DataDelete" type="s:dateTime"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdType" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFolder" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UnidocType" type="UnidocTypess"/>
+<s:element minOccurs="0" maxOccurs="1" name="UnidocFolder" type="UnidocFolders"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfUnidocsMetadatas">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="UnidocsMetadata" nillable="true" type="UnidocsMetadatas"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocsMetadatas">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="idMetadata" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="nomeMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="labelMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="descrizioneMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="datatype" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="indice" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdFile" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdVersioneDoc" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="valueMetadata" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="nomeBreve" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="nullable" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="cardinalita" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="versioningIdx" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="namingIdx" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="refIdType" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocTypess">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="FlgVersioned" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="FlgAttivo" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="DenDoc" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdType" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="UnidocFolders">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Cercami" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Path" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdRegistro" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdPadre" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFolder" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFolder" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Area" type="Areas"/>
+<s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Areas">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Root" type="UnidocFolders"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdArea" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="DenominazioneArea" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="FlgAttivo" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="CodRegistro" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="WorkflowStartResult" type="WorkFlow"/>
+<s:element name="WorkflowChangeStatusResult" type="WorkFlow"/>
+<s:element name="WfDetachResult" type="WorkFlow"/>
+<s:element name="request" type="FileRequest"/>
+<s:complexType name="FileRequest">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFile" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="File" type="s:base64Binary"/>
+<s:element minOccurs="0" maxOccurs="1" name="Info" type="FileMetatag"/>
+<s:element minOccurs="1" maxOccurs="1" name="RefIdFile" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdDoc" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="FileMetatag">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="RefIdPadre" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="MajorVersion" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="DataInserimento" type="s:dateTime"/>
+<s:element minOccurs="0" maxOccurs="1" name="TipoDocumento" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Metadati" type="ArrayOfMetadato"/>
+<s:element minOccurs="0" maxOccurs="1" name="Versione" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Estensione" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeOriginale" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UtenteInserimento" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFolder" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="PathFolder" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="RifIdRegistro" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdTipoDocumento" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFile" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Note" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdDoc" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdVerisonePrecedente" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFile" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFolder" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfMetadato">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="Metadato" nillable="true" type="Metadato"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Metadato">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="NomeMetadato" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdMetadato" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="ValoreMetadato" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="TypeMetadato" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="LabelMetadato" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="AddFileResult" type="FileResponse"/>
+<s:complexType name="FileResponse">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Chiave" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Metatag" type="FileMetatag"/>
+<s:element minOccurs="0" maxOccurs="1" name="Esito" type="Messaggio"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetInfoAboutFileResult" type="FileResponse"/>
+<s:element name="CreaNuovaCartellaResult" type="FolderResponse"/>
+<s:complexType name="FolderResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="NomeFolder" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdFolder" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Msg" type="Messaggio"/>
+</s:sequence>
+</s:complexType>
+<s:element name="file" type="FileRequest"/>
+<s:element name="AssociaFileFolderResult" type="FileResponse"/>
+<s:element name="GetMetadatiByTipoDocResult" type="FileResponse"/>
+<s:element name="aggiungiMetadatoResult" type="FileResponse"/>
+<s:element name="moveFileResult" type="FileResponse"/>
+<s:element name="deleteFileResult" type="FileResponse"/>
+<s:element name="GetFileDetailsResult" type="FileResponse"/>
+<s:element name="modificaMetadatoResult" type="FileResponse"/>
+<s:element name="creaNuovoRegistroResult" type="FileResponse"/>
+<s:element name="creaRootDirectoriesResult" type="FolderResponse"/>
+<s:complexType name="AreaResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Msg" type="Messaggio"/>
+<s:element minOccurs="1" maxOccurs="1" name="IdRegistro" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="DenArea" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="CodRegistro" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Root" type="FolderResponse"/>
+</s:sequence>
+</s:complexType>
+<s:element name="firma" type="UnidocsFirma"/>
+<s:complexType name="UnidocsFirma">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Firmatario" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="DataFirma" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UrlServizioIn" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="UrlServizioOut" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="IdFile" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="signDocumentResult" type="FileResponse"/>
+<s:element name="Email" type="UnidocMail"/>
+<s:complexType name="UnidocMail">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Destinatario" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Oggetto" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Testo" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Files" type="ArrayOfStringss"/>
+<s:element minOccurs="0" maxOccurs="1" name="Mittente" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Utente" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AppCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Regola" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="IdUnivoco" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfStringss">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="sendMailResult" type="FileResponse"/>
+<s:element name="fileToSave" type="FileRequest"/>
+<s:element name="UpdateMergeResult" type="FileResponse"/>
+<s:element name="getPagedFilesFromIdFolderResult" type="FileResponseList"/>
+<s:complexType name="FileResponseList">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ListFiles" type="ArrayOfFileResponses"/>
+<s:element minOccurs="1" maxOccurs="1" name="Da" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="Per" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="Totale" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Msg" type="Messaggio"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfFileResponses">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="FileResponse" nillable="true" type="FileResponse"/>
+</s:sequence>
+</s:complexType>
+<s:element name="getPagedFilesFromIdFolderStatusResult" type="FileResponseList"/>
+<s:element name="searchFilesResult" type="FileResponseList"/>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="WorkflowGetStatusSoapIn">
+<wsdl:part name="parameters" element="tns:WorkflowGetStatus"/>
+</wsdl:message>
+<wsdl:message name="WorkflowGetStatusSoapOut">
+<wsdl:part name="parameters" element="tns:WorkflowGetStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="WorkflowStartSoapIn">
+<wsdl:part name="parameters" element="tns:WorkflowStart"/>
+</wsdl:message>
+<wsdl:message name="WorkflowStartSoapOut">
+<wsdl:part name="parameters" element="tns:WorkflowStartResponse"/>
+</wsdl:message>
+<wsdl:message name="WorkflowChangeStatusSoapIn">
+<wsdl:part name="parameters" element="tns:WorkflowChangeStatus"/>
+</wsdl:message>
+<wsdl:message name="WorkflowChangeStatusSoapOut">
+<wsdl:part name="parameters" element="tns:WorkflowChangeStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="WfDetachSoapIn">
+<wsdl:part name="parameters" element="tns:WfDetach"/>
+</wsdl:message>
+<wsdl:message name="WfDetachSoapOut">
+<wsdl:part name="parameters" element="tns:WfDetachResponse"/>
+</wsdl:message>
+<wsdl:message name="GetFileUrlSoapIn">
+<wsdl:part name="parameters" element="tns:GetFileUrl"/>
+</wsdl:message>
+<wsdl:message name="GetFileUrlSoapOut">
+<wsdl:part name="parameters" element="tns:GetFileUrlResponse"/>
+</wsdl:message>
+<wsdl:message name="AddFileSoapIn">
+<wsdl:part name="parameters" element="tns:AddFile"/>
+</wsdl:message>
+<wsdl:message name="AddFileSoapOut">
+<wsdl:part name="parameters" element="tns:AddFileResponse"/>
+</wsdl:message>
+<wsdl:message name="GetInfoAboutFileSoapIn">
+<wsdl:part name="parameters" element="tns:GetInfoAboutFile"/>
+</wsdl:message>
+<wsdl:message name="GetInfoAboutFileSoapOut">
+<wsdl:part name="parameters" element="tns:GetInfoAboutFileResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCodiceIndividualeSoapIn">
+<wsdl:part name="parameters" element="tns:GetCodiceIndividuale"/>
+</wsdl:message>
+<wsdl:message name="GetCodiceIndividualeSoapOut">
+<wsdl:part name="parameters" element="tns:GetCodiceIndividualeResponse"/>
+</wsdl:message>
+<wsdl:message name="CreaNuovaCartellaSoapIn">
+<wsdl:part name="parameters" element="tns:CreaNuovaCartella"/>
+</wsdl:message>
+<wsdl:message name="CreaNuovaCartellaSoapOut">
+<wsdl:part name="parameters" element="tns:CreaNuovaCartellaResponse"/>
+</wsdl:message>
+<wsdl:message name="AssociaFileFolderSoapIn">
+<wsdl:part name="parameters" element="tns:AssociaFileFolder"/>
+</wsdl:message>
+<wsdl:message name="AssociaFileFolderSoapOut">
+<wsdl:part name="parameters" element="tns:AssociaFileFolderResponse"/>
+</wsdl:message>
+<wsdl:message name="GetMetadatiByTipoDocSoapIn">
+<wsdl:part name="parameters" element="tns:GetMetadatiByTipoDoc"/>
+</wsdl:message>
+<wsdl:message name="GetMetadatiByTipoDocSoapOut">
+<wsdl:part name="parameters" element="tns:GetMetadatiByTipoDocResponse"/>
+</wsdl:message>
+<wsdl:message name="getDocumentiByAreaSoapIn">
+<wsdl:part name="parameters" element="tns:getDocumentiByArea"/>
+</wsdl:message>
+<wsdl:message name="getDocumentiByAreaSoapOut">
+<wsdl:part name="parameters" element="tns:getDocumentiByAreaResponse"/>
+</wsdl:message>
+<wsdl:message name="aggiungiMetadatoSoapIn">
+<wsdl:part name="parameters" element="tns:aggiungiMetadato"/>
+</wsdl:message>
+<wsdl:message name="aggiungiMetadatoSoapOut">
+<wsdl:part name="parameters" element="tns:aggiungiMetadatoResponse"/>
+</wsdl:message>
+<wsdl:message name="getFilesFromIdFolderSoapIn">
+<wsdl:part name="parameters" element="tns:getFilesFromIdFolder"/>
+</wsdl:message>
+<wsdl:message name="getFilesFromIdFolderSoapOut">
+<wsdl:part name="parameters" element="tns:getFilesFromIdFolderResponse"/>
+</wsdl:message>
+<wsdl:message name="getFilesFromPathFolderSoapIn">
+<wsdl:part name="parameters" element="tns:getFilesFromPathFolder"/>
+</wsdl:message>
+<wsdl:message name="getFilesFromPathFolderSoapOut">
+<wsdl:part name="parameters" element="tns:getFilesFromPathFolderResponse"/>
+</wsdl:message>
+<wsdl:message name="getFoldersByAreaSoapIn">
+<wsdl:part name="parameters" element="tns:getFoldersByArea"/>
+</wsdl:message>
+<wsdl:message name="getFoldersByAreaSoapOut">
+<wsdl:part name="parameters" element="tns:getFoldersByAreaResponse"/>
+</wsdl:message>
+<wsdl:message name="GetFolderTreeSoapIn">
+<wsdl:part name="parameters" element="tns:GetFolderTree"/>
+</wsdl:message>
+<wsdl:message name="GetFolderTreeSoapOut">
+<wsdl:part name="parameters" element="tns:GetFolderTreeResponse"/>
+</wsdl:message>
+<wsdl:message name="moveFileSoapIn">
+<wsdl:part name="parameters" element="tns:moveFile"/>
+</wsdl:message>
+<wsdl:message name="moveFileSoapOut">
+<wsdl:part name="parameters" element="tns:moveFileResponse"/>
+</wsdl:message>
+<wsdl:message name="deleteFileSoapIn">
+<wsdl:part name="parameters" element="tns:deleteFile"/>
+</wsdl:message>
+<wsdl:message name="deleteFileSoapOut">
+<wsdl:part name="parameters" element="tns:deleteFileResponse"/>
+</wsdl:message>
+<wsdl:message name="GetFileDetailsSoapIn">
+<wsdl:part name="parameters" element="tns:GetFileDetails"/>
+</wsdl:message>
+<wsdl:message name="GetFileDetailsSoapOut">
+<wsdl:part name="parameters" element="tns:GetFileDetailsResponse"/>
+</wsdl:message>
+<wsdl:message name="modificaMetadatoSoapIn">
+<wsdl:part name="parameters" element="tns:modificaMetadato"/>
+</wsdl:message>
+<wsdl:message name="modificaMetadatoSoapOut">
+<wsdl:part name="parameters" element="tns:modificaMetadatoResponse"/>
+</wsdl:message>
+<wsdl:message name="creaNuovoRegistroSoapIn">
+<wsdl:part name="parameters" element="tns:creaNuovoRegistro"/>
+</wsdl:message>
+<wsdl:message name="creaNuovoRegistroSoapOut">
+<wsdl:part name="parameters" element="tns:creaNuovoRegistroResponse"/>
+</wsdl:message>
+<wsdl:message name="creaRootDirectoriesSoapIn">
+<wsdl:part name="parameters" element="tns:creaRootDirectories"/>
+</wsdl:message>
+<wsdl:message name="creaRootDirectoriesSoapOut">
+<wsdl:part name="parameters" element="tns:creaRootDirectoriesResponse"/>
+</wsdl:message>
+<wsdl:message name="getSubFoldersFromIdFolderSoapIn">
+<wsdl:part name="parameters" element="tns:getSubFoldersFromIdFolder"/>
+</wsdl:message>
+<wsdl:message name="getSubFoldersFromIdFolderSoapOut">
+<wsdl:part name="parameters" element="tns:getSubFoldersFromIdFolderResponse"/>
+</wsdl:message>
+<wsdl:message name="getRegistriByFiltroCodiceSoapIn">
+<wsdl:part name="parameters" element="tns:getRegistriByFiltroCodice"/>
+</wsdl:message>
+<wsdl:message name="getRegistriByFiltroCodiceSoapOut">
+<wsdl:part name="parameters" element="tns:getRegistriByFiltroCodiceResponse"/>
+</wsdl:message>
+<wsdl:message name="signDocumentSoapIn">
+<wsdl:part name="parameters" element="tns:signDocument"/>
+</wsdl:message>
+<wsdl:message name="signDocumentSoapOut">
+<wsdl:part name="parameters" element="tns:signDocumentResponse"/>
+</wsdl:message>
+<wsdl:message name="sendMailSoapIn">
+<wsdl:part name="parameters" element="tns:sendMail"/>
+</wsdl:message>
+<wsdl:message name="sendMailSoapOut">
+<wsdl:part name="parameters" element="tns:sendMailResponse"/>
+</wsdl:message>
+<wsdl:message name="UpdateMergeSoapIn">
+<wsdl:part name="parameters" element="tns:UpdateMerge"/>
+</wsdl:message>
+<wsdl:message name="UpdateMergeSoapOut">
+<wsdl:part name="parameters" element="tns:UpdateMergeResponse"/>
+</wsdl:message>
+<wsdl:message name="getPagedFilesFromIdFolderSoapIn">
+<wsdl:part name="parameters" element="tns:getPagedFilesFromIdFolder"/>
+</wsdl:message>
+<wsdl:message name="getPagedFilesFromIdFolderSoapOut">
+<wsdl:part name="parameters" element="tns:getPagedFilesFromIdFolderResponse"/>
+</wsdl:message>
+<wsdl:message name="getPagedFilesFromIdFolderStatusSoapIn">
+<wsdl:part name="parameters" element="tns:getPagedFilesFromIdFolderStatus"/>
+</wsdl:message>
+<wsdl:message name="getPagedFilesFromIdFolderStatusSoapOut">
+<wsdl:part name="parameters" element="tns:getPagedFilesFromIdFolderStatusResponse"/>
+</wsdl:message>
+<wsdl:message name="searchFilesSoapIn">
+<wsdl:part name="parameters" element="tns:searchFiles"/>
+</wsdl:message>
+<wsdl:message name="searchFilesSoapOut">
+<wsdl:part name="parameters" element="tns:searchFilesResponse"/>
+</wsdl:message>
+<wsdl:portType name="ControllerOperazioniWSSoap">
+<wsdl:operation name="WorkflowGetStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Ritorna lo stato corrente di un workflow associato a un wf_istance_id
+</wsdl:documentation>
+<wsdl:input message="tns:WorkflowGetStatusSoapIn"/>
+<wsdl:output message="tns:WorkflowGetStatusSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="WorkflowStart">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Avvia un workflow</wsdl:documentation>
+<wsdl:input message="tns:WorkflowStartSoapIn"/>
+<wsdl:output message="tns:WorkflowStartSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="WorkflowChangeStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Aggiorna lo stato nel workflow</wsdl:documentation>
+<wsdl:input message="tns:WorkflowChangeStatusSoapIn"/>
+<wsdl:output message="tns:WorkflowChangeStatusSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="WfDetach">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Marca tutti i record come deleted</wsdl:documentation>
+<wsdl:input message="tns:WfDetachSoapIn"/>
+<wsdl:output message="tns:WfDetachSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetFileUrl">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Ritorna l'URL del file desiderato individuandolo tramite ID.
+</wsdl:documentation>
+<wsdl:input message="tns:GetFileUrlSoapIn"/>
+<wsdl:output message="tns:GetFileUrlSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddFile">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Permette di archiviare un file sul server. Restituisce un messaggio di esito e diversi metadati inerenti il file inserito. In caso di errore ritorna il IdFile = -1.
+</wsdl:documentation>
+<wsdl:input message="tns:AddFileSoapIn"/>
+<wsdl:output message="tns:AddFileSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetInfoAboutFile">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Restituisce le informazioni inerenti una versione specifica di un file. Se il valore della versione passata � vuota, viene restituita la prima versione del fileIn caso di errore ritorna il IdFile = -1. Ritorna IdFile = 0 se non trova corrispondenze.
+</wsdl:documentation>
+<wsdl:input message="tns:GetInfoAboutFileSoapIn"/>
+<wsdl:output message="tns:GetInfoAboutFileSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCodiceIndividuale">
+<wsdl:input message="tns:GetCodiceIndividualeSoapIn"/>
+<wsdl:output message="tns:GetCodiceIndividualeSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CreaNuovaCartella">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Crea una nuova cartella. Restituisce un oggetto di tipo FolderResponse dove � contenuto l'id della folder
+</wsdl:documentation>
+<wsdl:input message="tns:CreaNuovaCartellaSoapIn"/>
+<wsdl:output message="tns:CreaNuovaCartellaSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AssociaFileFolder">
+<wsdl:input message="tns:AssociaFileFolderSoapIn"/>
+<wsdl:output message="tns:AssociaFileFolderSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetMetadatiByTipoDoc">
+<wsdl:input message="tns:GetMetadatiByTipoDocSoapIn"/>
+<wsdl:output message="tns:GetMetadatiByTipoDocSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getDocumentiByArea">
+<wsdl:input message="tns:getDocumentiByAreaSoapIn"/>
+<wsdl:output message="tns:getDocumentiByAreaSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="aggiungiMetadato">
+<wsdl:input message="tns:aggiungiMetadatoSoapIn"/>
+<wsdl:output message="tns:aggiungiMetadatoSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromIdFolder">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Restituisce la lista di file all'interno di una directory individuata dal'ID
+</wsdl:documentation>
+<wsdl:input message="tns:getFilesFromIdFolderSoapIn"/>
+<wsdl:output message="tns:getFilesFromIdFolderSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromPathFolder">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Restituisce la lista di file all'interno di una directory individuata dal path
+</wsdl:documentation>
+<wsdl:input message="tns:getFilesFromPathFolderSoapIn"/>
+<wsdl:output message="tns:getFilesFromPathFolderSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getFoldersByArea">
+<wsdl:input message="tns:getFoldersByAreaSoapIn"/>
+<wsdl:output message="tns:getFoldersByAreaSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetFolderTree">
+<wsdl:input message="tns:GetFolderTreeSoapIn"/>
+<wsdl:output message="tns:GetFolderTreeSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="moveFile">
+<wsdl:input message="tns:moveFileSoapIn"/>
+<wsdl:output message="tns:moveFileSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="deleteFile">
+<wsdl:input message="tns:deleteFileSoapIn"/>
+<wsdl:output message="tns:deleteFileSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetFileDetails">
+<wsdl:input message="tns:GetFileDetailsSoapIn"/>
+<wsdl:output message="tns:GetFileDetailsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="modificaMetadato">
+<wsdl:input message="tns:modificaMetadatoSoapIn"/>
+<wsdl:output message="tns:modificaMetadatoSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="creaNuovoRegistro">
+<wsdl:input message="tns:creaNuovoRegistroSoapIn"/>
+<wsdl:output message="tns:creaNuovoRegistroSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="creaRootDirectories">
+<wsdl:input message="tns:creaRootDirectoriesSoapIn"/>
+<wsdl:output message="tns:creaRootDirectoriesSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getSubFoldersFromIdFolder">
+<wsdl:input message="tns:getSubFoldersFromIdFolderSoapIn"/>
+<wsdl:output message="tns:getSubFoldersFromIdFolderSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getRegistriByFiltroCodice">
+<wsdl:input message="tns:getRegistriByFiltroCodiceSoapIn"/>
+<wsdl:output message="tns:getRegistriByFiltroCodiceSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="signDocument">
+<wsdl:input message="tns:signDocumentSoapIn"/>
+<wsdl:output message="tns:signDocumentSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="sendMail">
+<wsdl:input message="tns:sendMailSoapIn"/>
+<wsdl:output message="tns:sendMailSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="UpdateMerge">
+<wsdl:input message="tns:UpdateMergeSoapIn"/>
+<wsdl:output message="tns:UpdateMergeSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolder">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Restituisce la lista di file paginata all'interno di una directory individuata dal'ID
+</wsdl:documentation>
+<wsdl:input message="tns:getPagedFilesFromIdFolderSoapIn"/>
+<wsdl:output message="tns:getPagedFilesFromIdFolderSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolderStatus">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+Restituisce la lista di file paginata all'interno di una directory individuata dal'ID
+</wsdl:documentation>
+<wsdl:input message="tns:getPagedFilesFromIdFolderStatusSoapIn"/>
+<wsdl:output message="tns:getPagedFilesFromIdFolderStatusSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="searchFiles">
+<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ricerca i files secondo i criteri specificati</wsdl:documentation>
+<wsdl:input message="tns:searchFilesSoapIn"/>
+<wsdl:output message="tns:searchFilesSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ControllerOperazioniWSSoap" type="tns:ControllerOperazioniWSSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="WorkflowGetStatus">
+<soap:operation soapAction="http://tempuri.org/WorkflowGetStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WorkflowStart">
+<soap:operation soapAction="http://tempuri.org/WorkflowStart" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WorkflowChangeStatus">
+<soap:operation soapAction="http://tempuri.org/WorkflowChangeStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WfDetach">
+<soap:operation soapAction="http://tempuri.org/WfDetach" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFileUrl">
+<soap:operation soapAction="http://tempuri.org/GetFileUrl" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddFile">
+<soap:operation soapAction="http://tempuri.org/AddFile" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetInfoAboutFile">
+<soap:operation soapAction="http://tempuri.org/GetInfoAboutFile" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCodiceIndividuale">
+<soap:operation soapAction="http://tempuri.org/GetCodiceIndividuale" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreaNuovaCartella">
+<soap:operation soapAction="http://tempuri.org/CreaNuovaCartella" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AssociaFileFolder">
+<soap:operation soapAction="http://tempuri.org/AssociaFileFolder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetMetadatiByTipoDoc">
+<soap:operation soapAction="http://tempuri.org/GetMetadatiByTipoDoc" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getDocumentiByArea">
+<soap:operation soapAction="http://tempuri.org/getDocumentiByArea" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="aggiungiMetadato">
+<soap:operation soapAction="http://tempuri.org/aggiungiMetadato" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromIdFolder">
+<soap:operation soapAction="http://tempuri.org/getFilesFromIdFolder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromPathFolder">
+<soap:operation soapAction="http://tempuri.org/getFilesFromPathFolder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFoldersByArea">
+<soap:operation soapAction="http://tempuri.org/getFoldersByArea" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFolderTree">
+<soap:operation soapAction="http://tempuri.org/GetFolderTree" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="moveFile">
+<soap:operation soapAction="http://tempuri.org/moveFile" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="deleteFile">
+<soap:operation soapAction="http://tempuri.org/deleteFile" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFileDetails">
+<soap:operation soapAction="http://tempuri.org/GetFileDetails" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="modificaMetadato">
+<soap:operation soapAction="http://tempuri.org/modificaMetadato" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="creaNuovoRegistro">
+<soap:operation soapAction="http://tempuri.org/creaNuovoRegistro" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="creaRootDirectories">
+<soap:operation soapAction="http://tempuri.org/creaRootDirectories" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getSubFoldersFromIdFolder">
+<soap:operation soapAction="http://tempuri.org/getSubFoldersFromIdFolder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getRegistriByFiltroCodice">
+<soap:operation soapAction="http://tempuri.org/getRegistriByFiltroCodice" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="signDocument">
+<soap:operation soapAction="http://tempuri.org/signDocument" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="sendMail">
+<soap:operation soapAction="http://tempuri.org/sendMail" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateMerge">
+<soap:operation soapAction="http://tempuri.org/UpdateMerge" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolder">
+<soap:operation soapAction="http://tempuri.org/getPagedFilesFromIdFolder" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolderStatus">
+<soap:operation soapAction="http://tempuri.org/getPagedFilesFromIdFolderStatus" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="searchFiles">
+<soap:operation soapAction="http://tempuri.org/searchFiles" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ControllerOperazioniWSSoap12" type="tns:ControllerOperazioniWSSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="WorkflowGetStatus">
+<soap12:operation soapAction="http://tempuri.org/WorkflowGetStatus" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WorkflowStart">
+<soap12:operation soapAction="http://tempuri.org/WorkflowStart" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WorkflowChangeStatus">
+<soap12:operation soapAction="http://tempuri.org/WorkflowChangeStatus" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="WfDetach">
+<soap12:operation soapAction="http://tempuri.org/WfDetach" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFileUrl">
+<soap12:operation soapAction="http://tempuri.org/GetFileUrl" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddFile">
+<soap12:operation soapAction="http://tempuri.org/AddFile" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetInfoAboutFile">
+<soap12:operation soapAction="http://tempuri.org/GetInfoAboutFile" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCodiceIndividuale">
+<soap12:operation soapAction="http://tempuri.org/GetCodiceIndividuale" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CreaNuovaCartella">
+<soap12:operation soapAction="http://tempuri.org/CreaNuovaCartella" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AssociaFileFolder">
+<soap12:operation soapAction="http://tempuri.org/AssociaFileFolder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetMetadatiByTipoDoc">
+<soap12:operation soapAction="http://tempuri.org/GetMetadatiByTipoDoc" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getDocumentiByArea">
+<soap12:operation soapAction="http://tempuri.org/getDocumentiByArea" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="aggiungiMetadato">
+<soap12:operation soapAction="http://tempuri.org/aggiungiMetadato" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromIdFolder">
+<soap12:operation soapAction="http://tempuri.org/getFilesFromIdFolder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFilesFromPathFolder">
+<soap12:operation soapAction="http://tempuri.org/getFilesFromPathFolder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getFoldersByArea">
+<soap12:operation soapAction="http://tempuri.org/getFoldersByArea" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFolderTree">
+<soap12:operation soapAction="http://tempuri.org/GetFolderTree" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="moveFile">
+<soap12:operation soapAction="http://tempuri.org/moveFile" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="deleteFile">
+<soap12:operation soapAction="http://tempuri.org/deleteFile" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetFileDetails">
+<soap12:operation soapAction="http://tempuri.org/GetFileDetails" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="modificaMetadato">
+<soap12:operation soapAction="http://tempuri.org/modificaMetadato" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="creaNuovoRegistro">
+<soap12:operation soapAction="http://tempuri.org/creaNuovoRegistro" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="creaRootDirectories">
+<soap12:operation soapAction="http://tempuri.org/creaRootDirectories" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getSubFoldersFromIdFolder">
+<soap12:operation soapAction="http://tempuri.org/getSubFoldersFromIdFolder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getRegistriByFiltroCodice">
+<soap12:operation soapAction="http://tempuri.org/getRegistriByFiltroCodice" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="signDocument">
+<soap12:operation soapAction="http://tempuri.org/signDocument" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="sendMail">
+<soap12:operation soapAction="http://tempuri.org/sendMail" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="UpdateMerge">
+<soap12:operation soapAction="http://tempuri.org/UpdateMerge" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolder">
+<soap12:operation soapAction="http://tempuri.org/getPagedFilesFromIdFolder" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getPagedFilesFromIdFolderStatus">
+<soap12:operation soapAction="http://tempuri.org/getPagedFilesFromIdFolderStatus" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="searchFiles">
+<soap12:operation soapAction="http://tempuri.org/searchFiles" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ControllerOperazioniWS">
+<wsdl:port name="ControllerOperazioniWSSoap" binding="tns:ControllerOperazioniWSSoap">
+<soap:address location="http://localhost/Unidocs/GestoreFileWS/ControllerOperazioniWS.asmx"/>
+</wsdl:port>
+<wsdl:port name="ControllerOperazioniWSSoap12" binding="tns:ControllerOperazioniWSSoap12">
+<soap12:address location="http://localhost/Unidocs/GestoreFileWS/ControllerOperazioniWS.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

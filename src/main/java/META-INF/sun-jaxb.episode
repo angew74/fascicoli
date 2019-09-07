@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.2.11 
+Vedere <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
+Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+Generato il: 2019.09.06 alle 04:10:12 PM CEST 
+
+  -->
+  <jaxb:bindings xmlns:tns="http://www.comune.roma.it/certificati/data" if-exists="true" scd="x-schema::tns">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="com.roma.elettorale.fascicoli.service.serviceproxy"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings if-exists="true" scd="tns:ricercaPersona">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RicercaPersona"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:ricercaPersonaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RicercaPersonaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:ricercaComponentiFamiglia">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RicercaComponentiFamiglia"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:ricercaComponentiFamigliaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RicercaComponentiFamigliaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfComponenteFamigliaType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfComponenteFamigliaType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:recuperaDocumento">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RecuperaDocumento"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:recuperaDocumentoResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RecuperaDocumentoResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfBase64Binary">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfBase64Binary"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:richiestaCredenziali">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RichiestaCredenziali"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:TransactionRequestType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.TransactionRequestType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:richiestaCredenzialiResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RichiestaCredenzialiResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:CredenzialiType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CredenzialiType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:verificaEmettibilita">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.VerificaEmettibilita"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfInfoCertificatoType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfInfoCertificatoType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:verificaEmettibilitaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.VerificaEmettibilitaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:richiestaCertificati">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RichiestaCertificati"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:richiestaCertificatiResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.RichiestaCertificatiResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfCertificatoType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfCertificatoType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:confermaStampa">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ConfermaStampa"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfString">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfString"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:confermaStampaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ConfermaStampaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ComponenteFamigliaType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ComponenteFamigliaType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:InfoCertificatoType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.InfoCertificatoType"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:CertificatoType">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CertificatoType"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+  <jaxb:bindings xmlns:tns="http://tempuri.org/" if-exists="true" scd="x-schema::tns">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="com.roma.elettorale.fascicoli.service.serviceproxy"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings if-exists="true" scd="tns:CallMapperWebMethod">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CallMapperWebMethod"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:CallMapperWebMethodResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CallMapperWebMethodResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowGetStatus">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowGetStatus"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowGetStatusResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowGetStatusResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowStart">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowStart"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowStartResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowStartResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowChangeStatus">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowChangeStatus"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WorkflowChangeStatusResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkflowChangeStatusResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WfDetach">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WfDetach"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:WfDetachResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WfDetachResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFileUrl">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFileUrl"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFileUrlResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFileUrlResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:AddFile">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AddFile"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:AddFileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AddFileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetInfoAboutFile">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetInfoAboutFile"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetInfoAboutFileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetInfoAboutFileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetCodiceIndividuale">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetCodiceIndividuale"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetCodiceIndividualeResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetCodiceIndividualeResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:CreaNuovaCartella">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaNuovaCartella"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:CreaNuovaCartellaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaNuovaCartellaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:AssociaFileFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AssociaFileFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:AssociaFileFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AssociaFileFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetMetadatiByTipoDoc">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetMetadatiByTipoDoc"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetMetadatiByTipoDocResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetMetadatiByTipoDocResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getDocumentiByArea">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetDocumentiByArea"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getDocumentiByAreaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetDocumentiByAreaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfDocumentiPerAree">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfDocumentiPerAree"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:aggiungiMetadato">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AggiungiMetadato"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:UnidocsMetadata">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocsMetadata"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:aggiungiMetadatoResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AggiungiMetadatoResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFilesFromIdFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFilesFromIdFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFilesFromIdFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFilesFromIdFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfFileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfFileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFilesFromPathFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFilesFromPathFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFilesFromPathFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFilesFromPathFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFoldersByArea">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFoldersByArea"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getFoldersByAreaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFoldersByAreaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFolderTree">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFolderTree"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFolderTreeResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFolderTreeResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfSimpleTreeItem">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfSimpleTreeItem"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:moveFile">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.MoveFile"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:moveFileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.MoveFileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:deleteFile">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.DeleteFile"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:deleteFileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.DeleteFileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFileDetails">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFileDetails"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:GetFileDetailsResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetFileDetailsResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:modificaMetadato">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ModificaMetadato"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:modificaMetadatoResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ModificaMetadatoResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:creaNuovoRegistro">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaNuovoRegistro"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:creaNuovoRegistroResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaNuovoRegistroResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:creaRootDirectories">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaRootDirectories"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfStrings">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfStrings"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:creaRootDirectoriesResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.CreaRootDirectoriesResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getSubFoldersFromIdFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetSubFoldersFromIdFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getSubFoldersFromIdFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetSubFoldersFromIdFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getRegistriByFiltroCodice">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetRegistriByFiltroCodice"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getRegistriByFiltroCodiceResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetRegistriByFiltroCodiceResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfAreaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfAreaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:signDocument">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SignDocument"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:signDocumentResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SignDocumentResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:sendMail">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SendMail"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:sendMailResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SendMailResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:UpdateMerge">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UpdateMerge"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:UpdateMergeResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UpdateMergeResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getPagedFilesFromIdFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetPagedFilesFromIdFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getPagedFilesFromIdFolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetPagedFilesFromIdFolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getPagedFilesFromIdFolderStatus">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetPagedFilesFromIdFolderStatus"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:getPagedFilesFromIdFolderStatusResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.GetPagedFilesFromIdFolderStatusResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:searchFiles">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SearchFiles"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfUnidocFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfUnidocFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfUnidocTypes">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfUnidocTypes"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfArrayOfUnidocsMetadata">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfArrayOfUnidocsMetadata"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="tns:searchFilesResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SearchFilesResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:DocumentiPerAree">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.DocumentiPerAree"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:SimpleTreeItem">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.SimpleTreeItem"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:BaseResultItem">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.BaseResultItem"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:UnidocFolder">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocFolder"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:Area">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.Area"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:UnidocTypes">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocTypes"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~tns:ArrayOfUnidocsMetadata">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfUnidocsMetadata"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+  <jaxb:bindings if-exists="true" scd="x-schema::">
+    <jaxb:schemaBindings map="false">
+      <jaxb:package name="com.roma.elettorale.fascicoli.service.serviceproxy"/>
+    </jaxb:schemaBindings>
+    <jaxb:bindings if-exists="true" scd="~WorkFlow">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WorkFlow"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FileRequest">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FileRequest"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FileResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FileResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FolderResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FolderResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocsFirma">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocsFirma"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocMail">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocMail"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FileResponseList">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FileResponseList"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~Messaggio">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.Messaggio"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~Wf">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.Wf"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfWfStatus">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfWfStatus"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~WfStatus">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.WfStatus"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfFileWf">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfFileWf"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FileWf">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FileWf"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfUnidocFiles">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfUnidocFiles"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocFiles">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocFiles"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfUnidocsMetadatas">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfUnidocsMetadatas"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocsMetadatas">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocsMetadatas"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocTypess">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocTypess"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~UnidocFolders">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.UnidocFolders"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~Areas">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.Areas"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~FileMetatag">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.FileMetatag"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfMetadato">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfMetadato"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~Metadato">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.Metadato"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~AreaResponse">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.AreaResponse"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfStringss">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfStringss"/>
+    </jaxb:bindings>
+    <jaxb:bindings if-exists="true" scd="~ArrayOfFileResponses">
+      <jaxb:class ref="com.roma.elettorale.fascicoli.service.serviceproxy.ArrayOfFileResponses"/>
+    </jaxb:bindings>
+  </jaxb:bindings>
+</jaxb:bindings>
