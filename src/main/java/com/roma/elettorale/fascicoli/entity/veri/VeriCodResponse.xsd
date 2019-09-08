@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="VERICOD_RESP" targetNamespace="http://tempuri.org/VERICOD_RESP.xsd" 
+		   elementFormDefault="unqualified" 
+		   attributeFormDefault="unqualified" 
+		   xmlns="http://tempuri.org/VERICOD_RESP.xsd" 
+		   xmlns:mstns="http://tempuri.org/VERICOD_RESP.xsd" 
+		   xmlns:tc="http://tempuri.org/TipiBase.xsd" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace="http://tempuri.org/TipiBase.xsd" schemaLocation="C:\Users\AdminDSI\RootPrj\crab\CambiResidenzaData\schemes\common\TipiBase.xsd" />
+	<xs:element name="VERICOD_RESPONSE">
+		<xs:complexType>
+			<xs:sequence>
+        <xs:element maxOccurs="unbounded" name="PersonaElenco">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" form="unqualified" name="CodiceIndiv" type="xs:string" nillable="true" />
+              <xs:element minOccurs="0" form="unqualified" name="SessoPersona" type="xs:string" nillable="true" />
+              <xs:element minOccurs="0" form="unqualified" name="CognomePersona" type="xs:string" nillable="true" />
+              <xs:element minOccurs="0" form="unqualified" name="NomePersona" type="xs:string" nillable="true" />
+              <xs:element minOccurs="0" form="unqualified" name="DataDiNascitaPersona" type="xs:string" nillable="true" />
+              <xs:element minOccurs="0" form="unqualified" name="CodiceFiscale" type="xs:string" nillable="true" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>      
+				<xs:element name="Verifica">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="RawXml" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="Messaggi" type="tc:BaseMessaggioAnag" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
