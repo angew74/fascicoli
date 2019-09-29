@@ -36,7 +36,7 @@ public class DeleteFileResponse {
     protected FileResponse deleteFileResult;
 
     /**
-     * Recupera il valore della proprietà deleteFileResult.
+     * Recupera il valore della proprieta deleteFileResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class DeleteFileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà deleteFileResult.
+     * Imposta il valore della proprieta deleteFileResult.
      * 
      * @param value
      *     allowed object is

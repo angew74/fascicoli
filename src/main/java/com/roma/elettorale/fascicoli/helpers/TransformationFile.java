@@ -3,14 +3,15 @@ package com.roma.elettorale.fascicoli.helpers;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.html.simpleparser.StyleSheet;
 import com.itextpdf.text.pdf.PdfStream;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.StringUtils;
+import com.itextpdf.tool.xml.XMLWorkerHelper;
 import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
 import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
-import com.roma.elettorale.fascicoli.entity.veri.ObjectFactory;
-import com.roma.elettorale.fascicoli.entity.veri.Ricerca;
-import com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE;
+import com.roma.elettorale.fascicoli.entity.unidoc.Metadato;
+import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
+import com.roma.elettorale.fascicoli.entity.veri.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,22 +19,29 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.*;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMResult;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import java.beans.Introspector;
 import java.io.*;
 import java.net.URLEncoder;
+import java.security.MessageDigest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 import java.util.Locale;
 import java.util.Map;
 
@@ -47,58 +55,75 @@ public class TransformationFile {
 
     @Bean
     public Document convertStringToXMLDocument(String xmlString) {
-        //Parser that produces DOM object trees from XML content
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-
-        //API to obtain DOM Document instance
+        factory.setNamespaceAware(true);
         DocumentBuilder builder = null;
+        Document document = null;
         try {
-            //Create DocumentBuilder with default configuration
             builder = factory.newDocumentBuilder();
-
-            //Parse the content to Document object
-            Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
-            return doc;
+            document = builder.parse(new ByteArrayInputStream(xmlString.replace("#", "").getBytes("UTF-8")));
         } catch (Exception e) {
             e.printStackTrace();
-            logger.debug(e.getMessage());
+            logger.debug("ERR_05: " + e.getMessage());
         }
-        return null;
+        return document;
+    }
+
+
+    static void recurse(NodeList list) {
+        if (list == null || list.getLength() == 0) {
+            return;
+        } else {
+            for (int i = 0; i < list.getLength(); i++) {
+                Node item = list.item(i);
+                System.out.println(item);
+                recurse(item.getChildNodes());
+            }
+        }
     }
 
     public VERICODRESPONSE convertXmltoVericodResponse(String xmlString) {
         JAXBContext jaxbContext;
         VERICODRESPONSE vericodresponse = null;
         try {
-            jaxbContext = JAXBContext.newInstance(VERICODRESPONSE.class);
-
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE.class, ObjectFactoryVeri.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
             vericodresponse = (VERICODRESPONSE) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
-
             System.out.println(vericodresponse);
         } catch (JAXBException e) {
             e.printStackTrace();
-            logger.debug(e.getMessage());
+            logger.debug("ERR_04: " + e.getMessage());
         }
         return vericodresponse;
     }
 
 
+    public UploadResponse convertXmltoUploadResponse(String xmlString)
+    {
+        JAXBContext jaxbContext;
+        UploadResponse uploadResponse = null;
+        try {
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            uploadResponse = (UploadResponse) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            logger.error("ERR_26: " + e.getMessage());
+        }
+        return uploadResponse;
+    }
+
     public EstrattoNascita convertXmltoEstrattoNascita(String xmlString) {
         JAXBContext jaxbContext;
         EstrattoNascita estrattoNascita = null;
         try {
-            jaxbContext = JAXBContext.newInstance(VERICODRESPONSE.class);
-
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-
-            estrattoNascita = (EstrattoNascita) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
-
-            System.out.println(estrattoNascita);
+            String file = xmlString.replace("#", " ");
+            estrattoNascita = (EstrattoNascita) jaxbUnmarshaller.unmarshal(new StringReader(file));
         } catch (JAXBException e) {
             e.printStackTrace();
-            logger.debug(e.getMessage());
+            logger.error("ERR_06: " + e.getMessage());
         }
         return estrattoNascita;
     }
@@ -140,6 +165,7 @@ public class TransformationFile {
             document = convertStringToXMLDocument(sw.toString());
             return document;
         } catch (JAXBException e) {
+            logger.debug("ERR_07: " + e.getMessage());
             throw new DataBindingException(e);
         }
     }
@@ -147,87 +173,105 @@ public class TransformationFile {
     public String applyXSLToXml(Document xmlFile, String xslStyleSheet) {
         String faticaFinale = "";
         try {
-            File stylesheet = new File(xslStyleSheet);
+            String prova = convertDocumentToString(xmlFile);
+            File stylesheet = new File(env.getProperty("xslStyleSheet"));
             StreamSource stylesource = new StreamSource(stylesheet);
-            byte[] bytes = xmlFile.toString().getBytes();
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
-            StreamSource streamSource = new StreamSource(byteArrayInputStream);
-            StringWriter writer = new StringWriter();
-            StreamResult result = new StreamResult(writer);
+            Source xmlSource = new DOMSource(xmlFile);
+            DOMResult result = new DOMResult();
             Transformer transformer = TransformerFactory.newInstance()
                     .newTransformer(stylesource);
 
-            transformer.transform(streamSource, result);
-            String strResult = writer.toString();
-            String strResultModificato = modificaOutput(strResult);
-            faticaFinale = strResultModificato;
+            transformer.transform(xmlSource, result);
+            Document aff = (Document) result.getNode();
+            faticaFinale = modificaOutput(convertDocumentToString(aff));
         } catch (TransformerException e) {
+            logger.debug("ERR_08: " + e.getMessage());
             e.printStackTrace();
         }
         return faticaFinale;
     }
 
-    public byte[] createPdf(String Xmldocument)
-    {
-        String h = Xmldocument.replace("&lt;br&gt;", "<br />").replace("&lt;br /&gt;", "<br />");
-      /* com.itextpdf.text.Document document;
-        document = new com.itextpdf.text.Document();
-        try {
-            PdfWriter writer = PdfWriter.getInstance(document,
-                    new FileOutputStream("src/output/html.pdf"));
-            document.open();
-            XMLWorkerHelper.getInstance().parseXHtml(writer, document,
-                    new FileInputStream(filename));
-            document.close();
-        }
-        catch (Exception ex)
-        {
 
-        }*/
+    public Metadato createMetaDato(String nomeMetadato, String valoreMetaDato) {
+
+        Metadato m = new Metadato();
+        m.setValoreMetadato(valoreMetaDato);
+        m.setNomeMetadato(nomeMetadato);
+        return m;
+    }
+
+    public String getNomeCertificatoMetaDato(String codice)
+    {
+        String nomeCertificato = "";
+        switch (codice)
+        {
+            case "C0001":
+                nomeCertificato = "NASCITA";
+                break;
+            case "C0004":
+                nomeCertificato = "CITTADINANZA";
+                break;
+            case "C0005":
+                nomeCertificato = "CITTADINANZA_AIRE";
+                break;
+            case "C0006":
+                nomeCertificato = "RESIDENZA";
+                break;
+            case "C0007":
+                nomeCertificato = "RESIDENZA_AIRE";
+                break;
+
+        }
+        return  nomeCertificato;
+    }
+
+    public byte[] createPdf(String Xmldocument) {
+        String h = Xmldocument.replace("&lt;br&gt;", "<br />").replace("&lt;br /&gt;", "<br />");
         com.itextpdf.text.Document document = new com.itextpdf.text.Document(PageSize.A4, 40, 40, 20, 30);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try {
 
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(h.getBytes());
             PdfWriter writer = PdfWriter.getInstance(document, byteArrayOutputStream);
             writer.setPdfVersion(PdfWriter.VERSION_1_7);
             writer.setCompressionLevel(PdfStream.BEST_COMPRESSION);
             writer.setFullCompression();
             // h.replace(@"\s"," ");
             // var spacesSquashed = Regex.Replace(h, @ "\s+", " ", RegexOptions.Singleline).Trim();
-
+            // String newh =  h.replace("xmlns:ns3=\"http://tempuri.org\/EstrNas.xsd\","");
             document.open();
-            com.itextpdf.text.html.simpleparser.HTMLWorker hw =
-                    new com.itextpdf.text.html.simpleparser.HTMLWorker(document);
-            StyleSheet style = new StyleSheet();
-
             Paragraph pLogo = new Paragraph();
             String IMG = env.getProperty("EstrattoLogo");
             Image image = Image.getInstance(IMG);
-           //  PdfImage stream = new PdfImage(image, "", null);
-
-         //   com.itextpdf.text.Image imagetimbro = com.itextpdf.text.Image.GetInstance(ati, com.itextpdf.WHITE);
             image.scalePercent(60);
-         //    pLogo.setAlignment(Element.ALIGN_LEFT);
             pLogo.add(image);
             pLogo.setSpacingAfter(25);
             document.add(pLogo);
-/*
-            for(com.itextpdf.text.Element element : com.itextpdf.text.html.simpleparser.HTMLWorker.parseToList() ,style)
-            {
-                document.add(element);
-            }
-            foreach(IElement element in HTMLWorker.ParseToList(new System.IO.StringReader(spacesSquashed), style))
-            {
-                document.Add(element);
-            }*/
-
+            XMLWorkerHelper.getInstance().parseXHtml(writer, document, inputStream);
             document.close();
-        }
-        catch (Exception ex)
-        {
-
+        } catch (Exception ex) {
+            logger.error("ERR_03: " + ex.getMessage());
         }
         return byteArrayOutputStream.toByteArray();
+    }
+
+
+    public void wrtiteToDisk(String path, byte[] out) {
+
+        try {
+
+            File file = new File(path);
+            OutputStream
+                    os
+                    = new FileOutputStream(file);
+            os.write(out);
+            System.out.println("Successfully"
+                    + " byte inserted");
+            os.close();
+        } catch (Exception e) {
+            logger.debug("ERR_09: " + e.getMessage());
+            System.out.println("Exception: " + e);
+        }
     }
 
     private static String modificaOutput(String output) {
@@ -254,60 +298,111 @@ public class TransformationFile {
         return output;
     }
 
-    public String jaxbObjectToXML(Ricerca ricerca) {
+    public String jaxbObjectToXMLVericod(VERICOD vericod) {
         Locale.setDefault(Locale.ENGLISH);
         String xmlContent = "";
         try {
-            //Create JAXB Context
-
-            //    JAXBContext jaxbContext = JAXBContext.newInstance(Ricerca.class);
-            //  JAXBContext jaxbContext = JAXBContext.newInstance("com.roma.elettorale.fascicoli.entity");
-          //   JAXBContext jaxbContext = JAXBContext.newInstance("com.roma.elettorale.fascicoli.entity", com.roma.elettorale.fascicoli.entity.Ricerca.class.getClassLoader());
-            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.Ricerca.class, ObjectFactory.class);
-            //Create Marshaller
+            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICOD.class, ObjectFactory.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-            //Required formatting??
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-            //Print XML String to Console
             StringWriter sw = new StringWriter();
-
-            //Write XML to StringWriter
-            jaxbMarshaller.marshal(ricerca, sw);
-
-            //Verify XML Content
+            jaxbMarshaller.marshal(vericod, sw);
             xmlContent = sw.toString();
         } catch (JAXBException e) {
+            logger.debug("ERR_10: " + e.getMessage());
             e.printStackTrace();
         }
         return xmlContent;
+    }
+
+    public String convertDocumentToString(Document doc) throws TransformerException {
+        TransformerFactory tf = TransformerFactory.newInstance();
+        Transformer trans = tf.newTransformer();
+        StringWriter sw = new StringWriter();
+        trans.transform(new DOMSource(doc), new StreamResult(sw));
+        return sw.toString();
     }
 
     public String jaxbRichiestaEstrattoToXML(RichiestaEstratto ricerca) {
         String xmlContent = "";
+        Locale.setDefault(Locale.ENGLISH);
         try {
-            //Create JAXB Context
-            JAXBContext jaxbContext = JAXBContext.newInstance(RichiestaEstratto.class);
-
-            //Create Marshaller
+            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto.class, com.roma.elettorale.fascicoli.entity.anagrafe.ObjectFactory.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-
-            //Required formatting??
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-            //Print XML String to Console
             StringWriter sw = new StringWriter();
-
-            //Write XML to StringWriter
             jaxbMarshaller.marshal(ricerca, sw);
-
-            //Verify XML Content
             xmlContent = sw.toString();
         } catch (JAXBException e) {
+            logger.debug("ERR_11: " + e.getMessage());
             e.printStackTrace();
         }
         return xmlContent;
     }
+
+    public String Decrypt(String str, String thePassword)
+    {
+        String returnValue = null;
+        byte[] SALT = { 73,
+                118,
+                97,
+                110,
+                32,
+                77,
+                101,
+                100,
+                118,
+                101,
+                100,
+                101,
+                118 };
+        try
+        {
+           // String thePassword = "%cFRm*F)N9Rq[6#5";
+            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(thePassword,SALT);
+
+            byte[] encryptedData = DatatypeConverter.parseBase64Binary(str);
+            byte[] key = passwordDeriveBytes.getBytes(32);
+            byte[] IV =  passwordDeriveBytes.getBytes(16);
+            MessageDigest digest = MessageDigest.getInstance("MD5");
+            SecretKeySpec password = new SecretKeySpec(digest.digest(thePassword.getBytes()), "AES");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            IvParameterSpec IVParamSpec = new IvParameterSpec(IV);
+            cipher.init(Cipher.DECRYPT_MODE, password, IVParamSpec);
+            byte[] decryptedVal = cipher.doFinal(encryptedData);
+            returnValue = new String(decryptedVal);
+            return new String(decryptedVal);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return returnValue;
+    }
 }
+
+
+
+/*
+    public static String Decrypt(String cipherText, String Password) {
+        byte[] cipherBytes = Base64.getDecoder().decode(cipherText);
+        PasswordDeriveBytes pdb = new PasswordDeriveBytes(Password, new byte[] {
+                73,
+                118,
+                97,
+                110,
+                32,
+                77,
+                101,
+                100,
+                118,
+                101,
+                100,
+                101,
+                118});
+        byte[] decryptedData = Decrypt(cipherBytes, pdb.GetBytes(32), pdb.GetBytes(16));
+       String r = Base64.getEncoder().encodeToString(decryptedData);
+        return r;
+    }
+*/
+
+
 

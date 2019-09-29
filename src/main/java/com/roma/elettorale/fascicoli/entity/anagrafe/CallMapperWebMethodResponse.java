@@ -46,7 +46,7 @@ public class CallMapperWebMethodResponse {
     protected int tpurcode;
 
     /**
-     * Recupera il valore della proprietà callMapperWebMethodResult.
+     * Recupera il valore della proprieta callMapperWebMethodResult.
      * 
      */
     public boolean isCallMapperWebMethodResult() {
@@ -54,7 +54,7 @@ public class CallMapperWebMethodResponse {
     }
 
     /**
-     * Imposta il valore della proprietà callMapperWebMethodResult.
+     * Imposta il valore della proprieta callMapperWebMethodResult.
      * 
      */
     public void setCallMapperWebMethodResult(boolean value) {
@@ -62,7 +62,7 @@ public class CallMapperWebMethodResponse {
     }
 
     /**
-     * Recupera il valore della proprietà dati.
+     * Recupera il valore della proprieta dati.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class CallMapperWebMethodResponse {
     }
 
     /**
-     * Imposta il valore della proprietà dati.
+     * Imposta il valore della proprieta dati.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class CallMapperWebMethodResponse {
     }
 
     /**
-     * Recupera il valore della proprietà tpurcode.
+     * Recupera il valore della proprieta tpurcode.
      * 
      */
     public int getTPURCODE() {
@@ -94,7 +94,7 @@ public class CallMapperWebMethodResponse {
     }
 
     /**
-     * Imposta il valore della proprietà tpurcode.
+     * Imposta il valore della proprieta tpurcode.
      * 
      */
     public void setTPURCODE(int value) {

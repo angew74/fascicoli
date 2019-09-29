@@ -36,7 +36,7 @@ public class MoveFileResponse {
     protected FileResponse moveFileResult;
 
     /**
-     * Recupera il valore della proprietà moveFileResult.
+     * Recupera il valore della proprieta moveFileResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class MoveFileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà moveFileResult.
+     * Imposta il valore della proprieta moveFileResult.
      * 
      * @param value
      *     allowed object is

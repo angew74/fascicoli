@@ -38,7 +38,7 @@ public class GetMetadatiByTipoDocResponse {
     protected FileResponse getMetadatiByTipoDocResult;
 
     /**
-     * Recupera il valore della proprietà getMetadatiByTipoDocResult.
+     * Recupera il valore della proprieta getMetadatiByTipoDocResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetMetadatiByTipoDocResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getMetadatiByTipoDocResult.
+     * Imposta il valore della proprieta getMetadatiByTipoDocResult.
      * 
      * @param value
      *     allowed object is

@@ -64,7 +64,7 @@ public class UnidocFolders {
     protected boolean deleted;
 
     /**
-     * Recupera il valore della proprietà cercami.
+     * Recupera il valore della proprieta cercami.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà cercami.
+     * Imposta il valore della proprieta cercami.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà path.
+     * Recupera il valore della proprieta path.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà path.
+     * Imposta il valore della proprieta path.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà refIdRegistro.
+     * Recupera il valore della proprieta refIdRegistro.
      * 
      */
     public int getRefIdRegistro() {
@@ -120,7 +120,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà refIdRegistro.
+     * Imposta il valore della proprieta refIdRegistro.
      * 
      */
     public void setRefIdRegistro(int value) {
@@ -128,7 +128,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà refIdPadre.
+     * Recupera il valore della proprieta refIdPadre.
      * 
      */
     public int getRefIdPadre() {
@@ -136,7 +136,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà refIdPadre.
+     * Imposta il valore della proprieta refIdPadre.
      * 
      */
     public void setRefIdPadre(int value) {
@@ -144,7 +144,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -152,7 +152,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {
@@ -160,7 +160,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà nomeFolder.
+     * Recupera il valore della proprieta nomeFolder.
      * 
      * @return
      *     possible object is
@@ -172,7 +172,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà nomeFolder.
+     * Imposta il valore della proprieta nomeFolder.
      * 
      * @param value
      *     allowed object is
@@ -184,7 +184,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà area.
+     * Recupera il valore della proprieta area.
      * 
      * @return
      *     possible object is
@@ -196,7 +196,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà area.
+     * Imposta il valore della proprieta area.
      * 
      * @param value
      *     allowed object is
@@ -208,7 +208,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Recupera il valore della proprietà deleted.
+     * Recupera il valore della proprieta deleted.
      * 
      */
     public boolean isDeleted() {
@@ -216,7 +216,7 @@ public class UnidocFolders {
     }
 
     /**
-     * Imposta il valore della proprietà deleted.
+     * Imposta il valore della proprieta deleted.
      * 
      */
     public void setDeleted(boolean value) {

@@ -44,7 +44,7 @@ public class FolderResponse {
     protected Messaggio msg;
 
     /**
-     * Recupera il valore della proprietà nomeFolder.
+     * Recupera il valore della proprieta nomeFolder.
      * 
      * @return
      *     possible object is
@@ -56,7 +56,7 @@ public class FolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà nomeFolder.
+     * Imposta il valore della proprieta nomeFolder.
      * 
      * @param value
      *     allowed object is
@@ -68,7 +68,7 @@ public class FolderResponse {
     }
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -76,7 +76,7 @@ public class FolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {
@@ -84,7 +84,7 @@ public class FolderResponse {
     }
 
     /**
-     * Recupera il valore della proprietà msg.
+     * Recupera il valore della proprieta msg.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class FolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà msg.
+     * Imposta il valore della proprieta msg.
      * 
      * @param value
      *     allowed object is

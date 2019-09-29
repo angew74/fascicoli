@@ -22,7 +22,7 @@ import javax.xml.namespace.QName;
  * 
  */
 @XmlRegistry
-public class ObjectFactory {
+public class ObjectFactoryVeri {
 
     private final static QName _DatiPraticaDataDefinizione_QNAME = new QName("", "DataDefinizione");
     private final static QName _DatiPraticaAnnoPratica_QNAME = new QName("", "AnnoPratica");
@@ -304,7 +304,7 @@ public class ObjectFactory {
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.roma.elettorale.fascicoli.entity.veri
      * 
      */
-    public ObjectFactory() {
+    public ObjectFactoryVeri() {
     }
 
     /**

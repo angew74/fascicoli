@@ -38,7 +38,7 @@ public class UpdateMergeResponse {
     protected FileResponse updateMergeResult;
 
     /**
-     * Recupera il valore della proprietà updateMergeResult.
+     * Recupera il valore della proprieta updateMergeResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class UpdateMergeResponse {
     }
 
     /**
-     * Imposta il valore della proprietà updateMergeResult.
+     * Imposta il valore della proprieta updateMergeResult.
      * 
      * @param value
      *     allowed object is

@@ -42,7 +42,7 @@ public class GetInfoAboutFile {
     protected String versione;
 
     /**
-     * Recupera il valore della proprietà idDoc.
+     * Recupera il valore della proprieta idDoc.
      * 
      */
     public int getIdDoc() {
@@ -50,7 +50,7 @@ public class GetInfoAboutFile {
     }
 
     /**
-     * Imposta il valore della proprietà idDoc.
+     * Imposta il valore della proprieta idDoc.
      * 
      */
     public void setIdDoc(int value) {
@@ -58,7 +58,7 @@ public class GetInfoAboutFile {
     }
 
     /**
-     * Recupera il valore della proprietà versione.
+     * Recupera il valore della proprieta versione.
      * 
      * @return
      *     possible object is
@@ -70,7 +70,7 @@ public class GetInfoAboutFile {
     }
 
     /**
-     * Imposta il valore della proprietà versione.
+     * Imposta il valore della proprieta versione.
      * 
      * @param value
      *     allowed object is

@@ -38,7 +38,7 @@ public class GetFileUrl {
     protected int idFile;
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      */
     public int getIdFile() {
@@ -46,7 +46,7 @@ public class GetFileUrl {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      */
     public void setIdFile(int value) {

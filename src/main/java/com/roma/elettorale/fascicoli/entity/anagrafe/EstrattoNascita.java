@@ -1,196 +1,224 @@
 package com.roma.elettorale.fascicoli.entity.anagrafe;
 
 
+import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+
+
+@XmlRootElement(name = "EstrattoNascita" ,namespace = "http://tempuri.org/EstrNas.xsd")
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class EstrattoNascita
 {
 
-    private String codiceIndividuale;
 
-    private String dataNas;
 
-    private String risultanze;
+    @XmlElement(name = "CodiceIndividuale", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String CodiceIndividuale;
 
-    private String estrTesto;
+    @XmlElement(name = "DataNas", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String DataNas;
 
-    private String hTML;
+    @XmlElement(name = "Risultanza", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Risultanze;
 
-    private String ufficio;
+    @XmlElement(name = "EstrTesto", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String EstrTesto;
 
-    private String readTab;
+    @XmlElement(name = "Html", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Html;
 
-    private String atto;
+    @XmlElement(name = "Ufficio", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Ufficio;
 
-    private String firma;
+    @XmlElement(name = "ReadTab", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String ReadTab;
 
-    private String today;
+    @XmlElement(name = "Atto", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Atto;
 
-    private String luoNas;
+    @XmlElement(name = "Firma", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Firma;
 
-    private String cognomeNome;
+    @XmlElement(name = "Today", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Today;
 
-    private String codice;
+    @XmlElement(name = "LuoNas", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String LuoNas;
 
-    private String livello;
+    @XmlElement(name = "CognomeNome", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String CognomeNome;
 
-    private String descrizione;
+    @XmlElement(name = "Codice", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Codice;
 
-    private String messaggio;
+    @XmlElement(name = "Livello", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Livello;
 
-    private String logAtto;
+    @XmlElement(name = "Descrizione", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Descrizione;
 
-    private  String  sostituita;
+    @XmlElement(name = "Messaggio", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Messaggio;
 
-    private String utente;
+    @XmlElement(name = "LogAtto", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String LogAtto;
+
+    @XmlElement(name = "Sostituita", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String  Sostituita;
+
+    @XmlElement(name = "Utente", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
+    private String Utente;
+
 
     public String getCodiceIndividuale() {
-        return codiceIndividuale;
+        return CodiceIndividuale;
     }
 
     public void setCodiceIndividuale(String codiceIndividuale) {
-        this.codiceIndividuale = codiceIndividuale;
+        CodiceIndividuale = codiceIndividuale;
     }
 
     public String getDataNas() {
-        return dataNas;
+        return DataNas;
     }
 
     public void setDataNas(String dataNas) {
-        this.dataNas = dataNas;
+        DataNas = dataNas;
     }
 
     public String getRisultanze() {
-        return risultanze;
+        return Risultanze;
     }
 
     public void setRisultanze(String risultanze) {
-        this.risultanze = risultanze;
+        Risultanze = risultanze;
     }
 
     public String getEstrTesto() {
-        return estrTesto;
+        return EstrTesto;
     }
 
     public void setEstrTesto(String estrTesto) {
-        this.estrTesto = estrTesto;
+        EstrTesto = estrTesto;
     }
 
-    public String gethTML() {
-        return hTML;
+    public String getHtml() {
+        return Html;
     }
 
-    public void sethTML(String hTML) {
-        this.hTML = hTML;
+    public void setHTML(String Html) {
+        this.Html = Html;
     }
 
     public String getUfficio() {
-        return ufficio;
+        return Ufficio;
     }
 
     public void setUfficio(String ufficio) {
-        this.ufficio = ufficio;
+        this.Ufficio = ufficio;
     }
 
     public String getReadTab() {
-        return readTab;
+        return ReadTab;
     }
 
     public void setReadTab(String readTab) {
-        this.readTab = readTab;
+        this.ReadTab = readTab;
     }
 
     public String getAtto() {
-        return atto;
+        return Atto;
     }
 
     public void setAtto(String atto) {
-        this.atto = atto;
+        Atto = atto;
     }
 
     public String getFirma() {
-        return firma;
+        return Firma;
     }
 
     public void setFirma(String firma) {
-        this.firma = firma;
+        this.Firma = firma;
     }
 
     public String getToday() {
-        return today;
+        return Today;
     }
 
     public void setToday(String today) {
-        this.today = today;
+        Today = Today;
     }
 
     public String getLuoNas() {
-        return luoNas;
+        return LuoNas;
     }
 
     public void setLuoNas(String luoNas) {
-        this.luoNas = luoNas;
+        LuoNas = luoNas;
     }
 
     public String getCognomeNome() {
-        return cognomeNome;
+        return CognomeNome;
     }
 
     public void setCognomeNome(String cognomeNome) {
-        this.cognomeNome = cognomeNome;
+        CognomeNome = cognomeNome;
     }
 
     public String getCodice() {
-        return codice;
+        return Codice;
     }
 
     public void setCodice(String codice) {
-        this.codice = codice;
+        Codice = codice;
     }
 
     public String getLivello() {
-        return livello;
+        return Livello;
     }
 
     public void setLivello(String livello) {
-        this.livello = livello;
+        Livello = livello;
     }
 
     public String getDescrizione() {
-        return descrizione;
+        return Descrizione;
     }
 
     public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+        Descrizione = descrizione;
     }
 
     public String getMessaggio() {
-        return messaggio;
+        return Messaggio;
     }
 
     public void setMessaggio(String messaggio) {
-        this.messaggio = messaggio;
+        this.Messaggio = messaggio;
     }
 
     public String getLogAtto() {
-        return logAtto;
+        return LogAtto;
     }
 
     public void setLogAtto(String logAtto) {
-        this.logAtto = logAtto;
+        this.LogAtto = logAtto;
     }
 
     public String getSostituita() {
-        return sostituita;
+        return Sostituita;
     }
 
     public void setSostituita(String sostituita) {
-        this.sostituita = sostituita;
+        Sostituita = sostituita;
     }
 
     public String getUtente() {
-        return utente;
+        return Utente;
     }
 
     public void setUtente(String utente) {
-        this.utente = utente;
+        Utente = utente;
     }
 }

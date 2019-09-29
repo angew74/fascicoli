@@ -38,7 +38,7 @@ public class GetRegistriByFiltroCodice {
     protected String nome;
 
     /**
-     * Recupera il valore della proprietà nome.
+     * Recupera il valore della proprieta nome.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetRegistriByFiltroCodice {
     }
 
     /**
-     * Imposta il valore della proprietà nome.
+     * Imposta il valore della proprieta nome.
      * 
      * @param value
      *     allowed object is

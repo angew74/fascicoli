@@ -38,7 +38,7 @@ public class GetDocumentiByAreaResponse {
     protected ArrayOfDocumentiPerAree getDocumentiByAreaResult;
 
     /**
-     * Recupera il valore della proprietà getDocumentiByAreaResult.
+     * Recupera il valore della proprieta getDocumentiByAreaResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetDocumentiByAreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getDocumentiByAreaResult.
+     * Imposta il valore della proprieta getDocumentiByAreaResult.
      * 
      * @param value
      *     allowed object is

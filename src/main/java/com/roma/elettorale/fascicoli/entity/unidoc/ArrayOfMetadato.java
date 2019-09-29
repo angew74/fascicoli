@@ -59,6 +59,15 @@ public class ArrayOfMetadato {
      * 
      * 
      */
+
+    public void setMetadato(List<Metadato> list)
+    {
+        if (metadato == null) {
+            metadato = new ArrayList<Metadato>();
+            metadato = list;
+        }
+    }
+
     public List<Metadato> getMetadato() {
         if (metadato == null) {
             metadato = new ArrayList<Metadato>();

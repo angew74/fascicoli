@@ -1,3 +1,10 @@
+//
+// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.3.0 
+// Vedere <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Generato il: 2019.09.24 alle 10:06:42 AM CEST 
+//
+
 
 package com.roma.elettorale.fascicoli.entity.certi;
 
@@ -13,16 +20,16 @@ import javax.xml.bind.annotation.XmlType;
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType>
- *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence>
- *         &lt;element name="credenziali" type="{http://www.comune.roma.it/certificati/data}CredenzialiType" minOccurs="0" form="unqualified"/>
- *         &lt;element name="intestatarioTrovato" type="{http://www.w3.org/2001/XMLSchema}boolean" form="unqualified"/>
- *       &lt;/sequence>
- *     &lt;/restriction>
- *   &lt;/complexContent>
- * &lt;/complexType>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="credenziali" type="{http://www.comune.roma.it/certificati/data}CredenzialiType" minOccurs="0" form="unqualified"/&gt;
+ *         &lt;element name="intestatarioTrovato" type="{http://www.w3.org/2001/XMLSchema}boolean" form="unqualified"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
  * </pre>
  * 
  * 

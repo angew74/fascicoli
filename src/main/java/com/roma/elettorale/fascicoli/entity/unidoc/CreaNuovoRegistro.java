@@ -42,7 +42,7 @@ public class CreaNuovoRegistro {
     protected String codRegistro;
 
     /**
-     * Recupera il valore della proprietà denArea.
+     * Recupera il valore della proprieta denArea.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class CreaNuovoRegistro {
     }
 
     /**
-     * Imposta il valore della proprietà denArea.
+     * Imposta il valore della proprieta denArea.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class CreaNuovoRegistro {
     }
 
     /**
-     * Recupera il valore della proprietà codRegistro.
+     * Recupera il valore della proprieta codRegistro.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class CreaNuovoRegistro {
     }
 
     /**
-     * Imposta il valore della proprietà codRegistro.
+     * Imposta il valore della proprieta codRegistro.
      * 
      * @param value
      *     allowed object is

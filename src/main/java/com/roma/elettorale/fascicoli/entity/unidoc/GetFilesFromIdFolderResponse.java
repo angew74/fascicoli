@@ -38,7 +38,7 @@ public class GetFilesFromIdFolderResponse {
     protected ArrayOfFileResponse getFilesFromIdFolderResult;
 
     /**
-     * Recupera il valore della proprietà getFilesFromIdFolderResult.
+     * Recupera il valore della proprieta getFilesFromIdFolderResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetFilesFromIdFolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getFilesFromIdFolderResult.
+     * Imposta il valore della proprieta getFilesFromIdFolderResult.
      * 
      * @param value
      *     allowed object is

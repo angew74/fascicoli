@@ -70,7 +70,7 @@ public class IdAttoStatoCivile {
     protected JAXBElement<String> desComAttoSs;
 
     /**
-     * Recupera il valore della proprietà annoSs.
+     * Recupera il valore della proprietï¿½ annoSs.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà annoSs.
+     * Imposta il valore della proprietï¿½ annoSs.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà numeroSs.
+     * Recupera il valore della proprietï¿½ numeroSs.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà numeroSs.
+     * Imposta il valore della proprietï¿½ numeroSs.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà parteSs.
+     * Recupera il valore della proprietï¿½ parteSs.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà parteSs.
+     * Imposta il valore della proprietï¿½ parteSs.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà serieSs.
+     * Recupera il valore della proprietï¿½ serieSs.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà serieSs.
+     * Imposta il valore della proprietï¿½ serieSs.
      * 
      * @param value
      *     allowed object is
@@ -166,7 +166,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà espSs.
+     * Recupera il valore della proprietï¿½ espSs.
      * 
      * @return
      *     possible object is
@@ -178,7 +178,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà espSs.
+     * Imposta il valore della proprietï¿½ espSs.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +190,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà tipoComAttoSs.
+     * Recupera il valore della proprietï¿½ tipoComAttoSs.
      * 
      * @return
      *     possible object is
@@ -202,7 +202,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà tipoComAttoSs.
+     * Imposta il valore della propriet tipoComAttoSs.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +214,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà codComAttoSs.
+     * Recupera il valore della proprietï¿½ codComAttoSs.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà codComAttoSs.
+     * Imposta il valore della proprietï¿½ codComAttoSs.
      * 
      * @param value
      *     allowed object is
@@ -238,7 +238,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Recupera il valore della proprietà desComAttoSs.
+     * Recupera il valore della proprietï¿½ desComAttoSs.
      * 
      * @return
      *     possible object is
@@ -250,7 +250,7 @@ public class IdAttoStatoCivile {
     }
 
     /**
-     * Imposta il valore della proprietà desComAttoSs.
+     * Imposta il valore della proprietï¿½ desComAttoSs.
      * 
      * @param value
      *     allowed object is

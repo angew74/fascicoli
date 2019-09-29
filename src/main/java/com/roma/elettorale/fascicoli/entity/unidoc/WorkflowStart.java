@@ -50,7 +50,7 @@ public class WorkflowStart {
     protected String startStatus;
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Recupera il valore della proprietà workflowCode.
+     * Recupera il valore della proprieta workflowCode.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Imposta il valore della proprietà workflowCode.
+     * Imposta il valore della proprieta workflowCode.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Recupera il valore della proprietà customId.
+     * Recupera il valore della proprieta customId.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Imposta il valore della proprietà customId.
+     * Imposta il valore della proprieta customId.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Recupera il valore della proprietà startStatus.
+     * Recupera il valore della proprieta startStatus.
      * 
      * @return
      *     possible object is
@@ -134,7 +134,7 @@ public class WorkflowStart {
     }
 
     /**
-     * Imposta il valore della proprietà startStatus.
+     * Imposta il valore della proprieta startStatus.
      * 
      * @param value
      *     allowed object is

@@ -36,7 +36,7 @@ public class GetPagedFilesFromIdFolderResponse {
     protected FileResponseList getPagedFilesFromIdFolderResult;
 
     /**
-     * Recupera il valore della proprietà getPagedFilesFromIdFolderResult.
+     * Recupera il valore della proprieta getPagedFilesFromIdFolderResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class GetPagedFilesFromIdFolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getPagedFilesFromIdFolderResult.
+     * Imposta il valore della proprieta getPagedFilesFromIdFolderResult.
      * 
      * @param value
      *     allowed object is

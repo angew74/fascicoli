@@ -70,7 +70,7 @@ public class BaseCartaIdentitaAnagType {
     protected String dataScad;
 
     /**
-     * Recupera il valore della proprietà tipoCarta.
+     * Recupera il valore della proprieta tipoCarta.
      * 
      * @return
      *     possible object is
@@ -82,7 +82,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà tipoCarta.
+     * Imposta il valore della proprieta tipoCarta.
      * 
      * @param value
      *     allowed object is
@@ -94,7 +94,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà numeroCarta.
+     * Recupera il valore della proprieta numeroCarta.
      * 
      * @return
      *     possible object is
@@ -106,7 +106,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà numeroCarta.
+     * Imposta il valore della proprieta numeroCarta.
      * 
      * @param value
      *     allowed object is
@@ -118,7 +118,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà espatrio.
+     * Recupera il valore della proprieta espatrio.
      * 
      * @return
      *     possible object is
@@ -130,7 +130,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà espatrio.
+     * Imposta il valore della proprieta espatrio.
      * 
      * @param value
      *     allowed object is
@@ -142,7 +142,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataRil.
+     * Recupera il valore della proprieta dataRil.
      * 
      * @return
      *     possible object is
@@ -154,7 +154,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataRil.
+     * Imposta il valore della proprieta dataRil.
      * 
      * @param value
      *     allowed object is
@@ -166,7 +166,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà codComuneRil.
+     * Recupera il valore della proprieta codComuneRil.
      * 
      * @return
      *     possible object is
@@ -178,7 +178,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà codComuneRil.
+     * Imposta il valore della proprieta codComuneRil.
      * 
      * @param value
      *     allowed object is
@@ -190,7 +190,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà descComuneRil.
+     * Recupera il valore della proprieta descComuneRil.
      * 
      * @return
      *     possible object is
@@ -202,7 +202,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà descComuneRil.
+     * Imposta il valore della proprieta descComuneRil.
      * 
      * @param value
      *     allowed object is
@@ -214,7 +214,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà consolato.
+     * Recupera il valore della proprieta consolato.
      * 
      * @return
      *     possible object is
@@ -226,7 +226,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà consolato.
+     * Imposta il valore della proprieta consolato.
      * 
      * @param value
      *     allowed object is
@@ -238,7 +238,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà descConsolato.
+     * Recupera il valore della proprieta descConsolato.
      * 
      * @return
      *     possible object is
@@ -250,7 +250,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà descConsolato.
+     * Imposta il valore della proprieta descConsolato.
      * 
      * @param value
      *     allowed object is
@@ -262,7 +262,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataScad.
+     * Recupera il valore della proprieta dataScad.
      * 
      * @return
      *     possible object is
@@ -274,7 +274,7 @@ public class BaseCartaIdentitaAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataScad.
+     * Imposta il valore della proprieta dataScad.
      * 
      * @param value
      *     allowed object is

@@ -38,7 +38,7 @@ public class GetRegistriByFiltroCodiceResponse {
     protected ArrayOfAreaResponse getRegistriByFiltroCodiceResult;
 
     /**
-     * Recupera il valore della proprietà getRegistriByFiltroCodiceResult.
+     * Recupera il valore della proprieta getRegistriByFiltroCodiceResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetRegistriByFiltroCodiceResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getRegistriByFiltroCodiceResult.
+     * Imposta il valore della proprieta getRegistriByFiltroCodiceResult.
      * 
      * @param value
      *     allowed object is

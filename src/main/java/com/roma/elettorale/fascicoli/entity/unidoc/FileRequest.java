@@ -56,7 +56,7 @@ public class FileRequest {
     protected int idDoc;
 
     /**
-     * Recupera il valore della proprietà idTipoDocumento.
+     * Recupera il valore della proprieta idTipoDocumento.
      * 
      */
     public int getIdTipoDocumento() {
@@ -64,7 +64,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà idTipoDocumento.
+     * Imposta il valore della proprieta idTipoDocumento.
      * 
      */
     public void setIdTipoDocumento(int value) {
@@ -72,7 +72,7 @@ public class FileRequest {
     }
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      */
     public int getIdFile() {
@@ -80,7 +80,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      */
     public void setIdFile(int value) {
@@ -88,7 +88,7 @@ public class FileRequest {
     }
 
     /**
-     * Recupera il valore della proprietà file.
+     * Recupera il valore della proprieta file.
      * 
      * @return
      *     possible object is
@@ -99,7 +99,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà file.
+     * Imposta il valore della proprieta file.
      * 
      * @param value
      *     allowed object is
@@ -110,7 +110,7 @@ public class FileRequest {
     }
 
     /**
-     * Recupera il valore della proprietà info.
+     * Recupera il valore della proprieta info.
      * 
      * @return
      *     possible object is
@@ -122,7 +122,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà info.
+     * Imposta il valore della proprieta info.
      * 
      * @param value
      *     allowed object is
@@ -134,7 +134,7 @@ public class FileRequest {
     }
 
     /**
-     * Recupera il valore della proprietà refIdFile.
+     * Recupera il valore della proprieta refIdFile.
      * 
      */
     public int getRefIdFile() {
@@ -142,7 +142,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà refIdFile.
+     * Imposta il valore della proprieta refIdFile.
      * 
      */
     public void setRefIdFile(int value) {
@@ -150,7 +150,7 @@ public class FileRequest {
     }
 
     /**
-     * Recupera il valore della proprietà idDoc.
+     * Recupera il valore della proprieta idDoc.
      * 
      */
     public int getIdDoc() {
@@ -158,7 +158,7 @@ public class FileRequest {
     }
 
     /**
-     * Imposta il valore della proprietà idDoc.
+     * Imposta il valore della proprieta idDoc.
      * 
      */
     public void setIdDoc(int value) {

@@ -38,7 +38,7 @@ public class GetDocumentiByArea {
     protected int idArea;
 
     /**
-     * Recupera il valore della proprietà idArea.
+     * Recupera il valore della proprieta idArea.
      * 
      */
     public int getIdArea() {
@@ -46,7 +46,7 @@ public class GetDocumentiByArea {
     }
 
     /**
-     * Imposta il valore della proprietà idArea.
+     * Imposta il valore della proprieta idArea.
      * 
      */
     public void setIdArea(int value) {

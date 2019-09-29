@@ -65,7 +65,7 @@ public class BasePermessoSoggiornoAnagType {
     protected JAXBElement<String> dataRichNuovo;
 
     /**
-     * Recupera il valore della proprietà tipoPermesso.
+     * Recupera il valore della proprieta tipoPermesso.
      * 
      * @return
      *     possible object is
@@ -77,7 +77,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà tipoPermesso.
+     * Imposta il valore della proprieta tipoPermesso.
      * 
      * @param value
      *     allowed object is
@@ -89,7 +89,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà permesso.
+     * Recupera il valore della proprieta permesso.
      * 
      * @return
      *     possible object is
@@ -101,7 +101,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà permesso.
+     * Imposta il valore della proprieta permesso.
      * 
      * @param value
      *     allowed object is
@@ -113,7 +113,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà codQuestura.
+     * Recupera il valore della proprieta codQuestura.
      * 
      * @return
      *     possible object is
@@ -125,7 +125,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà codQuestura.
+     * Imposta il valore della proprieta codQuestura.
      * 
      * @param value
      *     allowed object is
@@ -137,7 +137,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà desQuestura.
+     * Recupera il valore della proprieta desQuestura.
      * 
      * @return
      *     possible object is
@@ -149,7 +149,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà desQuestura.
+     * Imposta il valore della proprieta desQuestura.
      * 
      * @param value
      *     allowed object is
@@ -161,7 +161,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataRil.
+     * Recupera il valore della proprieta dataRil.
      * 
      * @return
      *     possible object is
@@ -173,7 +173,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataRil.
+     * Imposta il valore della proprieta dataRil.
      * 
      * @param value
      *     allowed object is
@@ -185,7 +185,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataRinn.
+     * Recupera il valore della proprieta dataRinn.
      * 
      * @return
      *     possible object is
@@ -197,7 +197,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataRinn.
+     * Imposta il valore della proprieta dataRinn.
      * 
      * @param value
      *     allowed object is
@@ -209,7 +209,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataScad.
+     * Recupera il valore della proprieta dataScad.
      * 
      * @return
      *     possible object is
@@ -221,7 +221,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataScad.
+     * Imposta il valore della proprieta dataScad.
      * 
      * @param value
      *     allowed object is
@@ -233,7 +233,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà dataRichNuovo.
+     * Recupera il valore della proprieta dataRichNuovo.
      * 
      * @return
      *     possible object is
@@ -245,7 +245,7 @@ public class BasePermessoSoggiornoAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà dataRichNuovo.
+     * Imposta il valore della proprieta dataRichNuovo.
      * 
      * @param value
      *     allowed object is

@@ -56,7 +56,7 @@ public class UnidocsFirma {
     protected String idFile;
 
     /**
-     * Recupera il valore della proprietà firmatario.
+     * Recupera il valore della proprieta firmatario.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà firmatario.
+     * Imposta il valore della proprieta firmatario.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Recupera il valore della proprietà dataFirma.
+     * Recupera il valore della proprieta dataFirma.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà dataFirma.
+     * Imposta il valore della proprieta dataFirma.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Recupera il valore della proprietà urlServizioIn.
+     * Recupera il valore della proprieta urlServizioIn.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà urlServizioIn.
+     * Imposta il valore della proprieta urlServizioIn.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Recupera il valore della proprietà urlServizioOut.
+     * Recupera il valore della proprieta urlServizioOut.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà urlServizioOut.
+     * Imposta il valore della proprieta urlServizioOut.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Recupera il valore della proprietà status.
+     * Recupera il valore della proprieta status.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà status.
+     * Imposta il valore della proprieta status.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      * @return
      *     possible object is
@@ -188,7 +188,7 @@ public class UnidocsFirma {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      * @param value
      *     allowed object is

@@ -49,7 +49,7 @@ public class DatiRicercaPerMunicResponse {
     protected JAXBElement<String> statusPratica;
 
     /**
-     * Recupera il valore della proprietà nominativo.
+     * Recupera il valore della proprieta nominativo.
      * 
      * @return
      *     possible object is
@@ -61,7 +61,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Imposta il valore della proprietà nominativo.
+     * Imposta il valore della proprieta nominativo.
      * 
      * @param value
      *     allowed object is
@@ -73,7 +73,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Recupera il valore della proprietà annoPratica.
+     * Recupera il valore della proprieta annoPratica.
      * 
      * @return
      *     possible object is
@@ -85,7 +85,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Imposta il valore della proprietà annoPratica.
+     * Imposta il valore della proprieta annoPratica.
      * 
      * @param value
      *     allowed object is
@@ -97,7 +97,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Recupera il valore della proprietà numeroPratica.
+     * Recupera il valore della proprieta numeroPratica.
      * 
      * @return
      *     possible object is
@@ -109,7 +109,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Imposta il valore della proprietà numeroPratica.
+     * Imposta il valore della proprieta numeroPratica.
      * 
      * @param value
      *     allowed object is
@@ -121,7 +121,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Recupera il valore della proprietà statusPratica.
+     * Recupera il valore della proprieta statusPratica.
      * 
      * @return
      *     possible object is
@@ -133,7 +133,7 @@ public class DatiRicercaPerMunicResponse {
     }
 
     /**
-     * Imposta il valore della proprietà statusPratica.
+     * Imposta il valore della proprieta statusPratica.
      * 
      * @param value
      *     allowed object is

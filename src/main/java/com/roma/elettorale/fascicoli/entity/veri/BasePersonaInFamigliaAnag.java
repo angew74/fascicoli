@@ -38,7 +38,7 @@ public class BasePersonaInFamigliaAnag
     protected String rapportoParentela;
 
     /**
-     * Recupera il valore della proprietà rapportoParentela.
+     * Recupera il valore della proprieta rapportoParentela.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class BasePersonaInFamigliaAnag
     }
 
     /**
-     * Imposta il valore della proprietà rapportoParentela.
+     * Imposta il valore della proprieta rapportoParentela.
      * 
      * @param value
      *     allowed object is

@@ -72,7 +72,7 @@ public class UnidocMail {
     protected String status;
 
     /**
-     * Recupera il valore della proprietà destinatario.
+     * Recupera il valore della proprieta destinatario.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà destinatario.
+     * Imposta il valore della proprieta destinatario.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà oggetto.
+     * Recupera il valore della proprieta oggetto.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà oggetto.
+     * Imposta il valore della proprieta oggetto.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà testo.
+     * Recupera il valore della proprieta testo.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà testo.
+     * Imposta il valore della proprieta testo.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +144,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà files.
+     * Recupera il valore della proprieta files.
      * 
      * @return
      *     possible object is
@@ -156,7 +156,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà files.
+     * Imposta il valore della proprieta files.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà mittente.
+     * Recupera il valore della proprieta mittente.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà mittente.
+     * Imposta il valore della proprieta mittente.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +192,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà utente.
+     * Recupera il valore della proprieta utente.
      * 
      * @return
      *     possible object is
@@ -204,7 +204,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà utente.
+     * Imposta il valore della proprieta utente.
      * 
      * @param value
      *     allowed object is
@@ -216,7 +216,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà appCode.
+     * Recupera il valore della proprieta appCode.
      * 
      * @return
      *     possible object is
@@ -228,7 +228,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà appCode.
+     * Imposta il valore della proprieta appCode.
      * 
      * @param value
      *     allowed object is
@@ -240,7 +240,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà regola.
+     * Recupera il valore della proprieta regola.
      * 
      * @return
      *     possible object is
@@ -252,7 +252,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà regola.
+     * Imposta il valore della proprieta regola.
      * 
      * @param value
      *     allowed object is
@@ -264,7 +264,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà idUnivoco.
+     * Recupera il valore della proprieta idUnivoco.
      * 
      * @return
      *     possible object is
@@ -276,7 +276,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà idUnivoco.
+     * Imposta il valore della proprieta idUnivoco.
      * 
      * @param value
      *     allowed object is
@@ -288,7 +288,7 @@ public class UnidocMail {
     }
 
     /**
-     * Recupera il valore della proprietà status.
+     * Recupera il valore della proprieta status.
      * 
      * @return
      *     possible object is
@@ -300,7 +300,7 @@ public class UnidocMail {
     }
 
     /**
-     * Imposta il valore della proprietà status.
+     * Imposta il valore della proprieta status.
      * 
      * @param value
      *     allowed object is

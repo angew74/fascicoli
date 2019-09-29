@@ -52,7 +52,7 @@ public class Metadato {
     protected String labelMetadato;
 
     /**
-     * Recupera il valore della proprietà nomeMetadato.
+     * Recupera il valore della proprieta nomeMetadato.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class Metadato {
     }
 
     /**
-     * Imposta il valore della proprietà nomeMetadato.
+     * Imposta il valore della proprieta nomeMetadato.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class Metadato {
     }
 
     /**
-     * Recupera il valore della proprietà idMetadato.
+     * Recupera il valore della proprieta idMetadato.
      * 
      */
     public int getIdMetadato() {
@@ -84,7 +84,7 @@ public class Metadato {
     }
 
     /**
-     * Imposta il valore della proprietà idMetadato.
+     * Imposta il valore della proprieta idMetadato.
      * 
      */
     public void setIdMetadato(int value) {
@@ -92,7 +92,7 @@ public class Metadato {
     }
 
     /**
-     * Recupera il valore della proprietà valoreMetadato.
+     * Recupera il valore della proprieta valoreMetadato.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class Metadato {
     }
 
     /**
-     * Imposta il valore della proprietà valoreMetadato.
+     * Imposta il valore della proprieta valoreMetadato.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class Metadato {
     }
 
     /**
-     * Recupera il valore della proprietà typeMetadato.
+     * Recupera il valore della proprieta typeMetadato.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class Metadato {
     }
 
     /**
-     * Imposta il valore della proprietà typeMetadato.
+     * Imposta il valore della proprieta typeMetadato.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class Metadato {
     }
 
     /**
-     * Recupera il valore della proprietà labelMetadato.
+     * Recupera il valore della proprieta labelMetadato.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class Metadato {
     }
 
     /**
-     * Imposta il valore della proprietà labelMetadato.
+     * Imposta il valore della proprieta labelMetadato.
      * 
      * @param value
      *     allowed object is

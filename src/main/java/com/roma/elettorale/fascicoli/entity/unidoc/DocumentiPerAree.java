@@ -48,7 +48,7 @@ public class DocumentiPerAree {
     protected String denDoc;
 
     /**
-     * Recupera il valore della proprietà refIdDoc.
+     * Recupera il valore della proprieta refIdDoc.
      * 
      */
     public int getRefIdDoc() {
@@ -56,7 +56,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Imposta il valore della proprietà refIdDoc.
+     * Imposta il valore della proprieta refIdDoc.
      * 
      */
     public void setRefIdDoc(int value) {
@@ -64,7 +64,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Recupera il valore della proprietà refIdArea.
+     * Recupera il valore della proprieta refIdArea.
      * 
      */
     public int getRefIdArea() {
@@ -72,7 +72,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Imposta il valore della proprietà refIdArea.
+     * Imposta il valore della proprieta refIdArea.
      * 
      */
     public void setRefIdArea(int value) {
@@ -80,7 +80,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Recupera il valore della proprietà flgAssociazione.
+     * Recupera il valore della proprieta flgAssociazione.
      * 
      */
     public int getFlgAssociazione() {
@@ -88,7 +88,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Imposta il valore della proprietà flgAssociazione.
+     * Imposta il valore della proprieta flgAssociazione.
      * 
      */
     public void setFlgAssociazione(int value) {
@@ -96,7 +96,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Recupera il valore della proprietà denDoc.
+     * Recupera il valore della proprieta denDoc.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class DocumentiPerAree {
     }
 
     /**
-     * Imposta il valore della proprietà denDoc.
+     * Imposta il valore della proprieta denDoc.
      * 
      * @param value
      *     allowed object is

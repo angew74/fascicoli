@@ -38,7 +38,7 @@ public class WorkflowChangeStatusResponse {
     protected WorkFlow workflowChangeStatusResult;
 
     /**
-     * Recupera il valore della proprietà workflowChangeStatusResult.
+     * Recupera il valore della proprieta workflowChangeStatusResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class WorkflowChangeStatusResponse {
     }
 
     /**
-     * Imposta il valore della proprietà workflowChangeStatusResult.
+     * Imposta il valore della proprieta workflowChangeStatusResult.
      * 
      * @param value
      *     allowed object is

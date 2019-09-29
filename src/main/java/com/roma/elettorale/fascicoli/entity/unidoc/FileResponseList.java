@@ -52,7 +52,7 @@ public class FileResponseList {
     protected Messaggio msg;
 
     /**
-     * Recupera il valore della proprietà listFiles.
+     * Recupera il valore della proprieta listFiles.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class FileResponseList {
     }
 
     /**
-     * Imposta il valore della proprietà listFiles.
+     * Imposta il valore della proprieta listFiles.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class FileResponseList {
     }
 
     /**
-     * Recupera il valore della proprietà da.
+     * Recupera il valore della proprieta da.
      * 
      */
     public int getDa() {
@@ -84,7 +84,7 @@ public class FileResponseList {
     }
 
     /**
-     * Imposta il valore della proprietà da.
+     * Imposta il valore della proprieta da.
      * 
      */
     public void setDa(int value) {
@@ -92,7 +92,7 @@ public class FileResponseList {
     }
 
     /**
-     * Recupera il valore della proprietà per.
+     * Recupera il valore della proprieta per.
      * 
      */
     public int getPer() {
@@ -100,7 +100,7 @@ public class FileResponseList {
     }
 
     /**
-     * Imposta il valore della proprietà per.
+     * Imposta il valore della proprieta per.
      * 
      */
     public void setPer(int value) {
@@ -108,7 +108,7 @@ public class FileResponseList {
     }
 
     /**
-     * Recupera il valore della proprietà totale.
+     * Recupera il valore della proprieta totale.
      * 
      */
     public int getTotale() {
@@ -116,7 +116,7 @@ public class FileResponseList {
     }
 
     /**
-     * Imposta il valore della proprietà totale.
+     * Imposta il valore della proprieta totale.
      * 
      */
     public void setTotale(int value) {
@@ -124,7 +124,7 @@ public class FileResponseList {
     }
 
     /**
-     * Recupera il valore della proprietà msg.
+     * Recupera il valore della proprieta msg.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class FileResponseList {
     }
 
     /**
-     * Imposta il valore della proprietà msg.
+     * Imposta il valore della proprieta msg.
      * 
      * @param value
      *     allowed object is

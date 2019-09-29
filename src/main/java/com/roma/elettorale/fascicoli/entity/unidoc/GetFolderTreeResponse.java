@@ -38,7 +38,7 @@ public class GetFolderTreeResponse {
     protected ArrayOfSimpleTreeItem getFolderTreeResult;
 
     /**
-     * Recupera il valore della proprietà getFolderTreeResult.
+     * Recupera il valore della proprieta getFolderTreeResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetFolderTreeResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getFolderTreeResult.
+     * Imposta il valore della proprieta getFolderTreeResult.
      * 
      * @param value
      *     allowed object is

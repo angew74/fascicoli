@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="VERICOD" targetNamespace="http://tempuri.org/VERICOD.xsd" elementFormDefault="qualified" xmlns="http://tempuri.org/VERICOD.xsd" xmlns:mstns="http://tempuri.org/VERICOD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:element name="Ricerca">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="Parametri">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="CodFis" type="xs:string" nillable="true" minOccurs="0" />
-							<xs:element name="CodInd" type="xs:string" minOccurs="0" nillable="true" />
-							<xs:element name="DataRiferimento" type="xs:string" nillable="true" minOccurs="0" />
-							<xs:element name="CodFam" type="xs:string" nillable="true" minOccurs="0" />
-							<xs:element name="CarID" type="xs:string" nillable="true" minOccurs="0" />
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="TipoVerifica" type="xs:string" />
-				<xs:element name="FiltroPersone" type="xs:string" />
-				<xs:element name="TipoRicerca" type="xs:string" />
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+<xs:schema id="VERICOD" targetNamespace="http://tempuri.org/VERICOD.xsd" elementFormDefault="qualified"
+           xmlns="http://tempuri.org/VERICOD.xsd" xmlns:mstns="http://tempuri.org/VERICOD.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="VERICOD">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Ricerca">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Parametri">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="CodFis" type="xs:string" nillable="true" minOccurs="0"/>
+                                        <xs:element name="CodInd" type="xs:string" minOccurs="0" nillable="true"/>
+                                        <xs:element name="DataRiferimento" type="xs:string" nillable="true"
+                                                    minOccurs="0"/>
+                                        <xs:element name="CodFam" type="xs:string" nillable="true" minOccurs="0"/>
+                                        <xs:element name="CarID" type="xs:string" nillable="true" minOccurs="0"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="TipoVerifica" type="xs:string"/>
+                            <xs:element name="FiltroPersone" type="xs:string"/>
+                            <xs:element name="TipoRicerca" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>

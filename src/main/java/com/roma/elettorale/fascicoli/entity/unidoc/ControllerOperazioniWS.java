@@ -30,7 +30,8 @@ public class ControllerOperazioniWS
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/C:/Users/Nick/Documents/javaprojects/ElezioniIdeaProject/fascicoli/src/main/resources/wsdl/unidocwsdl.wsdl");
+           //  url = new URL("file:/C:/Users/Nick/Documents/javaprojects/ElezioniIdeaProject/fascicoli/src/main/resources/wsdl/unidocwsdl.wsdl");
+            url = new URL("file:/C:/Users/AdminDSI/IdeaProjects/fascicoli/src/main/resources/wsdl/unidocwsdl.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

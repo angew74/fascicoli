@@ -52,7 +52,7 @@ public class PersonaInPraticaCDF
     protected String motivoEsitoCompAcc;
 
     /**
-     * Recupera il valore della proprietà rappar.
+     * Recupera il valore della proprieta rappar.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Imposta il valore della proprietà rappar.
+     * Imposta il valore della proprieta rappar.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Recupera il valore della proprietà pagina.
+     * Recupera il valore della proprieta pagina.
      * 
      * @return
      *     possible object is
@@ -88,7 +88,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Imposta il valore della proprietà pagina.
+     * Imposta il valore della proprieta pagina.
      * 
      * @param value
      *     allowed object is
@@ -100,7 +100,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Recupera il valore della proprietà esitoCompAcc.
+     * Recupera il valore della proprieta esitoCompAcc.
      * 
      * @return
      *     possible object is
@@ -112,7 +112,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Imposta il valore della proprietà esitoCompAcc.
+     * Imposta il valore della proprieta esitoCompAcc.
      * 
      * @param value
      *     allowed object is
@@ -124,7 +124,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Recupera il valore della proprietà motivoEsitoCompAcc.
+     * Recupera il valore della proprieta motivoEsitoCompAcc.
      * 
      * @return
      *     possible object is
@@ -136,7 +136,7 @@ public class PersonaInPraticaCDF
     }
 
     /**
-     * Imposta il valore della proprietà motivoEsitoCompAcc.
+     * Imposta il valore della proprieta motivoEsitoCompAcc.
      * 
      * @param value
      *     allowed object is

@@ -38,7 +38,7 @@ public class GetFoldersByAreaResponse {
     protected ArrayOfFolderResponse getFoldersByAreaResult;
 
     /**
-     * Recupera il valore della proprietà getFoldersByAreaResult.
+     * Recupera il valore della proprieta getFoldersByAreaResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetFoldersByAreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getFoldersByAreaResult.
+     * Imposta il valore della proprieta getFoldersByAreaResult.
      * 
      * @param value
      *     allowed object is

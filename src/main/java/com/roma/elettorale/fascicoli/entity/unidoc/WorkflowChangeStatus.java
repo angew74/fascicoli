@@ -50,7 +50,7 @@ public class WorkflowChangeStatus {
     protected int refIdFile;
 
     /**
-     * Recupera il valore della proprietà wfInstanceID.
+     * Recupera il valore della proprieta wfInstanceID.
      * 
      * @return
      *     possible object is
@@ -62,7 +62,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Imposta il valore della proprietà wfInstanceID.
+     * Imposta il valore della proprieta wfInstanceID.
      * 
      * @param value
      *     allowed object is
@@ -74,7 +74,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Recupera il valore della proprietà currentStatus.
+     * Recupera il valore della proprieta currentStatus.
      * 
      * @return
      *     possible object is
@@ -86,7 +86,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Imposta il valore della proprietà currentStatus.
+     * Imposta il valore della proprieta currentStatus.
      * 
      * @param value
      *     allowed object is
@@ -98,7 +98,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Recupera il valore della proprietà newStatus.
+     * Recupera il valore della proprieta newStatus.
      * 
      * @return
      *     possible object is
@@ -110,7 +110,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Imposta il valore della proprietà newStatus.
+     * Imposta il valore della proprieta newStatus.
      * 
      * @param value
      *     allowed object is
@@ -122,7 +122,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Recupera il valore della proprietà refIdFile.
+     * Recupera il valore della proprieta refIdFile.
      * 
      */
     public int getRefIdFile() {
@@ -130,7 +130,7 @@ public class WorkflowChangeStatus {
     }
 
     /**
-     * Imposta il valore della proprietà refIdFile.
+     * Imposta il valore della proprieta refIdFile.
      * 
      */
     public void setRefIdFile(int value) {

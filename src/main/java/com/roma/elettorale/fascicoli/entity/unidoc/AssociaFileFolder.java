@@ -36,7 +36,7 @@ public class AssociaFileFolder {
     protected FileRequest file;
 
     /**
-     * Recupera il valore della proprietà file.
+     * Recupera il valore della proprieta file.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class AssociaFileFolder {
     }
 
     /**
-     * Imposta il valore della proprietà file.
+     * Imposta il valore della proprieta file.
      * 
      * @param value
      *     allowed object is

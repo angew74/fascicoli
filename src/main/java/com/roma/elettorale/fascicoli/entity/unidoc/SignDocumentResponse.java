@@ -36,7 +36,7 @@ public class SignDocumentResponse {
     protected FileResponse signDocumentResult;
 
     /**
-     * Recupera il valore della proprietà signDocumentResult.
+     * Recupera il valore della proprieta signDocumentResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class SignDocumentResponse {
     }
 
     /**
-     * Imposta il valore della proprietà signDocumentResult.
+     * Imposta il valore della proprieta signDocumentResult.
      * 
      * @param value
      *     allowed object is

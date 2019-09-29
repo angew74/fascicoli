@@ -46,7 +46,7 @@ public class GetFolderTree {
     protected int livelli;
 
     /**
-     * Recupera il valore della proprietà startNode.
+     * Recupera il valore della proprieta startNode.
      * 
      */
     public long getStartNode() {
@@ -54,7 +54,7 @@ public class GetFolderTree {
     }
 
     /**
-     * Imposta il valore della proprietà startNode.
+     * Imposta il valore della proprieta startNode.
      * 
      */
     public void setStartNode(long value) {
@@ -62,7 +62,7 @@ public class GetFolderTree {
     }
 
     /**
-     * Recupera il valore della proprietà area.
+     * Recupera il valore della proprieta area.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class GetFolderTree {
     }
 
     /**
-     * Imposta il valore della proprietà area.
+     * Imposta il valore della proprieta area.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class GetFolderTree {
     }
 
     /**
-     * Recupera il valore della proprietà livelli.
+     * Recupera il valore della proprieta livelli.
      * 
      */
     public int getLivelli() {
@@ -94,7 +94,7 @@ public class GetFolderTree {
     }
 
     /**
-     * Imposta il valore della proprietà livelli.
+     * Imposta il valore della proprieta livelli.
      * 
      */
     public void setLivelli(int value) {

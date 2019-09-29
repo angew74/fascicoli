@@ -42,7 +42,7 @@ public class MoveFile {
     protected int idFolder;
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      */
     public int getIdFile() {
@@ -50,7 +50,7 @@ public class MoveFile {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      */
     public void setIdFile(int value) {
@@ -58,7 +58,7 @@ public class MoveFile {
     }
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -66,7 +66,7 @@ public class MoveFile {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {

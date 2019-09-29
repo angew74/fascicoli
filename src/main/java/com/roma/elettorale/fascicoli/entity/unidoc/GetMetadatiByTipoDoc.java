@@ -38,7 +38,7 @@ public class GetMetadatiByTipoDoc {
     protected int idTipoDoc;
 
     /**
-     * Recupera il valore della proprietà idTipoDoc.
+     * Recupera il valore della proprieta idTipoDoc.
      * 
      */
     public int getIdTipoDoc() {
@@ -46,7 +46,7 @@ public class GetMetadatiByTipoDoc {
     }
 
     /**
-     * Imposta il valore della proprietà idTipoDoc.
+     * Imposta il valore della proprieta idTipoDoc.
      * 
      */
     public void setIdTipoDoc(int value) {

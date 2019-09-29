@@ -56,7 +56,7 @@ public class Wf {
     protected int idWf;
 
     /**
-     * Recupera il valore della proprietà wfStatusList.
+     * Recupera il valore della proprieta wfStatusList.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà wfStatusList.
+     * Imposta il valore della proprieta wfStatusList.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class Wf {
     }
 
     /**
-     * Recupera il valore della proprietà fileWfList.
+     * Recupera il valore della proprieta fileWfList.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà fileWfList.
+     * Imposta il valore della proprieta fileWfList.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class Wf {
     }
 
     /**
-     * Recupera il valore della proprietà descrizioneWf.
+     * Recupera il valore della proprieta descrizioneWf.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà descrizioneWf.
+     * Imposta il valore della proprieta descrizioneWf.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class Wf {
     }
 
     /**
-     * Recupera il valore della proprietà nomeWf.
+     * Recupera il valore della proprieta nomeWf.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà nomeWf.
+     * Imposta il valore della proprieta nomeWf.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class Wf {
     }
 
     /**
-     * Recupera il valore della proprietà codeWf.
+     * Recupera il valore della proprieta codeWf.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà codeWf.
+     * Imposta il valore della proprieta codeWf.
      * 
      * @param value
      *     allowed object is
@@ -176,7 +176,7 @@ public class Wf {
     }
 
     /**
-     * Recupera il valore della proprietà idWf.
+     * Recupera il valore della proprieta idWf.
      * 
      */
     public int getIdWf() {
@@ -184,7 +184,7 @@ public class Wf {
     }
 
     /**
-     * Imposta il valore della proprietà idWf.
+     * Imposta il valore della proprieta idWf.
      * 
      */
     public void setIdWf(int value) {

@@ -44,7 +44,7 @@ public class FileResponse {
     protected Messaggio esito;
 
     /**
-     * Recupera il valore della proprietà chiave.
+     * Recupera il valore della proprieta chiave.
      * 
      */
     public int getChiave() {
@@ -52,7 +52,7 @@ public class FileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà chiave.
+     * Imposta il valore della proprieta chiave.
      * 
      */
     public void setChiave(int value) {
@@ -60,7 +60,7 @@ public class FileResponse {
     }
 
     /**
-     * Recupera il valore della proprietà metatag.
+     * Recupera il valore della proprieta metatag.
      * 
      * @return
      *     possible object is
@@ -72,7 +72,7 @@ public class FileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà metatag.
+     * Imposta il valore della proprieta metatag.
      * 
      * @param value
      *     allowed object is
@@ -84,7 +84,7 @@ public class FileResponse {
     }
 
     /**
-     * Recupera il valore della proprietà esito.
+     * Recupera il valore della proprieta esito.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class FileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà esito.
+     * Imposta il valore della proprieta esito.
      * 
      * @param value
      *     allowed object is

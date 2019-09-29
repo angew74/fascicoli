@@ -38,7 +38,7 @@ public class AggiungiMetadato {
     protected UnidocsMetadata m;
 
     /**
-     * Recupera il valore della proprietà m.
+     * Recupera il valore della proprieta m.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class AggiungiMetadato {
     }
 
     /**
-     * Imposta il valore della proprietà m.
+     * Imposta il valore della proprieta m.
      * 
      * @param value
      *     allowed object is

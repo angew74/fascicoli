@@ -38,7 +38,7 @@ public class AddFileResponse {
     protected FileResponse addFileResult;
 
     /**
-     * Recupera il valore della proprietà addFileResult.
+     * Recupera il valore della proprieta addFileResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class AddFileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà addFileResult.
+     * Imposta il valore della proprieta addFileResult.
      * 
      * @param value
      *     allowed object is

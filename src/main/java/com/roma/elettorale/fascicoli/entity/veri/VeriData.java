@@ -1,7 +1,11 @@
 package com.roma.elettorale.fascicoli.entity.veri;
 
+import com.roma.elettorale.fascicoli.helpers.TransformationFile;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.w3c.dom.Document;
 
-
+@Component
 public class VeriData {
     private boolean Trovato;
     private String CodiceFiscale;
@@ -9,6 +13,9 @@ public class VeriData {
     private String Cognome;
     private String DataNascita;
     private com.roma.elettorale.fascicoli.entity.veri.AttoNascita AttoNascita;
+
+    @Autowired
+    TransformationFile transformationFile;
 
     public static VeriData CreateVeriData(String vericodResp) {
         VeriData vd = new VeriData();
@@ -29,16 +36,47 @@ public class VeriData {
         return vd;
     }
 
+    public VeriData CreateVeriDataFromXml(Document document) {
+        VeriData vd = new VeriData();
+        String codind = document.getElementsByTagName("CodiceIndiv").item(0).getTextContent();
+        if (codind != null) {
+            vd.setNome(ParsingTag("NomePersona", document));
+            vd.setCognome(ParsingTag("CognomePersona", document));
+            vd.setCodiceFiscale(ParsingTag("CodiceFiscale", document));
+            vd.setDataNascita(ParsingTag("DataDiNascitaPersona", document));
+            String xmlSring = ParsingTag("RawXml", document);
+            vd.setAttoNascita(new AttoNascita());
+            vd.getAttoNascita().Numero = readValueN("NATTNAS|",xmlSring, 5);
+            vd.getAttoNascita().Parte = readValueN("PATTNAS|",xmlSring, 1);
+            vd.getAttoNascita().Serie = readValueN("SATTNAS|",xmlSring, 1);
+            vd.getAttoNascita().Esponente = readValueN("EATTNAS|",xmlSring, 2);
+            vd.getAttoNascita().Anno = readValueN("AANAS|",xmlSring, 4);
+            vd.setTrovato(true);
+        }
+        return vd;
+    }
+
+    public static String readValueN(String key ,String xmlString, int length) {
+        int legnghtKey = key.length();
+        int start = xmlString.lastIndexOf(key) + legnghtKey;
+        int finish = start+ length;
+        String value = xmlString.substring(start, finish);
+        return value;
+    }
+
     public static String ParseVeriCod(String[] arr, String key) {
         String valore = "";
         for (String s : arr) {
             String[] ss = s.split("|");
-            if(ss[0].equals(key))
-            {
+            if (ss[0].equals(key)) {
                 valore = ss[1];
             }
         }
         return valore;
+    }
+
+    public static String ParsingTag(String tag, Document document) {
+        return document.getElementsByTagName(tag).item(0).getTextContent();
     }
 
     public boolean isTrovato() {

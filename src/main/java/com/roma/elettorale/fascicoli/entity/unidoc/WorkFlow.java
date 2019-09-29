@@ -40,7 +40,7 @@ public class WorkFlow {
     protected Wf workflow;
 
     /**
-     * Recupera il valore della proprietà messaggio.
+     * Recupera il valore della proprieta messaggio.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class WorkFlow {
     }
 
     /**
-     * Imposta il valore della proprietà messaggio.
+     * Imposta il valore della proprieta messaggio.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class WorkFlow {
     }
 
     /**
-     * Recupera il valore della proprietà workflow.
+     * Recupera il valore della proprieta workflow.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class WorkFlow {
     }
 
     /**
-     * Imposta il valore della proprietà workflow.
+     * Imposta il valore della proprieta workflow.
      * 
      * @param value
      *     allowed object is

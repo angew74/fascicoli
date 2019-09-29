@@ -62,7 +62,7 @@ public class SearchFiles {
     protected int per;
 
     /**
-     * Recupera il valore della proprietà folders.
+     * Recupera il valore della proprieta folders.
      * 
      * @return
      *     possible object is
@@ -74,7 +74,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà folders.
+     * Imposta il valore della proprieta folders.
      * 
      * @param value
      *     allowed object is
@@ -86,7 +86,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà types.
+     * Recupera il valore della proprieta types.
      * 
      * @return
      *     possible object is
@@ -98,7 +98,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà types.
+     * Imposta il valore della proprieta types.
      * 
      * @param value
      *     allowed object is
@@ -110,7 +110,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà metadata.
+     * Recupera il valore della proprieta metadata.
      * 
      * @return
      *     possible object is
@@ -122,7 +122,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà metadata.
+     * Imposta il valore della proprieta metadata.
      * 
      * @param value
      *     allowed object is
@@ -134,7 +134,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà operatore.
+     * Recupera il valore della proprieta operatore.
      * 
      * @return
      *     possible object is
@@ -146,7 +146,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà operatore.
+     * Imposta il valore della proprieta operatore.
      * 
      * @param value
      *     allowed object is
@@ -158,7 +158,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà status.
+     * Recupera il valore della proprieta status.
      * 
      * @return
      *     possible object is
@@ -170,7 +170,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà status.
+     * Imposta il valore della proprieta status.
      * 
      * @param value
      *     allowed object is
@@ -182,7 +182,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà da.
+     * Recupera il valore della proprieta da.
      * 
      */
     public int getDa() {
@@ -190,7 +190,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà da.
+     * Imposta il valore della proprieta da.
      * 
      */
     public void setDa(int value) {
@@ -198,7 +198,7 @@ public class SearchFiles {
     }
 
     /**
-     * Recupera il valore della proprietà per.
+     * Recupera il valore della proprieta per.
      * 
      */
     public int getPer() {
@@ -206,7 +206,7 @@ public class SearchFiles {
     }
 
     /**
-     * Imposta il valore della proprietà per.
+     * Imposta il valore della proprieta per.
      * 
      */
     public void setPer(int value) {

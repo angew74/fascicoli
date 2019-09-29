@@ -48,7 +48,7 @@ public class UnidocTypes {
     protected int idType;
 
     /**
-     * Recupera il valore della proprietà flgVersioned.
+     * Recupera il valore della proprieta flgVersioned.
      * 
      */
     public int getFlgVersioned() {
@@ -56,7 +56,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Imposta il valore della proprietà flgVersioned.
+     * Imposta il valore della proprieta flgVersioned.
      * 
      */
     public void setFlgVersioned(int value) {
@@ -64,7 +64,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Recupera il valore della proprietà flgAttivo.
+     * Recupera il valore della proprieta flgAttivo.
      * 
      */
     public int getFlgAttivo() {
@@ -72,7 +72,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Imposta il valore della proprietà flgAttivo.
+     * Imposta il valore della proprieta flgAttivo.
      * 
      */
     public void setFlgAttivo(int value) {
@@ -80,7 +80,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Recupera il valore della proprietà denDoc.
+     * Recupera il valore della proprieta denDoc.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Imposta il valore della proprietà denDoc.
+     * Imposta il valore della proprieta denDoc.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Recupera il valore della proprietà idType.
+     * Recupera il valore della proprieta idType.
      * 
      */
     public int getIdType() {
@@ -112,7 +112,7 @@ public class UnidocTypes {
     }
 
     /**
-     * Imposta il valore della proprietà idType.
+     * Imposta il valore della proprieta idType.
      * 
      */
     public void setIdType(int value) {

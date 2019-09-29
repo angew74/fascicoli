@@ -38,7 +38,7 @@ public class GetFoldersByArea {
     protected int area;
 
     /**
-     * Recupera il valore della proprietà area.
+     * Recupera il valore della proprieta area.
      * 
      */
     public int getArea() {
@@ -46,7 +46,7 @@ public class GetFoldersByArea {
     }
 
     /**
-     * Imposta il valore della proprietà area.
+     * Imposta il valore della proprieta area.
      * 
      */
     public void setArea(int value) {

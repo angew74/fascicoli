@@ -36,7 +36,7 @@ public class GetFileDetails {
     protected FileRequest request;
 
     /**
-     * Recupera il valore della proprietà request.
+     * Recupera il valore della proprieta request.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class GetFileDetails {
     }
 
     /**
-     * Imposta il valore della proprietà request.
+     * Imposta il valore della proprieta request.
      * 
      * @param value
      *     allowed object is

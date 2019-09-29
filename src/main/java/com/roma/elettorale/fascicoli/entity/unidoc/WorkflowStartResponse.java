@@ -38,7 +38,7 @@ public class WorkflowStartResponse {
     protected WorkFlow workflowStartResult;
 
     /**
-     * Recupera il valore della proprietà workflowStartResult.
+     * Recupera il valore della proprieta workflowStartResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class WorkflowStartResponse {
     }
 
     /**
-     * Imposta il valore della proprietà workflowStartResult.
+     * Imposta il valore della proprieta workflowStartResult.
      * 
      * @param value
      *     allowed object is

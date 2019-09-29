@@ -85,7 +85,7 @@ public class BaseCircolare19TitolareAnagType {
     protected JAXBElement<String> permSoggValScad;
 
     /**
-     * Recupera il valore della proprietà tipoDoc.
+     * Recupera il valore della proprieta tipoDoc.
      * 
      * @return
      *     possible object is
@@ -97,7 +97,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà tipoDoc.
+     * Imposta il valore della proprieta tipoDoc.
      * 
      * @param value
      *     allowed object is
@@ -109,7 +109,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà numeroDoc.
+     * Recupera il valore della proprieta numeroDoc.
      * 
      * @return
      *     possible object is
@@ -121,7 +121,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà numeroDoc.
+     * Imposta il valore della proprieta numeroDoc.
      * 
      * @param value
      *     allowed object is
@@ -133,7 +133,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà attLavor.
+     * Recupera il valore della proprieta attLavor.
      * 
      * @return
      *     possible object is
@@ -145,7 +145,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà attLavor.
+     * Imposta il valore della proprieta attLavor.
      * 
      * @param value
      *     allowed object is
@@ -157,7 +157,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà attRisEconLb.
+     * Recupera il valore della proprieta attRisEconLb.
      * 
      * @return
      *     possible object is
@@ -169,7 +169,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà attRisEconLb.
+     * Imposta il valore della proprieta attRisEconLb.
      * 
      * @param value
      *     allowed object is
@@ -181,7 +181,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà assSanit.
+     * Recupera il valore della proprieta assSanit.
      * 
      * @return
      *     possible object is
@@ -193,7 +193,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà assSanit.
+     * Imposta il valore della proprieta assSanit.
      * 
      * @param value
      *     allowed object is
@@ -205,7 +205,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà iscrIstituto.
+     * Recupera il valore della proprieta iscrIstituto.
      * 
      * @return
      *     possible object is
@@ -217,7 +217,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà iscrIstituto.
+     * Imposta il valore della proprieta iscrIstituto.
      * 
      * @param value
      *     allowed object is
@@ -229,7 +229,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà titolAss.
+     * Recupera il valore della proprieta titolAss.
      * 
      * @return
      *     possible object is
@@ -241,7 +241,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà titolAss.
+     * Imposta il valore della proprieta titolAss.
      * 
      * @param value
      *     allowed object is
@@ -253,7 +253,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà attRisEconLc.
+     * Recupera il valore della proprieta attRisEconLc.
      * 
      * @return
      *     possible object is
@@ -265,7 +265,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà attRisEconLc.
+     * Imposta il valore della proprieta attRisEconLc.
      * 
      * @param value
      *     allowed object is
@@ -277,7 +277,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà ricCartSoggQ.
+     * Recupera il valore della proprieta ricCartSoggQ.
      * 
      * @return
      *     possible object is
@@ -289,7 +289,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà ricCartSoggQ.
+     * Imposta il valore della proprieta ricCartSoggQ.
      * 
      * @param value
      *     allowed object is
@@ -301,7 +301,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà ricCSoggP.
+     * Recupera il valore della proprieta ricCSoggP.
      * 
      * @return
      *     possible object is
@@ -313,7 +313,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà ricCSoggP.
+     * Imposta il valore della proprieta ricCSoggP.
      * 
      * @param value
      *     allowed object is
@@ -325,7 +325,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà ricRinPermQ.
+     * Recupera il valore della proprieta ricRinPermQ.
      * 
      * @return
      *     possible object is
@@ -337,7 +337,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà ricRinPermQ.
+     * Imposta il valore della proprieta ricRinPermQ.
      * 
      * @param value
      *     allowed object is
@@ -349,7 +349,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà ricRinPermP.
+     * Recupera il valore della proprieta ricRinPermP.
      * 
      * @return
      *     possible object is
@@ -361,7 +361,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà ricRinPermP.
+     * Imposta il valore della proprieta ricRinPermP.
      * 
      * @param value
      *     allowed object is
@@ -373,7 +373,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Recupera il valore della proprietà permSoggValScad.
+     * Recupera il valore della proprieta permSoggValScad.
      * 
      * @return
      *     possible object is
@@ -385,7 +385,7 @@ public class BaseCircolare19TitolareAnagType {
     }
 
     /**
-     * Imposta il valore della proprietà permSoggValScad.
+     * Imposta il valore della proprieta permSoggValScad.
      * 
      * @param value
      *     allowed object is

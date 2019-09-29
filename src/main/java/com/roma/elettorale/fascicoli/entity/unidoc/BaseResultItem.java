@@ -56,7 +56,7 @@ public class BaseResultItem {
     protected String source;
 
     /**
-     * Recupera il valore della proprietà value.
+     * Recupera il valore della proprieta value.
      * 
      * @return
      *     possible object is
@@ -68,7 +68,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Imposta il valore della proprietà value.
+     * Imposta il valore della proprieta value.
      * 
      * @param value
      *     allowed object is
@@ -80,7 +80,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Recupera il valore della proprietà text.
+     * Recupera il valore della proprieta text.
      * 
      * @return
      *     possible object is
@@ -92,7 +92,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Imposta il valore della proprietà text.
+     * Imposta il valore della proprieta text.
      * 
      * @param value
      *     allowed object is
@@ -104,7 +104,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Recupera il valore della proprietà description.
+     * Recupera il valore della proprieta description.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Imposta il valore della proprietà description.
+     * Imposta il valore della proprieta description.
      * 
      * @param value
      *     allowed object is
@@ -128,7 +128,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Recupera il valore della proprietà subType.
+     * Recupera il valore della proprieta subType.
      * 
      * @return
      *     possible object is
@@ -140,7 +140,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Imposta il valore della proprietà subType.
+     * Imposta il valore della proprieta subType.
      * 
      * @param value
      *     allowed object is
@@ -152,7 +152,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Recupera il valore della proprietà source.
+     * Recupera il valore della proprieta source.
      * 
      * @return
      *     possible object is
@@ -164,7 +164,7 @@ public class BaseResultItem {
     }
 
     /**
-     * Imposta il valore della proprietà source.
+     * Imposta il valore della proprieta source.
      * 
      * @param value
      *     allowed object is

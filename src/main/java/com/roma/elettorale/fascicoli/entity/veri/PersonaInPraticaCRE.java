@@ -59,7 +59,7 @@ public class PersonaInPraticaCRE
     protected JAXBElement<String> numProt;
 
     /**
-     * Recupera il valore della proprietà codPos.
+     * Recupera il valore della proprieta codPos.
      * 
      * @return
      *     possible object is
@@ -71,7 +71,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà codPos.
+     * Imposta il valore della proprieta codPos.
      * 
      * @param value
      *     allowed object is
@@ -83,7 +83,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Recupera il valore della proprietà codNPos.
+     * Recupera il valore della proprieta codNPos.
      * 
      * @return
      *     possible object is
@@ -95,7 +95,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà codNPos.
+     * Imposta il valore della proprieta codNPos.
      * 
      * @param value
      *     allowed object is
@@ -107,7 +107,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Recupera il valore della proprietà codSett.
+     * Recupera il valore della proprieta codSett.
      * 
      * @return
      *     possible object is
@@ -119,7 +119,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà codSett.
+     * Imposta il valore della proprieta codSett.
      * 
      * @param value
      *     allowed object is
@@ -131,7 +131,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Recupera il valore della proprietà tipConf.
+     * Recupera il valore della proprieta tipConf.
      * 
      * @return
      *     possible object is
@@ -143,7 +143,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà tipConf.
+     * Imposta il valore della proprieta tipConf.
      * 
      * @param value
      *     allowed object is
@@ -155,7 +155,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Recupera il valore della proprietà esitoAcc.
+     * Recupera il valore della proprieta esitoAcc.
      * 
      * @return
      *     possible object is
@@ -167,7 +167,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà esitoAcc.
+     * Imposta il valore della proprieta esitoAcc.
      * 
      * @param value
      *     allowed object is
@@ -179,7 +179,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Recupera il valore della proprietà numProt.
+     * Recupera il valore della proprieta numProt.
      * 
      * @return
      *     possible object is
@@ -191,7 +191,7 @@ public class PersonaInPraticaCRE
     }
 
     /**
-     * Imposta il valore della proprietà numProt.
+     * Imposta il valore della proprieta numProt.
      * 
      * @param value
      *     allowed object is

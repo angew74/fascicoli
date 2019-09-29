@@ -36,7 +36,7 @@ public class SearchFilesResponse {
     protected FileResponseList searchFilesResult;
 
     /**
-     * Recupera il valore della proprietà searchFilesResult.
+     * Recupera il valore della proprieta searchFilesResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class SearchFilesResponse {
     }
 
     /**
-     * Imposta il valore della proprietà searchFilesResult.
+     * Imposta il valore della proprieta searchFilesResult.
      * 
      * @param value
      *     allowed object is

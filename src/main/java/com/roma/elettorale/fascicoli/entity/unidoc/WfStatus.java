@@ -60,7 +60,7 @@ public class WfStatus {
     protected int idStatus;
 
     /**
-     * Recupera il valore della proprietà finalStatus.
+     * Recupera il valore della proprieta finalStatus.
      * 
      * @return
      *     possible object is
@@ -72,7 +72,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà finalStatus.
+     * Imposta il valore della proprieta finalStatus.
      * 
      * @param value
      *     allowed object is
@@ -84,7 +84,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà startStatus.
+     * Recupera il valore della proprieta startStatus.
      * 
      * @return
      *     possible object is
@@ -96,7 +96,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà startStatus.
+     * Imposta il valore della proprieta startStatus.
      * 
      * @param value
      *     allowed object is
@@ -108,7 +108,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà descrizione.
+     * Recupera il valore della proprieta descrizione.
      * 
      * @return
      *     possible object is
@@ -120,7 +120,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà descrizione.
+     * Imposta il valore della proprieta descrizione.
      * 
      * @param value
      *     allowed object is
@@ -132,7 +132,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà nome.
+     * Recupera il valore della proprieta nome.
      * 
      * @return
      *     possible object is
@@ -144,7 +144,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà nome.
+     * Imposta il valore della proprieta nome.
      * 
      * @param value
      *     allowed object is
@@ -156,7 +156,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà codice.
+     * Recupera il valore della proprieta codice.
      * 
      * @return
      *     possible object is
@@ -168,7 +168,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà codice.
+     * Imposta il valore della proprieta codice.
      * 
      * @param value
      *     allowed object is
@@ -180,7 +180,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà refIdWf.
+     * Recupera il valore della proprieta refIdWf.
      * 
      */
     public int getRefIdWf() {
@@ -188,7 +188,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà refIdWf.
+     * Imposta il valore della proprieta refIdWf.
      * 
      */
     public void setRefIdWf(int value) {
@@ -196,7 +196,7 @@ public class WfStatus {
     }
 
     /**
-     * Recupera il valore della proprietà idStatus.
+     * Recupera il valore della proprieta idStatus.
      * 
      */
     public int getIdStatus() {
@@ -204,7 +204,7 @@ public class WfStatus {
     }
 
     /**
-     * Imposta il valore della proprietà idStatus.
+     * Imposta il valore della proprieta idStatus.
      * 
      */
     public void setIdStatus(int value) {

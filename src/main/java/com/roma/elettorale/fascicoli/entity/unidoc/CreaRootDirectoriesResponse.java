@@ -36,7 +36,7 @@ public class CreaRootDirectoriesResponse {
     protected FolderResponse creaRootDirectoriesResult;
 
     /**
-     * Recupera il valore della proprietà creaRootDirectoriesResult.
+     * Recupera il valore della proprieta creaRootDirectoriesResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class CreaRootDirectoriesResponse {
     }
 
     /**
-     * Imposta il valore della proprietà creaRootDirectoriesResult.
+     * Imposta il valore della proprieta creaRootDirectoriesResult.
      * 
      * @param value
      *     allowed object is

@@ -69,7 +69,7 @@ public class BasePatenteANAGType {
     protected JAXBElement<String> descComRil;
 
     /**
-     * Recupera il valore della proprietà numeroPat.
+     * Recupera il valore della proprieta numeroPat.
      * 
      * @return
      *     possible object is
@@ -81,7 +81,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà numeroPat.
+     * Imposta il valore della proprieta numeroPat.
      * 
      * @param value
      *     allowed object is
@@ -93,7 +93,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà categoria.
+     * Recupera il valore della proprieta categoria.
      * 
      * @return
      *     possible object is
@@ -105,7 +105,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà categoria.
+     * Imposta il valore della proprieta categoria.
      * 
      * @param value
      *     allowed object is
@@ -117,7 +117,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà descCategoria.
+     * Recupera il valore della proprieta descCategoria.
      * 
      * @return
      *     possible object is
@@ -129,7 +129,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà descCategoria.
+     * Imposta il valore della proprieta descCategoria.
      * 
      * @param value
      *     allowed object is
@@ -141,7 +141,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà enteRil.
+     * Recupera il valore della proprieta enteRil.
      * 
      * @return
      *     possible object is
@@ -153,7 +153,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà enteRil.
+     * Imposta il valore della proprieta enteRil.
      * 
      * @param value
      *     allowed object is
@@ -165,7 +165,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà descEnte.
+     * Recupera il valore della proprieta descEnte.
      * 
      * @return
      *     possible object is
@@ -177,7 +177,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà descEnte.
+     * Imposta il valore della proprieta descEnte.
      * 
      * @param value
      *     allowed object is
@@ -189,7 +189,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà dataRil.
+     * Recupera il valore della proprieta dataRil.
      * 
      * @return
      *     possible object is
@@ -201,7 +201,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà dataRil.
+     * Imposta il valore della proprieta dataRil.
      * 
      * @param value
      *     allowed object is
@@ -213,7 +213,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà statusPat.
+     * Recupera il valore della proprieta statusPat.
      * 
      * @return
      *     possible object is
@@ -225,7 +225,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà statusPat.
+     * Imposta il valore della proprieta statusPat.
      * 
      * @param value
      *     allowed object is
@@ -237,7 +237,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà comuRil.
+     * Recupera il valore della proprieta comuRil.
      * 
      * @return
      *     possible object is
@@ -249,7 +249,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà comuRil.
+     * Imposta il valore della proprieta comuRil.
      * 
      * @param value
      *     allowed object is
@@ -261,7 +261,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Recupera il valore della proprietà descComRil.
+     * Recupera il valore della proprieta descComRil.
      * 
      * @return
      *     possible object is
@@ -273,7 +273,7 @@ public class BasePatenteANAGType {
     }
 
     /**
-     * Imposta il valore della proprietà descComRil.
+     * Imposta il valore della proprieta descComRil.
      * 
      * @param value
      *     allowed object is

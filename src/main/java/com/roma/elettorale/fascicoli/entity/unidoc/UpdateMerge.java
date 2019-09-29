@@ -36,7 +36,7 @@ public class UpdateMerge {
     protected FileRequest fileToSave;
 
     /**
-     * Recupera il valore della proprietà fileToSave.
+     * Recupera il valore della proprieta fileToSave.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class UpdateMerge {
     }
 
     /**
-     * Imposta il valore della proprietà fileToSave.
+     * Imposta il valore della proprieta fileToSave.
      * 
      * @param value
      *     allowed object is

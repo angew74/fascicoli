@@ -38,7 +38,7 @@ public class WfDetach {
     protected String wfInstanceId;
 
     /**
-     * Recupera il valore della proprietà wfInstanceId.
+     * Recupera il valore della proprieta wfInstanceId.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class WfDetach {
     }
 
     /**
-     * Imposta il valore della proprietà wfInstanceId.
+     * Imposta il valore della proprieta wfInstanceId.
      * 
      * @param value
      *     allowed object is

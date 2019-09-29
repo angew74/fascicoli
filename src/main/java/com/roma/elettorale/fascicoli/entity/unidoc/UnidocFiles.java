@@ -120,7 +120,7 @@ public class UnidocFiles {
     protected UnidocFolders unidocFolder;
 
     /**
-     * Recupera il valore della proprietà verDetails.
+     * Recupera il valore della proprieta verDetails.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà verDetails.
+     * Imposta il valore della proprieta verDetails.
      * 
      * @param value
      *     allowed object is
@@ -144,7 +144,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà listaMetadati.
+     * Recupera il valore della proprieta listaMetadati.
      * 
      * @return
      *     possible object is
@@ -156,7 +156,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà listaMetadati.
+     * Imposta il valore della proprieta listaMetadati.
      * 
      * @param value
      *     allowed object is
@@ -168,7 +168,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà utenteCancellazione.
+     * Recupera il valore della proprieta utenteCancellazione.
      * 
      * @return
      *     possible object is
@@ -180,7 +180,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà utenteCancellazione.
+     * Imposta il valore della proprieta utenteCancellazione.
      * 
      * @param value
      *     allowed object is
@@ -192,7 +192,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      */
     public int getIdFile() {
@@ -200,7 +200,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      */
     public void setIdFile(int value) {
@@ -208,7 +208,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà refIdFile.
+     * Recupera il valore della proprieta refIdFile.
      * 
      */
     public int getRefIdFile() {
@@ -216,7 +216,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà refIdFile.
+     * Imposta il valore della proprieta refIdFile.
      * 
      */
     public void setRefIdFile(int value) {
@@ -224,7 +224,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà versione.
+     * Recupera il valore della proprieta versione.
      * 
      * @return
      *     possible object is
@@ -236,7 +236,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà versione.
+     * Imposta il valore della proprieta versione.
      * 
      * @param value
      *     allowed object is
@@ -248,7 +248,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà path.
+     * Recupera il valore della proprieta path.
      * 
      * @return
      *     possible object is
@@ -260,7 +260,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà path.
+     * Imposta il valore della proprieta path.
      * 
      * @param value
      *     allowed object is
@@ -272,7 +272,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà nome.
+     * Recupera il valore della proprieta nome.
      * 
      * @return
      *     possible object is
@@ -284,7 +284,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà nome.
+     * Imposta il valore della proprieta nome.
      * 
      * @param value
      *     allowed object is
@@ -296,7 +296,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà ext.
+     * Recupera il valore della proprieta ext.
      * 
      * @return
      *     possible object is
@@ -308,7 +308,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà ext.
+     * Imposta il valore della proprieta ext.
      * 
      * @param value
      *     allowed object is
@@ -320,7 +320,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà hash.
+     * Recupera il valore della proprieta hash.
      * 
      * @return
      *     possible object is
@@ -332,7 +332,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà hash.
+     * Imposta il valore della proprieta hash.
      * 
      * @param value
      *     allowed object is
@@ -344,7 +344,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà nomeOriginale.
+     * Recupera il valore della proprieta nomeOriginale.
      * 
      * @return
      *     possible object is
@@ -356,7 +356,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà nomeOriginale.
+     * Imposta il valore della proprieta nomeOriginale.
      * 
      * @param value
      *     allowed object is
@@ -368,7 +368,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà utenteInserimento.
+     * Recupera il valore della proprieta utenteInserimento.
      * 
      * @return
      *     possible object is
@@ -380,7 +380,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà utenteInserimento.
+     * Imposta il valore della proprieta utenteInserimento.
      * 
      * @param value
      *     allowed object is
@@ -392,7 +392,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà dataInserimento.
+     * Recupera il valore della proprieta dataInserimento.
      * 
      * @return
      *     possible object is
@@ -404,7 +404,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà dataInserimento.
+     * Imposta il valore della proprieta dataInserimento.
      * 
      * @param value
      *     allowed object is
@@ -416,7 +416,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà pgmInserimento.
+     * Recupera il valore della proprieta pgmInserimento.
      * 
      * @return
      *     possible object is
@@ -428,7 +428,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà pgmInserimento.
+     * Imposta il valore della proprieta pgmInserimento.
      * 
      * @param value
      *     allowed object is
@@ -440,7 +440,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà idDoc.
+     * Recupera il valore della proprieta idDoc.
      * 
      */
     public int getIdDoc() {
@@ -448,7 +448,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà idDoc.
+     * Imposta il valore della proprieta idDoc.
      * 
      */
     public void setIdDoc(int value) {
@@ -456,7 +456,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà flgStatus.
+     * Recupera il valore della proprieta flgStatus.
      * 
      * @return
      *     possible object is
@@ -468,7 +468,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà flgStatus.
+     * Imposta il valore della proprieta flgStatus.
      * 
      * @param value
      *     allowed object is
@@ -480,7 +480,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà dataDelete.
+     * Recupera il valore della proprieta dataDelete.
      * 
      * @return
      *     possible object is
@@ -492,7 +492,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà dataDelete.
+     * Imposta il valore della proprieta dataDelete.
      * 
      * @param value
      *     allowed object is
@@ -504,7 +504,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà refIdType.
+     * Recupera il valore della proprieta refIdType.
      * 
      */
     public int getRefIdType() {
@@ -512,7 +512,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà refIdType.
+     * Imposta il valore della proprieta refIdType.
      * 
      */
     public void setRefIdType(int value) {
@@ -520,7 +520,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà nomeFolder.
+     * Recupera il valore della proprieta nomeFolder.
      * 
      * @return
      *     possible object is
@@ -532,7 +532,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà nomeFolder.
+     * Imposta il valore della proprieta nomeFolder.
      * 
      * @param value
      *     allowed object is
@@ -544,7 +544,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà unidocType.
+     * Recupera il valore della proprieta unidocType.
      * 
      * @return
      *     possible object is
@@ -556,7 +556,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà unidocType.
+     * Imposta il valore della proprieta unidocType.
      * 
      * @param value
      *     allowed object is
@@ -568,7 +568,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Recupera il valore della proprietà unidocFolder.
+     * Recupera il valore della proprieta unidocFolder.
      * 
      * @return
      *     possible object is
@@ -580,7 +580,7 @@ public class UnidocFiles {
     }
 
     /**
-     * Imposta il valore della proprietà unidocFolder.
+     * Imposta il valore della proprieta unidocFolder.
      * 
      * @param value
      *     allowed object is

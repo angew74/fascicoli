@@ -36,7 +36,7 @@ public class AggiungiMetadatoResponse {
     protected FileResponse aggiungiMetadatoResult;
 
     /**
-     * Recupera il valore della proprietà aggiungiMetadatoResult.
+     * Recupera il valore della proprieta aggiungiMetadatoResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class AggiungiMetadatoResponse {
     }
 
     /**
-     * Imposta il valore della proprietà aggiungiMetadatoResult.
+     * Imposta il valore della proprieta aggiungiMetadatoResult.
      * 
      * @param value
      *     allowed object is

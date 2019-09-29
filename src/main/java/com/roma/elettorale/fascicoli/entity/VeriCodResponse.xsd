@@ -6,7 +6,7 @@
 		   xmlns:mstns="http://tempuri.org/VERICOD_RESP.xsd" 
 		   xmlns:tc="http://tempuri.org/TipiBase.xsd" 
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:import namespace="http://tempuri.org/TipiBase.xsd" schemaLocation="C:\Users\Nick\Documents\javaprojects\ElezioniIdeaProject\fascicoli\src\main\java\com\roma\elettorale\fascicoli\entity\veri\TipiBase.xsd" />
+	<xs:import namespace="http://tempuri.org/TipiBase.xsd" schemaLocation="C:\Users\AdminDSI\IdeaProjects\fascicoli\src\main\resources\xsd\TipiBase.xsd" />
 	<xs:element name="VERICOD_RESPONSE">
 		<xs:complexType>
 			<xs:sequence>

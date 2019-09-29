@@ -38,7 +38,7 @@ public class GetCodiceIndividualeResponse {
     protected String getCodiceIndividualeResult;
 
     /**
-     * Recupera il valore della proprietà getCodiceIndividualeResult.
+     * Recupera il valore della proprieta getCodiceIndividualeResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetCodiceIndividualeResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getCodiceIndividualeResult.
+     * Imposta il valore della proprieta getCodiceIndividualeResult.
      * 
      * @param value
      *     allowed object is

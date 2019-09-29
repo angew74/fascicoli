@@ -38,7 +38,7 @@ public class GetSubFoldersFromIdFolder {
     protected int idFolder;
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -46,7 +46,7 @@ public class GetSubFoldersFromIdFolder {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {

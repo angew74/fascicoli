@@ -1,6 +1,10 @@
 package com.roma.elettorale.fascicoli.service;
 
 
+import com.roma.elettorale.fascicoli.entity.certi.CertificatoType;
+import com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE;
+import com.roma.elettorale.fascicoli.entity.veri.VeriData;
+import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusoperazione;
 import com.roma.elettorale.fascicoli.sviluppo.contract.ICaricamentoService;
 import com.roma.elettorale.fascicoli.sviluppo.entity.caricamento;
@@ -10,99 +14,193 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 @Component
 public class ElaborazioneRichieste {
 
-/*
+
     Logger logger = LoggerFactory.getLogger(ManageFiles.class);
 
     @Autowired
     ICaricamentoService caricamentoService;
 
     @Autowired
+    VeriData veriData;
+
+    @Autowired
     AnagrafeClient anagrafeClient;
 
     @Autowired
-    TransformationFile tranS;
+    TransformationFile transformationFile;
 
     @Autowired
     ElaborazioneEstratti elaborazioneEstratti;
 
-    public void createCertificato() {
-      //   List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(0);
-        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazioneAndCodicecertificato(0, "ESN");
+    @Autowired
+    ElaborazioneCertificati elaborazioneCertificati;
 
+    @Autowired
+    ElaborazioneCaricamentiUnidoc elaborazioneCaricamentiUnidoc;
+
+    public void createCertificato() {
+        //   List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(0);
+        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazioneAndCodicecertificato(0, "ESN");
         String codiceindividuale = "";
         String codicecertificato = "";
-        String msg = "";
-        VERICODRESPONSE.Verifica verifica = null;
+        byte[] estratto = null;
+        int status = 0;
+        StringBuilder esito = new StringBuilder();
+        VeriData veriData = new VeriData();
         for (caricamento c : caricamentos) {
+            esito = new StringBuilder();
             codicecertificato = c.getCodicecertificato();
             codiceindividuale = c.getCodiceindividuale();
-            Document doc = anagrafeClient.GetVeri(codiceindividuale);
-            VERICODRESPONSE vericodresponse = new VERICODRESPONSE();
-            if (doc != null) {
-                vericodresponse = tranS.convertXmltoVericodResponse(doc.toString());
-                verifica = vericodresponse.getVerifica();
-                if (verifica.getRawXml() != null) {
+            String stringDoc = anagrafeClient.GetVeri(codiceindividuale);
+            if (stringDoc != null && (!stringDoc.equals(""))) {
+                Document doc = transformationFile.convertStringToXMLDocument(stringDoc);
+                veriData = veriData.CreateVeriDataFromXml(doc);
+                //  vericodresponse = transformationFile.convertXmltoVericodResponse(doc.toString());
+                if (veriData.isTrovato()) {
                     logger.debug("persona trovata " + codiceindividuale);
                 } else {
                     logger.debug("persona non trovata " + codiceindividuale);
-                    int status = statusoperazione.CITTADINO_NON_TROVATO.ordinal();
+                    status = statusoperazione.CITTADINO_NON_TROVATO.ordinal();
                     c.setFlgoperazione(status);
                     c.setDescrizioneerrore("CITTADINO NON TROVATO");
                     caricamentoService.Save(c);
                 }
             }
             String codiceCerti = "";
+            CertificatoType certificatoType = new CertificatoType();
             switch (codicecertificato) {
                 case "NAS": //nascita
-                    byte[] estratto = elaborazioneEstratti.getEstrattoNascita(codiceindividuale,verifica,msg);
-                  codiceCerti = "C0001";
+                    codiceCerti = "C0001";
+                    certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
+                    if (esito.equals("")) {
+                        elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale,esito);
+                        if (esito.equals("")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                        }
+                        c.setFlgoperazione(status);
+                        caricamentoService.Save(c);
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
                 case "CTD":
                     codiceCerti = "C0004";
+                    certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
+                    if (esito.toString().equals("")) {
+                        elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData,codiceindividuale, esito);
+                        if (esito.toString().equals("")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                        }
+                        c.setFlgoperazione(status);
+                        caricamentoService.Save(c);
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
                 case "CTE":
                     codiceCerti = "C0005";
+                    certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData,esito);
+                    if (esito.toString().equals("")) {
+                        elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale,esito);
+                        if (esito.toString().equals("")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                        }
+                        c.setFlgoperazione(status);
+                        caricamentoService.Save(c);
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
                 case "CRS":  //residenza
                     codiceCerti = "C0006";
+                    certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
+                    if (esito.toString().equals("")) {
+                        elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale,esito);
+                        if (esito.toString().equals("")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                        }
+                        c.setFlgoperazione(status);
+                        caricamentoService.Save(c);
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
                 case "RSE":  //residenza AIRE
                     codiceCerti = "C0007";
+                    certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData,esito);
+                    if (esito.toString().equals("")) {
+                        elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale,esito);
+                        if (esito.toString().equals("")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                        }
+                        c.setFlgoperazione(status);
+                        caricamentoService.Save(c);
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
                 case "ESN":
                     codiceCerti = "ESN";
+                    estratto = elaborazioneEstratti.getEstrattoNascita(codiceindividuale, veriData, esito);
+                    if (esito.toString().equals("")) {
+                        transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
+                        elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData,codiceindividuale, esito);
+                        if (esito.toString().equals("OK")) {
+                            status = statusoperazione.CARICATO.ordinal();
+                            c.setFlgoperazione(status);
+                            caricamentoService.Save(c);
+                            return;
+                        } else {
+                            status = statusoperazione.ERRORE.ordinal();
+                            c.setFlgoperazione(status);
+                            c.setDescrizioneerrore(esito.toString());
+                            caricamentoService.Save(c);
+                            return;
+                        }
+                    } else {
+                        status = statusoperazione.ERRORE.ordinal();
+                        c.setFlgoperazione(status);
+                        c.setDescrizioneerrore(esito.toString());
+                        caricamentoService.Save(c);
+                    }
                     break;
             }
-            String esito = "";
-            if (!codiceCerti.equals("") && !codiceCerti.equals("ESN")) {
 
-                //   String esito = proxy.getCerti(codiceindividuale, codiceCerti, veriData,msg);
-
-                if (!esito.equals("OK")) { //aggiorno il file degli scartati
-                    int status = statusoperazione.ERRORE.ordinal();
-                    c.setFlgoperazione(status);
-                    c.setDescrizioneerrore(msg);
-
-                }
-                int status = statusoperazione.CARICATO.ordinal();
-                c.setFlgoperazione(status);
-            } else {
-                //   String esito = proxy.caricaEstrattoNascita(codiceindividuale, veriData, msg);
-                if (!esito.equals("OK")) {
-                    int status = statusoperazione.ERRORE.ordinal();
-                    c.setFlgoperazione(status);
-                    c.setDescrizioneerrore(msg);
-                }
-                int status = statusoperazione.CARICATO.ordinal();
-                c.setFlgoperazione(status);
-            }
 
         }
 
-    }*/
+    }
 }

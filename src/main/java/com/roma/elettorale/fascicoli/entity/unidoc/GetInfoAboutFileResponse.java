@@ -38,7 +38,7 @@ public class GetInfoAboutFileResponse {
     protected FileResponse getInfoAboutFileResult;
 
     /**
-     * Recupera il valore della proprietà getInfoAboutFileResult.
+     * Recupera il valore della proprieta getInfoAboutFileResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetInfoAboutFileResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getInfoAboutFileResult.
+     * Imposta il valore della proprieta getInfoAboutFileResult.
      * 
      * @param value
      *     allowed object is

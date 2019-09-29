@@ -79,7 +79,7 @@ public class UnidocsMetadatas {
     protected int refIdType;
 
     /**
-     * Recupera il valore della proprietà idMetadata.
+     * Recupera il valore della proprieta idMetadata.
      * 
      */
     public int getIdMetadata() {
@@ -87,7 +87,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà idMetadata.
+     * Imposta il valore della proprieta idMetadata.
      * 
      */
     public void setIdMetadata(int value) {
@@ -95,7 +95,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà nomeMetadata.
+     * Recupera il valore della proprieta nomeMetadata.
      * 
      * @return
      *     possible object is
@@ -107,7 +107,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà nomeMetadata.
+     * Imposta il valore della proprieta nomeMetadata.
      * 
      * @param value
      *     allowed object is
@@ -119,7 +119,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà labelMetadata.
+     * Recupera il valore della proprieta labelMetadata.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà labelMetadata.
+     * Imposta il valore della proprieta labelMetadata.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà descrizioneMetadata.
+     * Recupera il valore della proprieta descrizioneMetadata.
      * 
      * @return
      *     possible object is
@@ -155,7 +155,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà descrizioneMetadata.
+     * Imposta il valore della proprieta descrizioneMetadata.
      * 
      * @param value
      *     allowed object is
@@ -167,7 +167,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà datatype.
+     * Recupera il valore della proprieta datatype.
      * 
      * @return
      *     possible object is
@@ -179,7 +179,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà datatype.
+     * Imposta il valore della proprieta datatype.
      * 
      * @param value
      *     allowed object is
@@ -191,7 +191,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà indice.
+     * Recupera il valore della proprieta indice.
      * 
      */
     public int getIndice() {
@@ -199,7 +199,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà indice.
+     * Imposta il valore della proprieta indice.
      * 
      */
     public void setIndice(int value) {
@@ -207,7 +207,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà refIdFile.
+     * Recupera il valore della proprieta refIdFile.
      * 
      */
     public int getRefIdFile() {
@@ -215,7 +215,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà refIdFile.
+     * Imposta il valore della proprieta refIdFile.
      * 
      */
     public void setRefIdFile(int value) {
@@ -223,7 +223,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà idVersioneDoc.
+     * Recupera il valore della proprieta idVersioneDoc.
      * 
      */
     public int getIdVersioneDoc() {
@@ -231,7 +231,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà idVersioneDoc.
+     * Imposta il valore della proprieta idVersioneDoc.
      * 
      */
     public void setIdVersioneDoc(int value) {
@@ -239,7 +239,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà valueMetadata.
+     * Recupera il valore della proprieta valueMetadata.
      * 
      * @return
      *     possible object is
@@ -251,7 +251,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà valueMetadata.
+     * Imposta il valore della proprieta valueMetadata.
      * 
      * @param value
      *     allowed object is
@@ -263,7 +263,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà nomeBreve.
+     * Recupera il valore della proprieta nomeBreve.
      * 
      * @return
      *     possible object is
@@ -275,7 +275,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà nomeBreve.
+     * Imposta il valore della proprieta nomeBreve.
      * 
      * @param value
      *     allowed object is
@@ -287,7 +287,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà nullable.
+     * Recupera il valore della proprieta nullable.
      * 
      * @return
      *     possible object is
@@ -299,7 +299,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà nullable.
+     * Imposta il valore della proprieta nullable.
      * 
      * @param value
      *     allowed object is
@@ -311,7 +311,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà cardinalita.
+     * Recupera il valore della proprieta cardinalita.
      * 
      */
     public int getCardinalita() {
@@ -319,7 +319,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà cardinalita.
+     * Imposta il valore della proprieta cardinalita.
      * 
      */
     public void setCardinalita(int value) {
@@ -327,7 +327,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà versioningIdx.
+     * Recupera il valore della proprieta versioningIdx.
      * 
      */
     public int getVersioningIdx() {
@@ -335,7 +335,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà versioningIdx.
+     * Imposta il valore della proprieta versioningIdx.
      * 
      */
     public void setVersioningIdx(int value) {
@@ -343,7 +343,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà namingIdx.
+     * Recupera il valore della proprieta namingIdx.
      * 
      */
     public int getNamingIdx() {
@@ -351,7 +351,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà namingIdx.
+     * Imposta il valore della proprieta namingIdx.
      * 
      */
     public void setNamingIdx(int value) {
@@ -359,7 +359,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Recupera il valore della proprietà refIdType.
+     * Recupera il valore della proprieta refIdType.
      * 
      */
     public int getRefIdType() {
@@ -367,7 +367,7 @@ public class UnidocsMetadatas {
     }
 
     /**
-     * Imposta il valore della proprietà refIdType.
+     * Imposta il valore della proprieta refIdType.
      * 
      */
     public void setRefIdType(int value) {

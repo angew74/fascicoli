@@ -38,7 +38,7 @@ public class GetSubFoldersFromIdFolderResponse {
     protected ArrayOfFolderResponse getSubFoldersFromIdFolderResult;
 
     /**
-     * Recupera il valore della proprietà getSubFoldersFromIdFolderResult.
+     * Recupera il valore della proprieta getSubFoldersFromIdFolderResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetSubFoldersFromIdFolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getSubFoldersFromIdFolderResult.
+     * Imposta il valore della proprieta getSubFoldersFromIdFolderResult.
      * 
      * @param value
      *     allowed object is

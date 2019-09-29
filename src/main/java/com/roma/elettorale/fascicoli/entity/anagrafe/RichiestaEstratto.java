@@ -1,36 +1,55 @@
 package com.roma.elettorale.fascicoli.entity.anagrafe;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "RichiestaEstratto")
 public class RichiestaEstratto
 {
 
+
+  //  @XmlElement(name = "CodiceIndividuale", required = true)
     private String codiceIndividuale;
 
+    //@XmlElement(name = "CodiceFiscale", required = true)
     private String codiceFiscale;
 
+    //@XmlElement(name = "Sesso", required = false)
     private String sesso;
 
+    //@XmlElement(name = "Cognome", required = false)
     private String cognome;
 
+   // @XmlElement(name = "Nome", required = false)
     private String nome;
 
+ //   @XmlElement(name = "AANas", required = false)
     private String aANas;
 
+  //  @XmlElement(name = "MMNas", required = false)
     private String mMNas;
 
+  //  @XmlElement(name = "GGNas", required = false)
     private String gGNas;
 
+ //   @XmlElement(name = "NumAtto", required = true)
     private String numAtto;
 
+//    @XmlElement(name = "ParteAtto", required = true)
     private String parteAtto;
 
+  //  @XmlElement(name = "SerieAtto", required = true)
     private String serieAtto;
 
+ //   @XmlElement(name = "AnnoAtto", required = true)
     private String annoAtto;
 
+//    @XmlElement(name = "Utente", required = true)
     private String utente;
 
+  //  @XmlElement(name = "Dipartimento", required = true)
     private String dipartimento;
 
+   // @XmlElement(name = "Password", required = true)
     private String password;
 
     private String giornRichiesta;

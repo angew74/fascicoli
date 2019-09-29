@@ -1,3 +1,10 @@
+//
+// Questo file è stato generato dall'architettura JavaTM per XML Binding (JAXB) Reference Implementation, v2.3.0 
+// Vedere <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+// Qualsiasi modifica a questo file andrà persa durante la ricompilazione dello schema di origine. 
+// Generato il: 2019.09.24 alle 10:06:42 AM CEST 
+//
+
 
 package com.roma.elettorale.fascicoli.entity.certi;
 
@@ -19,7 +26,7 @@ import javax.xml.bind.annotation.XmlRegistry;
  * 
  */
 @XmlRegistry
-public class ObjectFactory {
+public class  ObjectFactory {
 
 
     /**
@@ -38,30 +45,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link VerificaEmettibilita }
-     * 
-     */
-    public VerificaEmettibilita createVerificaEmettibilita() {
-        return new VerificaEmettibilita();
-    }
-
-    /**
-     * Create an instance of {@link CredenzialiType }
-     * 
-     */
-    public CredenzialiType createCredenzialiType() {
-        return new CredenzialiType();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfInfoCertificatoType }
-     * 
-     */
-    public ArrayOfInfoCertificatoType createArrayOfInfoCertificatoType() {
-        return new ArrayOfInfoCertificatoType();
-    }
-
-    /**
      * Create an instance of {@link RicercaPersonaResponse }
      * 
      */
@@ -70,67 +53,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link VerificaEmettibilitaResponse }
-     * 
-     */
-    public VerificaEmettibilitaResponse createVerificaEmettibilitaResponse() {
-        return new VerificaEmettibilitaResponse();
-    }
-
-    /**
-     * Create an instance of {@link ConfermaStampaResponse }
-     * 
-     */
-    public ConfermaStampaResponse createConfermaStampaResponse() {
-        return new ConfermaStampaResponse();
-    }
-
-    /**
-     * Create an instance of {@link RecuperaDocumento }
-     * 
-     */
-    public RecuperaDocumento createRecuperaDocumento() {
-        return new RecuperaDocumento();
-    }
-
-    /**
-     * Create an instance of {@link ConfermaStampa }
-     * 
-     */
-    public ConfermaStampa createConfermaStampa() {
-        return new ConfermaStampa();
-    }
-
-    /**
-     * Create an instance of {@link ArrayOfString }
-     * 
-     */
-    public ArrayOfString createArrayOfString() {
-        return new ArrayOfString();
-    }
-
-    /**
      * Create an instance of {@link RicercaComponentiFamiglia }
      * 
      */
     public RicercaComponentiFamiglia createRicercaComponentiFamiglia() {
         return new RicercaComponentiFamiglia();
-    }
-
-    /**
-     * Create an instance of {@link RichiestaCertificati }
-     * 
-     */
-    public RichiestaCertificati createRichiestaCertificati() {
-        return new RichiestaCertificati();
-    }
-
-    /**
-     * Create an instance of {@link RichiestaCredenzialiResponse }
-     * 
-     */
-    public RichiestaCredenzialiResponse createRichiestaCredenzialiResponse() {
-        return new RichiestaCredenzialiResponse();
     }
 
     /**
@@ -147,6 +74,14 @@ public class ObjectFactory {
      */
     public ArrayOfComponenteFamigliaType createArrayOfComponenteFamigliaType() {
         return new ArrayOfComponenteFamigliaType();
+    }
+
+    /**
+     * Create an instance of {@link RecuperaDocumento }
+     * 
+     */
+    public RecuperaDocumento createRecuperaDocumento() {
+        return new RecuperaDocumento();
     }
 
     /**
@@ -182,6 +117,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RichiestaCredenzialiResponse }
+     * 
+     */
+    public RichiestaCredenzialiResponse createRichiestaCredenzialiResponse() {
+        return new RichiestaCredenzialiResponse();
+    }
+
+    /**
+     * Create an instance of {@link CredenzialiType }
+     * 
+     */
+    public CredenzialiType createCredenzialiType() {
+        return new CredenzialiType();
+    }
+
+    /**
+     * Create an instance of {@link VerificaEmettibilita }
+     * 
+     */
+    public VerificaEmettibilita createVerificaEmettibilita() {
+        return new VerificaEmettibilita();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfInfoCertificatoType }
+     * 
+     */
+    public ArrayOfInfoCertificatoType createArrayOfInfoCertificatoType() {
+        return new ArrayOfInfoCertificatoType();
+    }
+
+    /**
+     * Create an instance of {@link VerificaEmettibilitaResponse }
+     * 
+     */
+    public VerificaEmettibilitaResponse createVerificaEmettibilitaResponse() {
+        return new VerificaEmettibilitaResponse();
+    }
+
+    /**
+     * Create an instance of {@link RichiestaCertificati }
+     * 
+     */
+    public RichiestaCertificati createRichiestaCertificati() {
+        return new RichiestaCertificati();
+    }
+
+    /**
      * Create an instance of {@link RichiestaCertificatiResponse }
      * 
      */
@@ -198,11 +181,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CertificatoType }
+     * Create an instance of {@link ConfermaStampa }
      * 
      */
-    public CertificatoType createCertificatoType() {
-        return new CertificatoType();
+    public ConfermaStampa createConfermaStampa() {
+        return new ConfermaStampa();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfString }
+     * 
+     */
+    public ArrayOfString createArrayOfString() {
+        return new ArrayOfString();
+    }
+
+    /**
+     * Create an instance of {@link ConfermaStampaResponse }
+     * 
+     */
+    public ConfermaStampaResponse createConfermaStampaResponse() {
+        return new ConfermaStampaResponse();
     }
 
     /**
@@ -219,6 +218,14 @@ public class ObjectFactory {
      */
     public InfoCertificatoType createInfoCertificatoType() {
         return new InfoCertificatoType();
+    }
+
+    /**
+     * Create an instance of {@link CertificatoType }
+     * 
+     */
+    public CertificatoType createCertificatoType() {
+        return new CertificatoType();
     }
 
 }

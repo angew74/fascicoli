@@ -66,7 +66,7 @@ public class CallMapperWebMethod {
     protected String serviceName;
 
     /**
-     * Recupera il valore della proprietà logon.
+     * Recupera il valore della proprieta logon.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà logon.
+     * Imposta il valore della proprieta logon.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +90,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà dept.
+     * Recupera il valore della proprieta dept.
      * 
      * @return
      *     possible object is
@@ -102,7 +102,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà dept.
+     * Imposta il valore della proprieta dept.
      * 
      * @param value
      *     allowed object is
@@ -114,7 +114,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà pwd.
+     * Recupera il valore della proprieta pwd.
      * 
      * @return
      *     possible object is
@@ -126,7 +126,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà pwd.
+     * Imposta il valore della proprieta pwd.
      * 
      * @param value
      *     allowed object is
@@ -138,7 +138,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà servizio.
+     * Recupera il valore della proprieta servizio.
      * 
      * @return
      *     possible object is
@@ -150,7 +150,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà servizio.
+     * Imposta il valore della proprieta servizio.
      * 
      * @param value
      *     allowed object is
@@ -162,7 +162,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà env.
+     * Recupera il valore della proprieta env.
      * 
      * @return
      *     possible object is
@@ -174,7 +174,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà env.
+     * Imposta il valore della proprieta env.
      * 
      * @param value
      *     allowed object is
@@ -186,7 +186,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà mapperes.
+     * Recupera il valore della proprieta mapperes.
      * 
      * @return
      *     possible object is
@@ -198,7 +198,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà mapperes.
+     * Imposta il valore della proprieta mapperes.
      * 
      * @param value
      *     allowed object is
@@ -210,7 +210,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà remotHost.
+     * Recupera il valore della proprieta remotHost.
      * 
      * @return
      *     possible object is
@@ -222,7 +222,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà remotHost.
+     * Imposta il valore della proprieta remotHost.
      * 
      * @param value
      *     allowed object is
@@ -234,7 +234,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Recupera il valore della proprietà serviceName.
+     * Recupera il valore della proprieta serviceName.
      * 
      * @return
      *     possible object is
@@ -246,7 +246,7 @@ public class CallMapperWebMethod {
     }
 
     /**
-     * Imposta il valore della proprietà serviceName.
+     * Imposta il valore della proprieta serviceName.
      * 
      * @param value
      *     allowed object is

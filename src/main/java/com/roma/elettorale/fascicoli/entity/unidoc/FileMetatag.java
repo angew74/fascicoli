@@ -115,7 +115,7 @@ public class FileMetatag {
     protected String nomeFolder;
 
     /**
-     * Recupera il valore della proprietà refIdPadre.
+     * Recupera il valore della proprieta refIdPadre.
      * 
      * @return
      *     possible object is
@@ -127,7 +127,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà refIdPadre.
+     * Imposta il valore della proprieta refIdPadre.
      * 
      * @param value
      *     allowed object is
@@ -139,7 +139,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà majorVersion.
+     * Recupera il valore della proprieta majorVersion.
      * 
      */
     public int getMajorVersion() {
@@ -147,7 +147,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà majorVersion.
+     * Imposta il valore della proprieta majorVersion.
      * 
      */
     public void setMajorVersion(int value) {
@@ -155,7 +155,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà dataInserimento.
+     * Recupera il valore della proprieta dataInserimento.
      * 
      * @return
      *     possible object is
@@ -167,7 +167,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà dataInserimento.
+     * Imposta il valore della proprieta dataInserimento.
      * 
      * @param value
      *     allowed object is
@@ -179,7 +179,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà tipoDocumento.
+     * Recupera il valore della proprieta tipoDocumento.
      * 
      * @return
      *     possible object is
@@ -191,7 +191,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà tipoDocumento.
+     * Imposta il valore della proprieta tipoDocumento.
      * 
      * @param value
      *     allowed object is
@@ -203,7 +203,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà metadati.
+     * Recupera il valore della proprieta metadati.
      * 
      * @return
      *     possible object is
@@ -215,7 +215,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà metadati.
+     * Imposta il valore della proprieta metadati.
      * 
      * @param value
      *     allowed object is
@@ -227,7 +227,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà versione.
+     * Recupera il valore della proprieta versione.
      * 
      * @return
      *     possible object is
@@ -239,7 +239,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà versione.
+     * Imposta il valore della proprieta versione.
      * 
      * @param value
      *     allowed object is
@@ -251,7 +251,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà estensione.
+     * Recupera il valore della proprieta estensione.
      * 
      * @return
      *     possible object is
@@ -263,7 +263,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà estensione.
+     * Imposta il valore della proprieta estensione.
      * 
      * @param value
      *     allowed object is
@@ -275,7 +275,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà nomeOriginale.
+     * Recupera il valore della proprieta nomeOriginale.
      * 
      * @return
      *     possible object is
@@ -287,7 +287,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà nomeOriginale.
+     * Imposta il valore della proprieta nomeOriginale.
      * 
      * @param value
      *     allowed object is
@@ -299,7 +299,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà utenteInserimento.
+     * Recupera il valore della proprieta utenteInserimento.
      * 
      * @return
      *     possible object is
@@ -311,7 +311,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà utenteInserimento.
+     * Imposta il valore della proprieta utenteInserimento.
      * 
      * @param value
      *     allowed object is
@@ -323,7 +323,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -331,7 +331,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {
@@ -339,7 +339,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà pathFolder.
+     * Recupera il valore della proprieta pathFolder.
      * 
      * @return
      *     possible object is
@@ -351,7 +351,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà pathFolder.
+     * Imposta il valore della proprieta pathFolder.
      * 
      * @param value
      *     allowed object is
@@ -363,7 +363,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà rifIdRegistro.
+     * Recupera il valore della proprieta rifIdRegistro.
      * 
      */
     public int getRifIdRegistro() {
@@ -371,7 +371,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà rifIdRegistro.
+     * Imposta il valore della proprieta rifIdRegistro.
      * 
      */
     public void setRifIdRegistro(int value) {
@@ -379,7 +379,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà idTipoDocumento.
+     * Recupera il valore della proprieta idTipoDocumento.
      * 
      */
     public int getIdTipoDocumento() {
@@ -387,7 +387,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà idTipoDocumento.
+     * Imposta il valore della proprieta idTipoDocumento.
      * 
      */
     public void setIdTipoDocumento(int value) {
@@ -395,7 +395,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà nomeFile.
+     * Recupera il valore della proprieta nomeFile.
      * 
      * @return
      *     possible object is
@@ -407,7 +407,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà nomeFile.
+     * Imposta il valore della proprieta nomeFile.
      * 
      * @param value
      *     allowed object is
@@ -419,7 +419,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà note.
+     * Recupera il valore della proprieta note.
      * 
      * @return
      *     possible object is
@@ -431,7 +431,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà note.
+     * Imposta il valore della proprieta note.
      * 
      * @param value
      *     allowed object is
@@ -443,7 +443,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà status.
+     * Recupera il valore della proprieta status.
      * 
      * @return
      *     possible object is
@@ -455,7 +455,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà status.
+     * Imposta il valore della proprieta status.
      * 
      * @param value
      *     allowed object is
@@ -467,7 +467,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà idDoc.
+     * Recupera il valore della proprieta idDoc.
      * 
      */
     public int getIdDoc() {
@@ -475,7 +475,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà idDoc.
+     * Imposta il valore della proprieta idDoc.
      * 
      */
     public void setIdDoc(int value) {
@@ -483,7 +483,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà idVerisonePrecedente.
+     * Recupera il valore della proprieta idVerisonePrecedente.
      * 
      */
     public int getIdVerisonePrecedente() {
@@ -491,7 +491,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà idVerisonePrecedente.
+     * Imposta il valore della proprieta idVerisonePrecedente.
      * 
      */
     public void setIdVerisonePrecedente(int value) {
@@ -499,7 +499,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà idFile.
+     * Recupera il valore della proprieta idFile.
      * 
      */
     public int getIdFile() {
@@ -507,7 +507,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà idFile.
+     * Imposta il valore della proprieta idFile.
      * 
      */
     public void setIdFile(int value) {
@@ -515,7 +515,7 @@ public class FileMetatag {
     }
 
     /**
-     * Recupera il valore della proprietà nomeFolder.
+     * Recupera il valore della proprieta nomeFolder.
      * 
      * @return
      *     possible object is
@@ -527,7 +527,7 @@ public class FileMetatag {
     }
 
     /**
-     * Imposta il valore della proprietà nomeFolder.
+     * Imposta il valore della proprieta nomeFolder.
      * 
      * @param value
      *     allowed object is

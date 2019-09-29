@@ -38,7 +38,7 @@ public class SendMail {
     protected UnidocMail email;
 
     /**
-     * Recupera il valore della proprietà email.
+     * Recupera il valore della proprieta email.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class SendMail {
     }
 
     /**
-     * Imposta il valore della proprietà email.
+     * Imposta il valore della proprieta email.
      * 
      * @param value
      *     allowed object is

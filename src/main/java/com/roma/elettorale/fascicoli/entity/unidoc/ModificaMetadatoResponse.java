@@ -36,7 +36,7 @@ public class ModificaMetadatoResponse {
     protected FileResponse modificaMetadatoResult;
 
     /**
-     * Recupera il valore della proprietà modificaMetadatoResult.
+     * Recupera il valore della proprieta modificaMetadatoResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class ModificaMetadatoResponse {
     }
 
     /**
-     * Imposta il valore della proprietà modificaMetadatoResult.
+     * Imposta il valore della proprieta modificaMetadatoResult.
      * 
      * @param value
      *     allowed object is

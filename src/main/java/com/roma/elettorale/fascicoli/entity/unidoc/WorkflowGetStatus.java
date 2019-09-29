@@ -38,7 +38,7 @@ public class WorkflowGetStatus {
     protected String wfIstanceId;
 
     /**
-     * Recupera il valore della proprietà wfIstanceId.
+     * Recupera il valore della proprieta wfIstanceId.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class WorkflowGetStatus {
     }
 
     /**
-     * Imposta il valore della proprietà wfIstanceId.
+     * Imposta il valore della proprieta wfIstanceId.
      * 
      * @param value
      *     allowed object is

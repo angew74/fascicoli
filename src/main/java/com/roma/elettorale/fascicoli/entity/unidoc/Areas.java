@@ -52,7 +52,7 @@ public class Areas {
     protected String codRegistro;
 
     /**
-     * Recupera il valore della proprietà root.
+     * Recupera il valore della proprieta root.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class Areas {
     }
 
     /**
-     * Imposta il valore della proprietà root.
+     * Imposta il valore della proprieta root.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class Areas {
     }
 
     /**
-     * Recupera il valore della proprietà idArea.
+     * Recupera il valore della proprieta idArea.
      * 
      */
     public int getIdArea() {
@@ -84,7 +84,7 @@ public class Areas {
     }
 
     /**
-     * Imposta il valore della proprietà idArea.
+     * Imposta il valore della proprieta idArea.
      * 
      */
     public void setIdArea(int value) {
@@ -92,7 +92,7 @@ public class Areas {
     }
 
     /**
-     * Recupera il valore della proprietà denominazioneArea.
+     * Recupera il valore della proprieta denominazioneArea.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class Areas {
     }
 
     /**
-     * Imposta il valore della proprietà denominazioneArea.
+     * Imposta il valore della proprieta denominazioneArea.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class Areas {
     }
 
     /**
-     * Recupera il valore della proprietà flgAttivo.
+     * Recupera il valore della proprieta flgAttivo.
      * 
      */
     public int getFlgAttivo() {
@@ -124,7 +124,7 @@ public class Areas {
     }
 
     /**
-     * Imposta il valore della proprietà flgAttivo.
+     * Imposta il valore della proprieta flgAttivo.
      * 
      */
     public void setFlgAttivo(int value) {
@@ -132,7 +132,7 @@ public class Areas {
     }
 
     /**
-     * Recupera il valore della proprietà codRegistro.
+     * Recupera il valore della proprieta codRegistro.
      * 
      * @return
      *     possible object is
@@ -144,7 +144,7 @@ public class Areas {
     }
 
     /**
-     * Imposta il valore della proprietà codRegistro.
+     * Imposta il valore della proprieta codRegistro.
      * 
      * @param value
      *     allowed object is

@@ -38,7 +38,7 @@ public class CreaNuovaCartellaResponse {
     protected FolderResponse creaNuovaCartellaResult;
 
     /**
-     * Recupera il valore della proprietà creaNuovaCartellaResult.
+     * Recupera il valore della proprieta creaNuovaCartellaResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class CreaNuovaCartellaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà creaNuovaCartellaResult.
+     * Imposta il valore della proprieta creaNuovaCartellaResult.
      * 
      * @param value
      *     allowed object is

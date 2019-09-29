@@ -52,7 +52,7 @@ public class AreaResponse {
     protected FolderResponse root;
 
     /**
-     * Recupera il valore della proprietà msg.
+     * Recupera il valore della proprieta msg.
      * 
      * @return
      *     possible object is
@@ -64,7 +64,7 @@ public class AreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà msg.
+     * Imposta il valore della proprieta msg.
      * 
      * @param value
      *     allowed object is
@@ -76,7 +76,7 @@ public class AreaResponse {
     }
 
     /**
-     * Recupera il valore della proprietà idRegistro.
+     * Recupera il valore della proprieta idRegistro.
      * 
      */
     public int getIdRegistro() {
@@ -84,7 +84,7 @@ public class AreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà idRegistro.
+     * Imposta il valore della proprieta idRegistro.
      * 
      */
     public void setIdRegistro(int value) {
@@ -92,7 +92,7 @@ public class AreaResponse {
     }
 
     /**
-     * Recupera il valore della proprietà denArea.
+     * Recupera il valore della proprieta denArea.
      * 
      * @return
      *     possible object is
@@ -104,7 +104,7 @@ public class AreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà denArea.
+     * Imposta il valore della proprieta denArea.
      * 
      * @param value
      *     allowed object is
@@ -116,7 +116,7 @@ public class AreaResponse {
     }
 
     /**
-     * Recupera il valore della proprietà codRegistro.
+     * Recupera il valore della proprieta codRegistro.
      * 
      * @return
      *     possible object is
@@ -128,7 +128,7 @@ public class AreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà codRegistro.
+     * Imposta il valore della proprieta codRegistro.
      * 
      * @param value
      *     allowed object is
@@ -140,7 +140,7 @@ public class AreaResponse {
     }
 
     /**
-     * Recupera il valore della proprietà root.
+     * Recupera il valore della proprieta root.
      * 
      * @return
      *     possible object is
@@ -152,7 +152,7 @@ public class AreaResponse {
     }
 
     /**
-     * Imposta il valore della proprietà root.
+     * Imposta il valore della proprieta root.
      * 
      * @param value
      *     allowed object is

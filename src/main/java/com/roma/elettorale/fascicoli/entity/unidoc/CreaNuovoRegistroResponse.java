@@ -36,7 +36,7 @@ public class CreaNuovoRegistroResponse {
     protected FileResponse creaNuovoRegistroResult;
 
     /**
-     * Recupera il valore della proprietà creaNuovoRegistroResult.
+     * Recupera il valore della proprieta creaNuovoRegistroResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class CreaNuovoRegistroResponse {
     }
 
     /**
-     * Imposta il valore della proprietà creaNuovoRegistroResult.
+     * Imposta il valore della proprieta creaNuovoRegistroResult.
      * 
      * @param value
      *     allowed object is

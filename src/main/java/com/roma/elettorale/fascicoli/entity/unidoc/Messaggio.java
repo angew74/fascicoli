@@ -48,7 +48,7 @@ public class Messaggio {
     protected String dettaglioMessagio;
 
     /**
-     * Recupera il valore della proprietà esito.
+     * Recupera il valore della proprieta esito.
      * 
      * @return
      *     possible object is
@@ -60,7 +60,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della proprietà esito.
+     * Imposta il valore della proprieta esito.
      * 
      * @param value
      *     allowed object is
@@ -72,7 +72,7 @@ public class Messaggio {
     }
 
     /**
-     * Recupera il valore della proprietà attore.
+     * Recupera il valore della proprieta attore.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della proprietà attore.
+     * Imposta il valore della proprieta attore.
      * 
      * @param value
      *     allowed object is
@@ -96,7 +96,7 @@ public class Messaggio {
     }
 
     /**
-     * Recupera il valore della proprietà livelloMessagio.
+     * Recupera il valore della proprieta livelloMessagio.
      * 
      * @return
      *     possible object is
@@ -108,7 +108,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della proprietà livelloMessagio.
+     * Imposta il valore della proprieta livelloMessagio.
      * 
      * @param value
      *     allowed object is
@@ -120,7 +120,7 @@ public class Messaggio {
     }
 
     /**
-     * Recupera il valore della proprietà dettaglioMessagio.
+     * Recupera il valore della proprieta dettaglioMessagio.
      * 
      * @return
      *     possible object is
@@ -132,7 +132,7 @@ public class Messaggio {
     }
 
     /**
-     * Imposta il valore della proprietà dettaglioMessagio.
+     * Imposta il valore della proprieta dettaglioMessagio.
      * 
      * @param value
      *     allowed object is

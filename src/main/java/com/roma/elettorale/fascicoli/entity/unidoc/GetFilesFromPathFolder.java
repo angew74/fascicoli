@@ -38,7 +38,7 @@ public class GetFilesFromPathFolder {
     protected String path;
 
     /**
-     * Recupera il valore della proprietà path.
+     * Recupera il valore della proprieta path.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetFilesFromPathFolder {
     }
 
     /**
-     * Imposta il valore della proprietà path.
+     * Imposta il valore della proprieta path.
      * 
      * @param value
      *     allowed object is

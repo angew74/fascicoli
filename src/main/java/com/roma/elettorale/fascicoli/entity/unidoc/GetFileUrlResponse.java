@@ -42,7 +42,7 @@ public class GetFileUrlResponse {
     protected String nomeOriginale;
 
     /**
-     * Recupera il valore della proprietà getFileUrlResult.
+     * Recupera il valore della proprieta getFileUrlResult.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class GetFileUrlResponse {
     }
 
     /**
-     * Imposta il valore della proprietà getFileUrlResult.
+     * Imposta il valore della proprieta getFileUrlResult.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class GetFileUrlResponse {
     }
 
     /**
-     * Recupera il valore della proprietà nomeOriginale.
+     * Recupera il valore della proprieta nomeOriginale.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class GetFileUrlResponse {
     }
 
     /**
-     * Imposta il valore della proprietà nomeOriginale.
+     * Imposta il valore della proprieta nomeOriginale.
      * 
      * @param value
      *     allowed object is

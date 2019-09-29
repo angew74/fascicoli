@@ -46,7 +46,7 @@ public class GetPagedFilesFromIdFolder {
     protected int per;
 
     /**
-     * Recupera il valore della proprietà idFolder.
+     * Recupera il valore della proprieta idFolder.
      * 
      */
     public int getIdFolder() {
@@ -54,7 +54,7 @@ public class GetPagedFilesFromIdFolder {
     }
 
     /**
-     * Imposta il valore della proprietà idFolder.
+     * Imposta il valore della proprieta idFolder.
      * 
      */
     public void setIdFolder(int value) {
@@ -62,7 +62,7 @@ public class GetPagedFilesFromIdFolder {
     }
 
     /**
-     * Recupera il valore della proprietà da.
+     * Recupera il valore della proprieta da.
      * 
      */
     public int getDa() {
@@ -70,7 +70,7 @@ public class GetPagedFilesFromIdFolder {
     }
 
     /**
-     * Imposta il valore della proprietà da.
+     * Imposta il valore della proprieta da.
      * 
      */
     public void setDa(int value) {
@@ -78,7 +78,7 @@ public class GetPagedFilesFromIdFolder {
     }
 
     /**
-     * Recupera il valore della proprietà per.
+     * Recupera il valore della proprieta per.
      * 
      */
     public int getPer() {
@@ -86,7 +86,7 @@ public class GetPagedFilesFromIdFolder {
     }
 
     /**
-     * Imposta il valore della proprietà per.
+     * Imposta il valore della proprieta per.
      * 
      */
     public void setPer(int value) {

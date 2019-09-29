@@ -38,7 +38,7 @@ public class AssociaFileFolderResponse {
     protected FileResponse associaFileFolderResult;
 
     /**
-     * Recupera il valore della proprietà associaFileFolderResult.
+     * Recupera il valore della proprieta associaFileFolderResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class AssociaFileFolderResponse {
     }
 
     /**
-     * Imposta il valore della proprietà associaFileFolderResult.
+     * Imposta il valore della proprieta associaFileFolderResult.
      * 
      * @param value
      *     allowed object is

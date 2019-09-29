@@ -36,7 +36,7 @@ public class SignDocument {
     protected UnidocsFirma firma;
 
     /**
-     * Recupera il valore della proprietà firma.
+     * Recupera il valore della proprieta firma.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class SignDocument {
     }
 
     /**
-     * Imposta il valore della proprietà firma.
+     * Imposta il valore della proprieta firma.
      * 
      * @param value
      *     allowed object is

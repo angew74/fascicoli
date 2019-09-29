@@ -79,7 +79,7 @@ public class FileWf {
     protected int refIdFile;
 
     /**
-     * Recupera il valore della proprietà unidocFileList.
+     * Recupera il valore della proprieta unidocFileList.
      * 
      * @return
      *     possible object is
@@ -91,7 +91,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà unidocFileList.
+     * Imposta il valore della proprieta unidocFileList.
      * 
      * @param value
      *     allowed object is
@@ -103,7 +103,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà wfDeleted.
+     * Recupera il valore della proprieta wfDeleted.
      * 
      */
     public boolean isWfDeleted() {
@@ -111,7 +111,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà wfDeleted.
+     * Imposta il valore della proprieta wfDeleted.
      * 
      */
     public void setWfDeleted(boolean value) {
@@ -119,7 +119,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà statusDate.
+     * Recupera il valore della proprieta statusDate.
      * 
      * @return
      *     possible object is
@@ -131,7 +131,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà statusDate.
+     * Imposta il valore della proprieta statusDate.
      * 
      * @param value
      *     allowed object is
@@ -143,7 +143,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà statusPrevId.
+     * Recupera il valore della proprieta statusPrevId.
      * 
      */
     public int getStatusPrevId() {
@@ -151,7 +151,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà statusPrevId.
+     * Imposta il valore della proprieta statusPrevId.
      * 
      */
     public void setStatusPrevId(int value) {
@@ -159,7 +159,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà statusIsCurrent.
+     * Recupera il valore della proprieta statusIsCurrent.
      * 
      */
     public boolean isStatusIsCurrent() {
@@ -167,7 +167,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà statusIsCurrent.
+     * Imposta il valore della proprieta statusIsCurrent.
      * 
      */
     public void setStatusIsCurrent(boolean value) {
@@ -175,7 +175,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà statusCode.
+     * Recupera il valore della proprieta statusCode.
      * 
      * @return
      *     possible object is
@@ -187,7 +187,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà statusCode.
+     * Imposta il valore della proprieta statusCode.
      * 
      * @param value
      *     allowed object is
@@ -199,7 +199,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà wfGroupCode.
+     * Recupera il valore della proprieta wfGroupCode.
      * 
      * @return
      *     possible object is
@@ -211,7 +211,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà wfGroupCode.
+     * Imposta il valore della proprieta wfGroupCode.
      * 
      * @param value
      *     allowed object is
@@ -223,7 +223,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà wfInstanceCode.
+     * Recupera il valore della proprieta wfInstanceCode.
      * 
      * @return
      *     possible object is
@@ -235,7 +235,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà wfInstanceCode.
+     * Imposta il valore della proprieta wfInstanceCode.
      * 
      * @param value
      *     allowed object is
@@ -247,7 +247,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà refIdDoc.
+     * Recupera il valore della proprieta refIdDoc.
      * 
      */
     public int getRefIdDoc() {
@@ -255,7 +255,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà refIdDoc.
+     * Imposta il valore della proprieta refIdDoc.
      * 
      */
     public void setRefIdDoc(int value) {
@@ -263,7 +263,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà refIdWf.
+     * Recupera il valore della proprieta refIdWf.
      * 
      */
     public int getRefIdWf() {
@@ -271,7 +271,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà refIdWf.
+     * Imposta il valore della proprieta refIdWf.
      * 
      */
     public void setRefIdWf(int value) {
@@ -279,7 +279,7 @@ public class FileWf {
     }
 
     /**
-     * Recupera il valore della proprietà refIdFile.
+     * Recupera il valore della proprieta refIdFile.
      * 
      */
     public int getRefIdFile() {
@@ -287,7 +287,7 @@ public class FileWf {
     }
 
     /**
-     * Imposta il valore della proprietà refIdFile.
+     * Imposta il valore della proprieta refIdFile.
      * 
      */
     public void setRefIdFile(int value) {

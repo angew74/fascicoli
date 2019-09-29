@@ -36,7 +36,7 @@ public class SendMailResponse {
     protected FileResponse sendMailResult;
 
     /**
-     * Recupera il valore della proprietà sendMailResult.
+     * Recupera il valore della proprieta sendMailResult.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class SendMailResponse {
     }
 
     /**
-     * Imposta il valore della proprietà sendMailResult.
+     * Imposta il valore della proprieta sendMailResult.
      * 
      * @param value
      *     allowed object is

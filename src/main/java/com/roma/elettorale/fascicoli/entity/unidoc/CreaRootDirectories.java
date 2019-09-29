@@ -42,7 +42,7 @@ public class CreaRootDirectories {
     protected ArrayOfStrings dirs;
 
     /**
-     * Recupera il valore della proprietà root.
+     * Recupera il valore della proprieta root.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class CreaRootDirectories {
     }
 
     /**
-     * Imposta il valore della proprietà root.
+     * Imposta il valore della proprieta root.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class CreaRootDirectories {
     }
 
     /**
-     * Recupera il valore della proprietà dirs.
+     * Recupera il valore della proprieta dirs.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class CreaRootDirectories {
     }
 
     /**
-     * Imposta il valore della proprietà dirs.
+     * Imposta il valore della proprieta dirs.
      * 
      * @param value
      *     allowed object is

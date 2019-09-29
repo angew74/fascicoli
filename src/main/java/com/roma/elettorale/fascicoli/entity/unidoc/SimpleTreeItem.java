@@ -42,7 +42,7 @@ public class SimpleTreeItem
     protected String padre;
 
     /**
-     * Recupera il valore della proprietà path.
+     * Recupera il valore della proprieta path.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class SimpleTreeItem
     }
 
     /**
-     * Imposta il valore della proprietà path.
+     * Imposta il valore della proprieta path.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class SimpleTreeItem
     }
 
     /**
-     * Recupera il valore della proprietà padre.
+     * Recupera il valore della proprieta padre.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class SimpleTreeItem
     }
 
     /**
-     * Imposta il valore della proprietà padre.
+     * Imposta il valore della proprieta padre.
      * 
      * @param value
      *     allowed object is

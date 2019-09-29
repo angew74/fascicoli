@@ -38,7 +38,7 @@ public class WfDetachResponse {
     protected WorkFlow wfDetachResult;
 
     /**
-     * Recupera il valore della proprietà wfDetachResult.
+     * Recupera il valore della proprieta wfDetachResult.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class WfDetachResponse {
     }
 
     /**
-     * Imposta il valore della proprietà wfDetachResult.
+     * Imposta il valore della proprieta wfDetachResult.
      * 
      * @param value
      *     allowed object is

@@ -41,7 +41,7 @@ public class DeleteFile {
     protected boolean lastVersion;
 
     /**
-     * Recupera il valore della proprietà request.
+     * Recupera il valore della proprieta request.
      * 
      * @return
      *     possible object is
@@ -53,7 +53,7 @@ public class DeleteFile {
     }
 
     /**
-     * Imposta il valore della proprietà request.
+     * Imposta il valore della proprieta request.
      * 
      * @param value
      *     allowed object is
@@ -65,7 +65,7 @@ public class DeleteFile {
     }
 
     /**
-     * Recupera il valore della proprietà lastVersion.
+     * Recupera il valore della proprieta lastVersion.
      * 
      */
     public boolean isLastVersion() {
@@ -73,7 +73,7 @@ public class DeleteFile {
     }
 
     /**
-     * Imposta il valore della proprietà lastVersion.
+     * Imposta il valore della proprieta lastVersion.
      * 
      */
     public void setLastVersion(boolean value) {

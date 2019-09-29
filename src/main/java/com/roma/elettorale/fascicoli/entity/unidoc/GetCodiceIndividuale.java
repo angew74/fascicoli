@@ -38,7 +38,7 @@ public class GetCodiceIndividuale {
     protected String codiceFiscale;
 
     /**
-     * Recupera il valore della proprietà codiceFiscale.
+     * Recupera il valore della proprieta codiceFiscale.
      * 
      * @return
      *     possible object is
@@ -50,7 +50,7 @@ public class GetCodiceIndividuale {
     }
 
     /**
-     * Imposta il valore della proprietà codiceFiscale.
+     * Imposta il valore della proprieta codiceFiscale.
      * 
      * @param value
      *     allowed object is
