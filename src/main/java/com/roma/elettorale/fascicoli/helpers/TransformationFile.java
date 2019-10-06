@@ -10,6 +10,7 @@ import com.itextpdf.tool.xml.XMLWorkerHelper;
 import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
 import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
 import com.roma.elettorale.fascicoli.entity.unidoc.Metadato;
+import com.roma.elettorale.fascicoli.entity.unidoc.Upload;
 import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
 import com.roma.elettorale.fascicoli.entity.veri.*;
 import org.slf4j.Logger;
@@ -53,7 +54,7 @@ public class TransformationFile {
     @Autowired
     Environment env;
 
-    @Bean
+
     public Document convertStringToXMLDocument(String xmlString) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
@@ -68,6 +69,7 @@ public class TransformationFile {
         }
         return document;
     }
+
 
 
     static void recurse(NodeList list) {
@@ -98,14 +100,15 @@ public class TransformationFile {
     }
 
 
-    public UploadResponse convertXmltoUploadResponse(String xmlString)
+
+    public Upload convertXmltoUploadResponse(String xmlString)
     {
         JAXBContext jaxbContext;
-        UploadResponse uploadResponse = null;
+        Upload uploadResponse = null;
         try {
-            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse.class);
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.unidoc.Upload.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            uploadResponse = (UploadResponse) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
+            uploadResponse = (Upload) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
         } catch (JAXBException e) {
             e.printStackTrace();
             logger.error("ERR_26: " + e.getMessage());
@@ -129,7 +132,7 @@ public class TransformationFile {
     }
 
 
-    @Bean
+
     public static String getParamsString(Map<String, String> params)
             throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();
@@ -156,10 +159,8 @@ public class TransformationFile {
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true); // remove xml prolog
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true); // formatted output
-
             final QName name = new QName(Introspector.decapitalize(clazz.getSimpleName()));
             JAXBElement jaxbElement = new JAXBElement(name, clazz, o);
-
             StringWriter sw = new StringWriter();
             marshaller.marshal(jaxbElement, sw);
             document = convertStringToXMLDocument(sw.toString());
@@ -170,20 +171,27 @@ public class TransformationFile {
         }
     }
 
-    public String applyXSLToXml(Document xmlFile, String xslStyleSheet) {
+    public String applyXSLToXml(Document xmlFile, String xslStyleSheet,Boolean IsEstratto) {
         String faticaFinale = "";
         try {
-            String prova = convertDocumentToString(xmlFile);
-            File stylesheet = new File(env.getProperty("xslStyleSheet"));
+            File stylesheet = new File(xslStyleSheet);
             StreamSource stylesource = new StreamSource(stylesheet);
             Source xmlSource = new DOMSource(xmlFile);
             DOMResult result = new DOMResult();
             Transformer transformer = TransformerFactory.newInstance()
                     .newTransformer(stylesource);
-
             transformer.transform(xmlSource, result);
+            // prova
+            StreamResult console = new StreamResult(System.out);
+            transformer.transform(xmlSource, console);
+            // fine prova
             Document aff = (Document) result.getNode();
-            faticaFinale = modificaOutput(convertDocumentToString(aff));
+            if(IsEstratto) {
+                faticaFinale = modificaOutput(convertDocumentToString(aff));
+            }
+            else {
+                faticaFinale = convertDocumentToString(aff);
+            }
         } catch (TransformerException e) {
             logger.debug("ERR_08: " + e.getMessage());
             e.printStackTrace();
@@ -225,6 +233,29 @@ public class TransformationFile {
         return  nomeCertificato;
     }
 
+    public Document ConvertStringToXmlDocument(String xmlString)
+    {
+        //Parser that produces DOM object trees from XML content
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        //API to obtain DOM Document instance
+        DocumentBuilder builder = null;
+        try
+        {
+            //Create DocumentBuilder with default configuration
+            builder = factory.newDocumentBuilder();
+            //Parse the content to Document object
+            Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
+            return doc;
+        }
+        catch (Exception e)
+        {
+            logger.error("ERR_22 dettagli: "  +e.getMessage() + " "+ e.getCause());
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
     public byte[] createPdf(String Xmldocument) {
         String h = Xmldocument.replace("&lt;br&gt;", "<br />").replace("&lt;br /&gt;", "<br />");
         com.itextpdf.text.Document document = new com.itextpdf.text.Document(PageSize.A4, 40, 40, 20, 30);
@@ -236,9 +267,6 @@ public class TransformationFile {
             writer.setPdfVersion(PdfWriter.VERSION_1_7);
             writer.setCompressionLevel(PdfStream.BEST_COMPRESSION);
             writer.setFullCompression();
-            // h.replace(@"\s"," ");
-            // var spacesSquashed = Regex.Replace(h, @ "\s+", " ", RegexOptions.Singleline).Trim();
-            // String newh =  h.replace("xmlns:ns3=\"http://tempuri.org\/EstrNas.xsd\","");
             document.open();
             Paragraph pLogo = new Paragraph();
             String IMG = env.getProperty("EstrattoLogo");
@@ -338,6 +366,10 @@ public class TransformationFile {
             e.printStackTrace();
         }
         return xmlContent;
+    }
+
+    public static String ParsingTag(String tag, Document document) {
+        return document.getElementsByTagName(tag).item(0).getTextContent();
     }
 
     public String Decrypt(String str, String thePassword)

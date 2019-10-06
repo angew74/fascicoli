@@ -1,45 +1,22 @@
 package com.roma.elettorale.fascicoli.entity.unidoc;
 
-import javax.xml.bind.annotation.*;
+public class UploadResponse
+{
+    private Message Message;
 
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UploadResponse", namespace = "", propOrder = {
-        "message" ,
-        "downloadUrl"
-})
-public class UploadResponse {
-
-    public UploadResponse() {
-        this.message = new message();
+    public Message getMessage ()
+    {
+        return Message;
     }
 
-    public UploadResponse(String codice, String livello, String attore, String descrizione) {
-        this.message = new message();
+    public void setMessage (Message Message)
+    {
+        this.Message = Message;
     }
 
-
-    public String getDownloadUrl() {
-        return downloadUrl;
+    @Override
+    public String toString()
+    {
+        return "ClassPojo [Message = "+Message+"]";
     }
-
-    public message getMessage() {
-        return message;
-    }
-
-    public void setDownloadUrl(String downloadUrl) {
-        this.downloadUrl = downloadUrl;
-    }
-
-    public void setMessage(message message) {
-        this.message = message;
-    }
-
-    @XmlElement(name = "DownLoadUrl", namespace = "http://tempuri.org/")
-    protected String downloadUrl;
-
-    @XmlElement(name = "Message", namespace = "http://tempuri.org/")
-    protected message message;
-
-
 }

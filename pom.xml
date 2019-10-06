@@ -195,6 +195,15 @@
             <artifactId>xmlsec</artifactId>
             <version>2.1.4</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ws</groupId>
+            <artifactId>spring-ws-support</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -204,7 +213,7 @@
                     <version>2.4</version>
                     <executions>
                         <execution>
-                            <id>xjc</id>
+                            <id>certi</id>
                             <goals>
                                 <goal>xjc</goal>
                             </goals>
@@ -224,25 +233,33 @@
                 </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>pap</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- <wsdl>true</wsdl>
+                     <xmlschema>false</xmlschema>-->
+                    <packageName>com.roma.elettorale.fascicoli.entity.pap</packageName>
+                    <sourceType>wsdl</sourceType>
+                    <sources>
+                        <source>src/main/resources/wsdl/nva.wsdl</source>
+                    </sources>
+                    <outputDirectory>${project.basedir}/target/generated-sources</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.4.1</version>
                 <executions>
-                 <!--   <execution>
-                        <id>certi</id>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlDirectory>src/main/resources/wsdl</wsdlDirectory>
-                            <wsdlFiles>
-                                <wsdlFile>Certiws.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName>com.roma.elettorale.fascicoli.entity.certi</packageName>
-                            <vmArgs>
-                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
-                            </vmArgs>
-                        </configuration>
-                    </execution>-->
                     <execution>
                         <id>unidoc</id>
                         <goals>

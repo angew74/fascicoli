@@ -47,7 +47,7 @@ public class ElaborazioneEstratti {
             Document estrattoCompleto = transformationFile.convertClassToDocument(estratto);
             String xsltTransformation = env.getProperty("xslStyleSheet");
             // parte di controllo
-            String estrattoFinale = transformationFile.applyXSLToXml(estrattoCompleto,xsltTransformation);
+            String estrattoFinale = transformationFile.applyXSLToXml(estrattoCompleto,xsltTransformation,true);
             result =transformationFile.createPdf(estrattoFinale);
         }
         else {

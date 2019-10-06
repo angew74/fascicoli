@@ -40,11 +40,11 @@ public class VeriData {
         VeriData vd = new VeriData();
         String codind = document.getElementsByTagName("CodiceIndiv").item(0).getTextContent();
         if (codind != null) {
-            vd.setNome(ParsingTag("NomePersona", document));
-            vd.setCognome(ParsingTag("CognomePersona", document));
-            vd.setCodiceFiscale(ParsingTag("CodiceFiscale", document));
-            vd.setDataNascita(ParsingTag("DataDiNascitaPersona", document));
-            String xmlSring = ParsingTag("RawXml", document);
+            vd.setNome(transformationFile.ParsingTag("NomePersona", document));
+            vd.setCognome(transformationFile.ParsingTag("CognomePersona", document));
+            vd.setCodiceFiscale(transformationFile.ParsingTag("CodiceFiscale", document));
+            vd.setDataNascita(transformationFile.ParsingTag("DataDiNascitaPersona", document));
+            String xmlSring = transformationFile.ParsingTag("RawXml", document);
             vd.setAttoNascita(new AttoNascita());
             vd.getAttoNascita().Numero = readValueN("NATTNAS|",xmlSring, 5);
             vd.getAttoNascita().Parte = readValueN("PATTNAS|",xmlSring, 1);
@@ -55,6 +55,7 @@ public class VeriData {
         }
         return vd;
     }
+
 
     public static String readValueN(String key ,String xmlString, int length) {
         int legnghtKey = key.length();
@@ -73,10 +74,6 @@ public class VeriData {
             }
         }
         return valore;
-    }
-
-    public static String ParsingTag(String tag, Document document) {
-        return document.getElementsByTagName(tag).item(0).getTextContent();
     }
 
     public boolean isTrovato() {

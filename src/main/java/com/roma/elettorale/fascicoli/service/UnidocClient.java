@@ -1,6 +1,7 @@
 package com.roma.elettorale.fascicoli.service;
 
 import com.roma.elettorale.fascicoli.entity.unidoc.*;
+import com.roma.elettorale.fascicoli.helpers.MultipartUtil;
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusfiles;
 import com.roma.elettorale.fascicoli.helpers.enumerators.unidocmetadata;
@@ -12,10 +13,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -33,6 +31,8 @@ public class UnidocClient extends WebServiceGatewaySupport {
 
     @Autowired
     TransformationFile ttransformation;
+
+
 
 
     /*
@@ -67,7 +67,7 @@ public class UnidocClient extends WebServiceGatewaySupport {
         try {
             URL urlUnidocService = new URL(env.getProperty("serviziounidoc"));
             ControllerOperazioniWS controllerOperazioniWS = new ControllerOperazioniWS(urlUnidocService);
-            String service = env.getProperty("servizioverifica");
+          //  String service = env.getProperty("servizioverifica");
             fileResponse = controllerOperazioniWS.getControllerOperazioniWSSoap().addFile(fileRequest);
 
         } catch (Exception ex) {
@@ -146,6 +146,45 @@ public class UnidocClient extends WebServiceGatewaySupport {
     }
 */
 
+
+    public String postFileUploadRaw(byte[] File, String idfile) {
+        String service = env.getProperty("uploadFile");
+        StringBuilder response = new StringBuilder();
+        response.append("OK");
+        try {
+            URL url = new URL(service);
+            MultipartUtil multipartUtil = new MultipartUtil(service,"UTF-8",false);
+            PrintWriter printWriter =  multipartUtil.setup_writer();
+            multipartUtil.addFilePart(idfile,idfile,File);
+            HttpURLConnection httpURLConnection =  multipartUtil.finish();
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(httpURLConnection.getInputStream()));
+            String inputLine;
+            StringBuffer content = new StringBuffer();
+            while ((inputLine = in.readLine()) != null) {
+                content.append(inputLine);
+            }
+            int status = httpURLConnection.getResponseCode();
+            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString()).getUploadResponse();
+            Reader streamReader = null;
+            if (status > 299) {
+                streamReader = new InputStreamReader(httpURLConnection.getErrorStream());
+                response = new StringBuilder();
+                response.append("ERR_28 Errore di connessione status: " + status);
+                logger.error("ERR_28 Errore di connessione status " + status);
+            }
+            in.close();
+            httpURLConnection.disconnect();
+        }
+        catch (Exception ex) {
+            logger.error("ERR_16BIS: " + ex.getMessage());
+            response = new StringBuilder();
+            response.append("ERR_16BIS: " + ex.getMessage());
+            System.out.println("Exception: " + ex.getMessage());
+        }
+        return response.toString();
+    }
+
     public String postFileUpload(byte[] File, String idfile) {
         String service = env.getProperty("uploadFile");
         StringBuilder response = new StringBuilder();
@@ -178,7 +217,7 @@ public class UnidocClient extends WebServiceGatewaySupport {
             while ((inputLine = in.readLine()) != null) {
                 content.append(inputLine);
             }
-            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString());
+            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString()).getUploadResponse();
             Reader streamReader = null;
             if (status > 299) {
                 streamReader = new InputStreamReader(con.getErrorStream());

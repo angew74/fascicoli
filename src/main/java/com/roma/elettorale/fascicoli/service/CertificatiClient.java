@@ -1,18 +1,9 @@
 package com.roma.elettorale.fascicoli.service;
 
 
+import com.roma.elettorale.fascicoli.configuration.SoapClientCertiConfig;
 import com.roma.elettorale.fascicoli.entity.certi.*;
-import com.roma.elettorale.fascicoli.extensions.LogHttpHeaderClientInterceptor;
-import com.roma.elettorale.fascicoli.helpers.RijndaelCrypt;
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
-import org.apache.cxf.interceptor.LoggingOutInterceptor;
-import org.apache.poi.dev.OOXMLLister;
-import org.apache.ws.security.WSConstants;
-import org.apache.ws.security.handler.WSHandlerConstants;
-import org.apache.ws.security.util.Base64;
-import org.apache.wss4j.dom.engine.WSSConfig;
-import org.apache.wss4j.dom.engine.WSSecurityEngine;
-import org.apache.xmlbeans.impl.soap.SOAPHeaderElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,26 +13,12 @@ import org.springframework.ws.WebServiceMessage;
 import org.springframework.ws.client.core.WebServiceMessageCallback;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import org.springframework.ws.client.support.interceptor.ClientInterceptor;
-import org.springframework.ws.soap.SoapElement;
-import org.springframework.ws.soap.SoapHeader;
 import org.springframework.ws.soap.SoapHeaderElement;
-import org.springframework.ws.soap.SoapMessage;
 import org.springframework.ws.soap.saaj.SaajSoapMessage;
-import org.springframework.ws.soap.security.wss4j2.Wss4jSecurityInterceptor;
 
 
 import javax.xml.namespace.QName;
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.ws.Endpoint;
-import javax.xml.ws.Holder;
-import javax.xml.ws.Service;
-import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 
@@ -107,7 +84,7 @@ public class CertificatiClient extends WebServiceGatewaySupport {
                     UUID uuid = UUID.randomUUID();
                     messageId.setText("uuid:" + uuid.toString());
                     SoapHeaderElement to = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "To", "wsa"));
-                    to.setText("http://10.173.2.184/CertiWS/CertiService.asmx");
+                    to.setText("http://10.173.9.48/CertiWS/CertiService.asmx");
                     SoapHeaderElement action = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Action", "wsa"));
                     action.setText("http://www.comune.roma.it/certificati/richiestaCredenziali");
                     final String mesPrefix = "wsa";
@@ -172,7 +149,7 @@ public class CertificatiClient extends WebServiceGatewaySupport {
                     UUID uuid = UUID.randomUUID();
                     messageId.setText("uuid:" + uuid.toString());
                     SoapHeaderElement to = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "To", "wsa"));
-                    to.setText("http://10.173.2.184/CertiWS/CertiService.asmx");
+                    to.setText(env.getProperty("certificatiservice"));
                     SoapHeaderElement action = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Action", "wsa"));
                     action.setText("http://www.comune.roma.it/certificati/verificaEmettibilita");
                     final String mesPrefix = "wsa";

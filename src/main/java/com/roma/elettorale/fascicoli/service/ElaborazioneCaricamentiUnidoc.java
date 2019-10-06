@@ -201,7 +201,7 @@ public class ElaborazioneCaricamentiUnidoc {
                         log.info("salvo il file " + info.getNomeOriginale() + " su filesystem");
                         System.out.println("salvo il file " + info.getNomeOriginale() + " su filesystem");
                         String idfile =String.valueOf(response.getChiave());
-                        esito.append(unidocClient.postFileUpload(estratto,idfile));
+                        esito.append(unidocClient.postFileUploadRaw(estratto,idfile));
                         if (!(esito.toString().equals("OK"))) {
                             log.error("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
                             System.out.println("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
