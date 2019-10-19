@@ -10,7 +10,7 @@ import com.itextpdf.tool.xml.XMLWorkerHelper;
 import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
 import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
 import com.roma.elettorale.fascicoli.entity.unidoc.Metadato;
-import com.roma.elettorale.fascicoli.entity.unidoc.Upload;
+import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
 import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
 import com.roma.elettorale.fascicoli.entity.veri.*;
 import org.slf4j.Logger;
@@ -88,7 +88,7 @@ public class TransformationFile {
         JAXBContext jaxbContext;
         VERICODRESPONSE vericodresponse = null;
         try {
-            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE.class, ObjectFactoryVeri.class);
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE.class, ObjectFactoryVeriCodResponse.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             vericodresponse = (VERICODRESPONSE) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
             System.out.println(vericodresponse);
@@ -101,14 +101,14 @@ public class TransformationFile {
 
 
 
-    public Upload convertXmltoUploadResponse(String xmlString)
+    public UploadResponse convertXmltoUploadResponse(String xmlString)
     {
         JAXBContext jaxbContext;
-        Upload uploadResponse = null;
+        UploadResponse uploadResponse = null;
         try {
-            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.unidoc.Upload.class);
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            uploadResponse = (Upload) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
+            uploadResponse = (UploadResponse) jaxbUnmarshaller.unmarshal(new StringReader(xmlString));
         } catch (JAXBException e) {
             e.printStackTrace();
             logger.error("ERR_26: " + e.getMessage());
@@ -330,11 +330,28 @@ public class TransformationFile {
         Locale.setDefault(Locale.ENGLISH);
         String xmlContent = "";
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICOD.class, ObjectFactory.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERICOD.class, ObjectFactoryVeriCod.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             StringWriter sw = new StringWriter();
             jaxbMarshaller.marshal(vericod, sw);
+            xmlContent = sw.toString();
+        } catch (JAXBException e) {
+            logger.debug("ERR_10: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return xmlContent;
+    }
+
+    public String jaxbObjectToXMLVeriric(VERIRIC veriric) {
+        Locale.setDefault(Locale.ENGLISH);
+        String xmlContent = "";
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.veri.VERIRIC.class, ObjectFactoryVeriRic.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            StringWriter sw = new StringWriter();
+            jaxbMarshaller.marshal(veriric, sw);
             xmlContent = sw.toString();
         } catch (JAXBException e) {
             logger.debug("ERR_10: " + e.getMessage());
@@ -392,7 +409,6 @@ public class TransformationFile {
         {
            // String thePassword = "%cFRm*F)N9Rq[6#5";
             PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(thePassword,SALT);
-
             byte[] encryptedData = DatatypeConverter.parseBase64Binary(str);
             byte[] key = passwordDeriveBytes.getBytes(32);
             byte[] IV =  passwordDeriveBytes.getBytes(16);

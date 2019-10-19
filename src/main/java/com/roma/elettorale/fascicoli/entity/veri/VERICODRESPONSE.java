@@ -49,7 +49,19 @@ import javax.xml.bind.annotation.XmlType;
  *             &lt;/complexContent>
  *           &lt;/complexType>
  *         &lt;/element>
- *         &lt;element name="Messaggi" type="{http://tempuri.org/TipiBase.xsd}BaseMessaggioAnag" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="Messaggi" maxOccurs="unbounded" minOccurs="0">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="Codice" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                   &lt;element name="Livello" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                   &lt;element name="Descrizione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -72,7 +84,7 @@ public class VERICODRESPONSE {
     @XmlElement(name = "Verifica", required = true)
     protected VERICODRESPONSE.Verifica verifica;
     @XmlElement(name = "Messaggi")
-    protected List<BaseMessaggioAnag> messaggi;
+    protected List<VERICODRESPONSE.Messaggi> messaggi;
 
     /**
      * Gets the value of the personaElenco property.
@@ -104,7 +116,7 @@ public class VERICODRESPONSE {
     }
 
     /**
-     * Recupera il valore della proprietà verifica.
+     * Recupera il valore della propriet verifica.
      * 
      * @return
      *     possible object is
@@ -116,7 +128,7 @@ public class VERICODRESPONSE {
     }
 
     /**
-     * Imposta il valore della proprietà verifica.
+     * Imposta il valore della propriet verifica.
      * 
      * @param value
      *     allowed object is
@@ -145,15 +157,126 @@ public class VERICODRESPONSE {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link BaseMessaggioAnag }
+     * {@link VERICODRESPONSE.Messaggi }
      * 
      * 
      */
-    public List<BaseMessaggioAnag> getMessaggi() {
+    public List<VERICODRESPONSE.Messaggi> getMessaggi() {
         if (messaggi == null) {
-            messaggi = new ArrayList<BaseMessaggioAnag>();
+            messaggi = new ArrayList<VERICODRESPONSE.Messaggi>();
         }
         return this.messaggi;
+    }
+
+
+    /**
+     * <p>Classe Java per anonymous complex type.
+     * 
+     * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="Codice" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *         &lt;element name="Livello" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *         &lt;element name="Descrizione" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "codice",
+        "livello",
+        "descrizione"
+    })
+    public static class Messaggi {
+
+        @XmlElementRef(name = "Codice", type = JAXBElement.class, required = false)
+        protected JAXBElement<String> codice;
+        @XmlElementRef(name = "Livello", type = JAXBElement.class, required = false)
+        protected JAXBElement<String> livello;
+        @XmlElementRef(name = "Descrizione", type = JAXBElement.class, required = false)
+        protected JAXBElement<String> descrizione;
+
+        /**
+         * Recupera il valore della propriet codice.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public JAXBElement<String> getCodice() {
+            return codice;
+        }
+
+        /**
+         * Imposta il valore della propriet codice.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public void setCodice(JAXBElement<String> value) {
+            this.codice = value;
+        }
+
+        /**
+         * Recupera il valore della propriet livello.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public JAXBElement<String> getLivello() {
+            return livello;
+        }
+
+        /**
+         * Imposta il valore della propriet livello.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public void setLivello(JAXBElement<String> value) {
+            this.livello = value;
+        }
+
+        /**
+         * Recupera il valore della propriet descrizione.
+         * 
+         * @return
+         *     possible object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public JAXBElement<String> getDescrizione() {
+            return descrizione;
+        }
+
+        /**
+         * Imposta il valore della propriet descrizione.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link JAXBElement }{@code <}{@link String }{@code >}
+         *     
+         */
+        public void setDescrizione(JAXBElement<String> value) {
+            this.descrizione = value;
+        }
+
     }
 
 
@@ -206,7 +329,7 @@ public class VERICODRESPONSE {
         protected JAXBElement<String> codiceFiscale;
 
         /**
-         * Recupera il valore della proprietà codiceIndiv.
+         * Recupera il valore della propriet codiceIndiv.
          * 
          * @return
          *     possible object is
@@ -218,7 +341,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà codiceIndiv.
+         * Imposta il valore della propriet codiceIndiv.
          * 
          * @param value
          *     allowed object is
@@ -230,7 +353,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Recupera il valore della proprietà sessoPersona.
+         * Recupera il valore della propriet sessoPersona.
          * 
          * @return
          *     possible object is
@@ -242,7 +365,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà sessoPersona.
+         * Imposta il valore della propriet sessoPersona.
          * 
          * @param value
          *     allowed object is
@@ -254,7 +377,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Recupera il valore della proprietà cognomePersona.
+         * Recupera il valore della propriet cognomePersona.
          * 
          * @return
          *     possible object is
@@ -266,7 +389,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà cognomePersona.
+         * Imposta il valore della propriet cognomePersona.
          * 
          * @param value
          *     allowed object is
@@ -278,7 +401,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Recupera il valore della proprietà nomePersona.
+         * Recupera il valore della propriet nomePersona.
          * 
          * @return
          *     possible object is
@@ -290,7 +413,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà nomePersona.
+         * Imposta il valore della propriet nomePersona.
          * 
          * @param value
          *     allowed object is
@@ -302,7 +425,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Recupera il valore della proprietà dataDiNascitaPersona.
+         * Recupera il valore della propriet dataDiNascitaPersona.
          * 
          * @return
          *     possible object is
@@ -314,7 +437,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà dataDiNascitaPersona.
+         * Imposta il valore della propriet dataDiNascitaPersona.
          * 
          * @param value
          *     allowed object is
@@ -326,7 +449,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Recupera il valore della proprietà codiceFiscale.
+         * Recupera il valore della propriet codiceFiscale.
          * 
          * @return
          *     possible object is
@@ -338,7 +461,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà codiceFiscale.
+         * Imposta il valore della propriet codiceFiscale.
          * 
          * @param value
          *     allowed object is
@@ -381,7 +504,7 @@ public class VERICODRESPONSE {
         protected String rawXml;
 
         /**
-         * Recupera il valore della proprietà rawXml.
+         * Recupera il valore della propriet rawXml.
          * 
          * @return
          *     possible object is
@@ -393,7 +516,7 @@ public class VERICODRESPONSE {
         }
 
         /**
-         * Imposta il valore della proprietà rawXml.
+         * Imposta il valore della propriet rawXml.
          * 
          * @param value
          *     allowed object is

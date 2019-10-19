@@ -84,7 +84,7 @@ public class CertificatiClient extends WebServiceGatewaySupport {
                     UUID uuid = UUID.randomUUID();
                     messageId.setText("uuid:" + uuid.toString());
                     SoapHeaderElement to = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "To", "wsa"));
-                    to.setText("http://10.173.9.48/CertiWS/CertiService.asmx");
+                    to.setText("http://10.173.2.168/CertiWS/CertiService.asmx");
                     SoapHeaderElement action = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Action", "wsa"));
                     action.setText("http://www.comune.roma.it/certificati/richiestaCredenziali");
                     final String mesPrefix = "wsa";
@@ -174,7 +174,7 @@ public class CertificatiClient extends WebServiceGatewaySupport {
                         UUID uuid = UUID.randomUUID();
                         messageId.setText("uuid:" + uuid.toString());
                         SoapHeaderElement to = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "To", "wsa"));
-                        to.setText("http://10.173.2.184/CertiWS/CertiService.asmx");
+                        to.setText("http://10.173.2.168/CertiWS/CertiService.asmx");
                         SoapHeaderElement action = soapMessage.getSoapHeader().addHeaderElement(new QName("http://schemas.xmlsoap.org/ws/2004/03/addressing", "Action", "wsa"));
                         action.setText("http://www.comune.roma.it/certificati/richiestaCertificati");
                         final String mesPrefix = "wsa";

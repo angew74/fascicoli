@@ -9,5 +9,6 @@ public enum statusoperazione {
     ERRORE,
     NINETE,
     NIENTE,
-    CITTADINO_NON_TROVATO
+    CITTADINO_NON_TROVATO,
+    TROVATI_PIU_CITTADINI
 }

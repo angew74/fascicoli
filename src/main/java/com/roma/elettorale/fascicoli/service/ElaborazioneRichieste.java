@@ -58,7 +58,8 @@ public class ElaborazioneRichieste {
 
     public void createCertificato() {
         //   List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(0);
-        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(), "ESN");
+        // List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
+        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(),"ESN");
         String codiceindividuale = "";
         String codicecertificato = "";
         byte[] estratto = null;
@@ -81,6 +82,7 @@ public class ElaborazioneRichieste {
                     status = statusoperazione.CITTADINO_NON_TROVATO.ordinal();
                     c.setFlgoperazione(status);
                     c.setDescrizioneerrore("CITTADINO NON TROVATO");
+                    c.setDataoperazione(LocalDateTime.now());
                     caricamentoService.Save(c);
                 }
             }
@@ -95,15 +97,19 @@ public class ElaborazioneRichieste {
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito);
                             if (esito.equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
+                            } else if (esito.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                             }
                             c.setFlgoperazione(status);
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;
@@ -112,17 +118,19 @@ public class ElaborazioneRichieste {
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.toString().equals("")) {
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito);
-                            if (esito.toString().equals("")) {
+                            if (esito.toString().equals("OK")) {
                                 status = statusoperazione.ELABORATO.ordinal();
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                             }
                             c.setFlgoperazione(status);
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;
@@ -133,15 +141,19 @@ public class ElaborazioneRichieste {
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
+                            } else if (esito.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                             }
                             c.setFlgoperazione(status);
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;
@@ -152,15 +164,19 @@ public class ElaborazioneRichieste {
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
+                            } else if (esito.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                             }
+                            c.setDataoperazione(LocalDateTime.now());
                             c.setFlgoperazione(status);
                             caricamentoService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;
@@ -171,15 +187,19 @@ public class ElaborazioneRichieste {
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
+                            } else if (esito.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                             }
                             c.setFlgoperazione(status);
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;
@@ -198,12 +218,14 @@ public class ElaborazioneRichieste {
                                 status = statusoperazione.ERRORE.ordinal();
                                 c.setFlgoperazione(status);
                                 c.setDescrizioneerrore(esito.toString());
+                                c.setDataoperazione(LocalDateTime.now());
                                 caricamentoService.Save(c);
                             }
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
+                            c.setDataoperazione(LocalDateTime.now());
                             caricamentoService.Save(c);
                         }
                         break;

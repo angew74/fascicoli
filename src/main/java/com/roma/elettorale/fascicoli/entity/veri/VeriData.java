@@ -12,6 +12,7 @@ public class VeriData {
     private String Nome;
     private String Cognome;
     private String DataNascita;
+    private String CodiceIndividuale;
     private com.roma.elettorale.fascicoli.entity.veri.AttoNascita AttoNascita;
 
     @Autowired
@@ -123,6 +124,15 @@ public class VeriData {
     public void setAttoNascita(AttoNascita attoNascita) {
         AttoNascita = attoNascita;
     }
+
+    public String getCodiceIndividuale() {
+        return CodiceIndividuale;
+    }
+
+    public void setCodiceIndividuale(String codiceIndividuale) {
+        CodiceIndividuale = codiceIndividuale;
+    }
 }
+
 
 

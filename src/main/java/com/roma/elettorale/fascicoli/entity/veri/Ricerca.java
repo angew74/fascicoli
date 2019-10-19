@@ -1,5 +1,6 @@
-
 package com.roma.elettorale.fascicoli.entity.veri;
+
+
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -12,9 +13,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Classe Java per anonymous complex type.
- * 
+ *
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -43,15 +44,15 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "parametri",
-    "tipoVerifica",
-    "filtroPersone",
-    "tipoRicerca"
+        "parametri",
+        "tipoVerifica",
+        "filtroPersone",
+        "tipoRicerca"
 })
 @XmlRootElement(name = "Ricerca", namespace = "http://tempuri.org/VERICOD.xsd")
 public class Ricerca {
@@ -66,96 +67,97 @@ public class Ricerca {
     protected String tipoRicerca;
 
     /**
-     * Recupera il valore della proprietà parametri.
-     * 
+     * Recupera il valore della proprietï¿½ parametri.
+     *
      * @return
      *     possible object is
      *     {@link Ricerca.Parametri }
-     *     
+     *
      */
     public Ricerca.Parametri getParametri() {
         return parametri;
     }
 
     /**
-     * Imposta il valore della proprietà parametri.
-     * 
+     * Imposta il valore della proprietï¿½ parametri.
+     *
      * @param value
      *     allowed object is
      *     {@link Ricerca.Parametri }
-     *     
+     *
      */
     public void setParametri(Ricerca.Parametri value) {
         this.parametri = value;
     }
 
+
     /**
-     * Recupera il valore della proprietà tipoVerifica.
-     * 
+     * Recupera il valore della proprietï¿½ tipoVerifica.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getTipoVerifica() {
         return tipoVerifica;
     }
 
     /**
-     * Imposta il valore della proprietà tipoVerifica.
-     * 
+     * Imposta il valore della proprietï¿½ tipoVerifica.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTipoVerifica(String value) {
         this.tipoVerifica = value;
     }
 
     /**
-     * Recupera il valore della proprietà filtroPersone.
-     * 
+     * Recupera il valore della proprietï¿½ filtroPersone.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getFiltroPersone() {
         return filtroPersone;
     }
 
     /**
-     * Imposta il valore della proprietà filtroPersone.
-     * 
+     * Imposta il valore della proprietï¿½ filtroPersone.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setFiltroPersone(String value) {
         this.filtroPersone = value;
     }
 
     /**
-     * Recupera il valore della proprietà tipoRicerca.
-     * 
+     * Recupera il valore della proprietï¿½ tipoRicerca.
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getTipoRicerca() {
         return tipoRicerca;
     }
 
     /**
-     * Imposta il valore della proprietà tipoRicerca.
-     * 
+     * Imposta il valore della proprietï¿½ tipoRicerca.
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setTipoRicerca(String value) {
         this.tipoRicerca = value;
@@ -164,9 +166,9 @@ public class Ricerca {
 
     /**
      * <p>Classe Java per anonymous complex type.
-     * 
+     *
      * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -182,16 +184,16 @@ public class Ricerca {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "codFis",
-        "codInd",
-        "dataRiferimento",
-        "codFam",
-        "carID"
+            "codFis",
+            "codInd",
+            "dataRiferimento",
+            "codFam",
+            "carID"
     })
     public static class Parametri {
 
@@ -207,120 +209,120 @@ public class Ricerca {
         protected JAXBElement<String> carID;
 
         /**
-         * Recupera il valore della proprietà codFis.
-         * 
+         * Recupera il valore della proprietï¿½ codFis.
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public JAXBElement<String> getCodFis() {
             return codFis;
         }
 
         /**
-         * Imposta il valore della proprietà codFis.
-         * 
+         * Imposta il valore della proprietï¿½ codFis.
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public void setCodFis(JAXBElement<String> value) {
             this.codFis = value;
         }
 
         /**
-         * Recupera il valore della proprietà codInd.
-         * 
+         * Recupera il valore della proprietï¿½ codInd.
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public JAXBElement<String> getCodInd() {
             return codInd;
         }
 
         /**
-         * Imposta il valore della proprietà codInd.
-         * 
+         * Imposta il valore della proprietï¿½ codInd.
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public void setCodInd(JAXBElement<String> value) {
             this.codInd = value;
         }
 
         /**
-         * Recupera il valore della proprietà dataRiferimento.
-         * 
+         * Recupera il valore della proprietï¿½ dataRiferimento.
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public JAXBElement<String> getDataRiferimento() {
             return dataRiferimento;
         }
 
         /**
-         * Imposta il valore della proprietà dataRiferimento.
-         * 
+         * Imposta il valore della proprietï¿½ dataRiferimento.
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public void setDataRiferimento(JAXBElement<String> value) {
             this.dataRiferimento = value;
         }
 
         /**
-         * Recupera il valore della proprietà codFam.
-         * 
+         * Recupera il valore della proprietï¿½ codFam.
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public JAXBElement<String> getCodFam() {
             return codFam;
         }
 
         /**
-         * Imposta il valore della proprietà codFam.
-         * 
+         * Imposta il valore della proprietï¿½ codFam.
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public void setCodFam(JAXBElement<String> value) {
             this.codFam = value;
         }
 
         /**
-         * Recupera il valore della proprietà carID.
-         * 
+         * Recupera il valore della proprietï¿½ carID.
+         *
          * @return
          *     possible object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public JAXBElement<String> getCarID() {
             return carID;
         }
 
         /**
-         * Imposta il valore della proprietà carID.
-         * 
+         * Imposta il valore della proprietï¿½ carID.
+         *
          * @param value
          *     allowed object is
          *     {@link JAXBElement }{@code <}{@link String }{@code >}
-         *     
+         *
          */
         public void setCarID(JAXBElement<String> value) {
             this.carID = value;

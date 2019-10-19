@@ -22,7 +22,7 @@ public class ElaborazioneCertificati {
         CertificatoType certificatoType = new CertificatoType();
         try {
             certificatoType = certificatiClient.GeneraCertificato("SYSTEM", codiceindividuale, "127.0.0.1", codiceCerti, esito);
-            if (esito.equals("") && !certificatoType.isEmettibile()) { //aggiorno il file degli scartati
+            if (certificatoType.isEmettibile() == false) { //aggiorno il file degli scartati
                 esito.append("Certificato non emettibile");
             }
         } catch (Exception ex) {

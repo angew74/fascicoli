@@ -67,7 +67,7 @@ public class VERICOD {
     protected VERICOD.Ricerca ricerca;
 
     /**
-     * Recupera il valore della proprietà ricerca.
+     * Recupera il valore della propriet ricerca.
      * 
      * @return
      *     possible object is
@@ -79,7 +79,7 @@ public class VERICOD {
     }
 
     /**
-     * Imposta il valore della proprietà ricerca.
+     * Imposta il valore della propriet ricerca.
      * 
      * @param value
      *     allowed object is
@@ -146,7 +146,7 @@ public class VERICOD {
         protected String tipoRicerca;
 
         /**
-         * Recupera il valore della proprietà parametri.
+         * Recupera il valore della propriet parametri.
          * 
          * @return
          *     possible object is
@@ -158,7 +158,7 @@ public class VERICOD {
         }
 
         /**
-         * Imposta il valore della proprietà parametri.
+         * Imposta il valore della propriet parametri.
          * 
          * @param value
          *     allowed object is
@@ -170,7 +170,7 @@ public class VERICOD {
         }
 
         /**
-         * Recupera il valore della proprietà tipoVerifica.
+         * Recupera il valore della propriet tipoVerifica.
          * 
          * @return
          *     possible object is
@@ -182,7 +182,7 @@ public class VERICOD {
         }
 
         /**
-         * Imposta il valore della proprietà tipoVerifica.
+         * Imposta il valore della propriet tipoVerifica.
          * 
          * @param value
          *     allowed object is
@@ -194,7 +194,7 @@ public class VERICOD {
         }
 
         /**
-         * Recupera il valore della proprietà filtroPersone.
+         * Recupera il valore della propriet filtroPersone.
          * 
          * @return
          *     possible object is
@@ -206,7 +206,7 @@ public class VERICOD {
         }
 
         /**
-         * Imposta il valore della proprietà filtroPersone.
+         * Imposta il valore della propriet filtroPersone.
          * 
          * @param value
          *     allowed object is
@@ -218,7 +218,7 @@ public class VERICOD {
         }
 
         /**
-         * Recupera il valore della proprietà tipoRicerca.
+         * Recupera il valore della propriet tipoRicerca.
          * 
          * @return
          *     possible object is
@@ -230,7 +230,7 @@ public class VERICOD {
         }
 
         /**
-         * Imposta il valore della proprietà tipoRicerca.
+         * Imposta il valore della propriet tipoRicerca.
          * 
          * @param value
          *     allowed object is
@@ -287,7 +287,7 @@ public class VERICOD {
             protected JAXBElement<String> carID;
 
             /**
-             * Recupera il valore della proprietà codFis.
+             * Recupera il valore della propriet codFis.
              * 
              * @return
              *     possible object is
@@ -299,7 +299,7 @@ public class VERICOD {
             }
 
             /**
-             * Imposta il valore della proprietà codFis.
+             * Imposta il valore della propriet codFis.
              * 
              * @param value
              *     allowed object is
@@ -311,7 +311,7 @@ public class VERICOD {
             }
 
             /**
-             * Recupera il valore della proprietà codInd.
+             * Recupera il valore della propriet codInd.
              * 
              * @return
              *     possible object is
@@ -323,7 +323,7 @@ public class VERICOD {
             }
 
             /**
-             * Imposta il valore della proprietà codInd.
+             * Imposta il valore della propriet codInd.
              * 
              * @param value
              *     allowed object is
@@ -335,7 +335,7 @@ public class VERICOD {
             }
 
             /**
-             * Recupera il valore della proprietà dataRiferimento.
+             * Recupera il valore della propriet dataRiferimento.
              * 
              * @return
              *     possible object is
@@ -347,7 +347,7 @@ public class VERICOD {
             }
 
             /**
-             * Imposta il valore della proprietà dataRiferimento.
+             * Imposta il valore della propriet dataRiferimento.
              * 
              * @param value
              *     allowed object is
@@ -359,7 +359,7 @@ public class VERICOD {
             }
 
             /**
-             * Recupera il valore della proprietà codFam.
+             * Recupera il valore della propriet codFam.
              * 
              * @return
              *     possible object is
@@ -371,7 +371,7 @@ public class VERICOD {
             }
 
             /**
-             * Imposta il valore della proprietà codFam.
+             * Imposta il valore della propriet codFam.
              * 
              * @param value
              *     allowed object is
@@ -383,7 +383,7 @@ public class VERICOD {
             }
 
             /**
-             * Recupera il valore della proprietà carID.
+             * Recupera il valore della propriet carID.
              * 
              * @return
              *     possible object is
@@ -395,7 +395,7 @@ public class VERICOD {
             }
 
             /**
-             * Imposta il valore della proprietà carID.
+             * Imposta il valore della propriet carID.
              * 
              * @param value
              *     allowed object is

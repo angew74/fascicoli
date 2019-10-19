@@ -6,6 +6,7 @@ import com.roma.elettorale.fascicoli.entity.veri.VeriData;
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.unidocmetadata;
 import com.roma.elettorale.fascicoli.helpers.enumerators.unidoctype;
+import com.roma.elettorale.fascicoli.sviluppo.entity.penali;
 import org.apache.poi.util.StringUtil;
 import org.codehaus.plexus.util.StringUtils;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public class ElaborazioneCaricamentiUnidoc {
     UnidocClient unidocClient;
 
 
-    public String UpLoadCertificato(CertificatoType certificatoType, VeriData veriData, String codiceIndividuale,StringBuilder esito) {
+    public String UpLoadCertificato(CertificatoType certificatoType, VeriData veriData, String codiceIndividuale, StringBuilder esito) {
 
         FileRequest request = new FileRequest();
         FileMetatag info = new FileMetatag();
@@ -40,7 +41,7 @@ public class ElaborazioneCaricamentiUnidoc {
         String messaggioErrore = "";
         try {
             String nomeCertificato = transformationFile.getNomeCertificatoMetaDato(certificatoType.getIdNomeCertificato());
-            request.setIdTipoDocumento(7);
+            request.setIdTipoDocumento(unidoctype.CERTIFICATO_ANAGRAFICO.ordinal());
             request.setRefIdFile(0);
             info.setTipoDocumento("CERTIFICATO ANAGRAFICO");
             lMeta.add(transformationFile.createMetaDato("INTESTATARIO-COD_IND", codiceIndividuale));
@@ -71,7 +72,7 @@ public class ElaborazioneCaricamentiUnidoc {
             searchMetadato.setIdMetadata(unidocmetadata.INTESTATARIO_COD_IND.ordinal());
             searchMetadato.setValueMetadata(codiceIndividuale);
             UnidocsMetadata searchMetadato2 = new UnidocsMetadata();
-            searchMetadato2.setIdMetadata(unidocmetadata.ORIGINE_UFFICIO_NOME.ordinal());
+            searchMetadato2.setIdMetadata(unidocmetadata.CERTIFICATO_NOME.ordinal());
             searchMetadato2.setValueMetadata(nomeCertificato);
             List<UnidocsMetadata> unidocsMetadata = new ArrayList<>();
             unidocsMetadata.add(searchMetadato);
@@ -84,7 +85,8 @@ public class ElaborazioneCaricamentiUnidoc {
             arrayOfArrayOfUnidocsMetadata.setArrayOfUnidocsMetadata(arrayOfUnidocsMetadataList);
             FileResponseList resFiles = unidocClient.searchFiles(null, arrayOfUnidocTypes, arrayOfArrayOfUnidocsMetadata);
             if (resFiles.getListFiles() != null && resFiles.getListFiles().getFileResponse().size() != 0) {
-                Integer idFile = resFiles.getListFiles().getFileResponse().get(0).getMetatag().getIdFile();
+                int idprog = (resFiles.getListFiles().getFileResponse().size() - 1);
+                Integer idFile = resFiles.getListFiles().getFileResponse().get(idprog).getMetatag().getIdFile();
                 info.setRefIdPadre(idFile.toString());
                 info.setMajorVersion(2);
             }
@@ -109,8 +111,8 @@ public class ElaborazioneCaricamentiUnidoc {
                         log.info("salvo il file " + info.getNomeOriginale() + " su filesystem");
                         System.out.println("salvo il file " + info.getNomeOriginale() + " su filesystem");
                         request.setIdFile(response.getChiave());  //salvo la chiave del nuovo file
-                        String idfile =String.valueOf(response.getChiave());
-                        esito.append(unidocClient.postFileUpload(certificatoType.getBin(),idfile));
+                        String idfile = String.valueOf(response.getChiave());
+                        esito.append(unidocClient.postFileUploadRaw(certificatoType.getBin(), idfile));
                         if (!(esito.toString().equals("OK"))) {
                             log.error("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
                             System.out.println("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
@@ -131,7 +133,99 @@ public class ElaborazioneCaricamentiUnidoc {
         return messaggioErrore;
     }
 
-    public String UploadEstratto(byte[] estratto, VeriData veriData,String codiceIndividuale, StringBuilder esito) {
+    public String UploadPenale(byte[] penale, penali p, StringBuilder esito) {
+        FileRequest request = new FileRequest();
+        FileMetatag info = new FileMetatag();
+        Metadato metadato = new Metadato();
+        List<Metadato> lMeta = new ArrayList<>();
+        FileResponse response = null;
+        String messaggioErrore = "";
+        try {
+            request.setIdTipoDocumento(unidoctype.CASELLARIO.ordinal());
+            request.setRefIdFile(0);
+            info.setTipoDocumento("CASELLARIO");
+            lMeta.add(transformationFile.createMetaDato("INTESTATARIO-COD_IND", p.getCodiceindividuale()));
+            lMeta.add(transformationFile.createMetaDato("INTESTATARIO-COD_FIS", p.getCodicefiscale()));
+            lMeta.add(transformationFile.createMetaDato("INTESTATARIO-COGNOME", p.getCognome()));
+            lMeta.add(transformationFile.createMetaDato("INTESTATARIO-NOME", p.getNome()));
+            lMeta.add(transformationFile.createMetaDato("INTESTATARIO-DATA_NAS", p.getDatanascita()));
+            lMeta.add(transformationFile.createMetaDato("CERT_PENALE-ESITO", p.getEsito()));
+            lMeta.add(transformationFile.createMetaDato("CERT_PENALE-DESC_ESITO", p.getDescrizioneEsito()));
+            lMeta.add(transformationFile.createMetaDato("CERT_PENALE-ID_COMUNICAZIONE", p.getRefidcasellario().toString() + "_" + p.getId().toString()));
+            lMeta.add(transformationFile.createMetaDato("ORIGINE-ENTE-NOME", "CASELLARIO GIUDIZIARIO"));
+            info.setNomeOriginale(p.getId().toString()+ ".pdf");
+            info.setUtenteInserimento("SYSTEMJ");
+            String path = "FASCICOLO_ELETTORALE\\";
+            info.setPathFolder(path + p.getCodiceindividuale());
+            ArrayOfMetadato arrayOfMetadato = new ArrayOfMetadato();
+            arrayOfMetadato.setMetadato(lMeta);
+            info.setMetadati(arrayOfMetadato);
+            UnidocTypes type = new UnidocTypes();
+            type.setIdType(unidoctype.CASELLARIO.ordinal());
+            UnidocFolders unidocFolders = new UnidocFolders();
+            ArrayOfUnidocTypes arrayOfUnidocTypes = new ArrayOfUnidocTypes();
+            List<UnidocTypes> unidocTypes = new ArrayList<>();
+            unidocTypes.add(type);
+            arrayOfUnidocTypes.setUnidocTypes(unidocTypes);
+            UnidocsMetadata searchMetadato = new UnidocsMetadata();
+            searchMetadato.setIdMetadata(unidocmetadata.INTESTATARIO_COD_IND.ordinal());
+            searchMetadato.setValueMetadata(p.getCodiceindividuale());
+            List<UnidocsMetadata> unidocsMetadata = new ArrayList<>();
+            unidocsMetadata.add(searchMetadato);
+            ArrayOfArrayOfUnidocsMetadata arrayOfArrayOfUnidocsMetadata = new ArrayOfArrayOfUnidocsMetadata();
+            ArrayOfUnidocsMetadata arrayOfUnidocsMetadata = new ArrayOfUnidocsMetadata();
+            arrayOfUnidocsMetadata.setUnidocsMetadata(unidocsMetadata);
+            List<ArrayOfUnidocsMetadata> arrayOfUnidocsMetadataList = new ArrayList<>();
+            arrayOfUnidocsMetadataList.add(arrayOfUnidocsMetadata);
+            arrayOfArrayOfUnidocsMetadata.setArrayOfUnidocsMetadata(arrayOfUnidocsMetadataList);
+            FileResponseList resFiles = unidocClient.searchFiles(null, arrayOfUnidocTypes, arrayOfArrayOfUnidocsMetadata);
+            if (resFiles.getListFiles() != null && resFiles.getListFiles().getFileResponse().size() != 0) {
+                int idprog = (resFiles.getListFiles().getFileResponse().size() - 1);
+                Integer idFile = resFiles.getListFiles().getFileResponse().get(idprog).getMetatag().getIdFile();
+                info.setRefIdPadre(idFile.toString());
+                info.setMajorVersion(2);
+            }
+            request.setInfo(info);
+            if (request.getInfo().getIdFolder() == 0) {
+                log.info("creo la cartella per l'individuo: " + p.getCodiceindividuale());
+                System.out.println("creo la cartella per l'individuo: " + p.getCodiceindividuale());
+                FolderResponse folderResponse = unidocClient.creaNuovaCartella(request);
+                if (folderResponse.getMsg().getEsito().equals("ERROR")) {
+                    log.error("ERR_15: Errore nella creazione della cartella " + folderResponse.getMsg().getDettaglioMessagio());
+                    System.out.println("Errore nell'applicazione: " + folderResponse.getMsg().getDettaglioMessagio());
+                    messaggioErrore = folderResponse.getMsg().getDettaglioMessagio();
+                    return messaggioErrore;
+                } else {
+                    request.getInfo().setIdFolder(folderResponse.getIdFolder());
+                    log.info("salvo il file " + info.getNomeOriginale() + " in archivio");
+                    System.out.println("salvo il file " + info.getNomeOriginale() + " in archivio");
+                    response = unidocClient.addFile(request);
+                    if (response.getEsito().getEsito().toUpperCase().equals("OK")) {
+                        log.info("salvo il file " + info.getNomeOriginale() + " su filesystem");
+                        System.out.println("salvo il file " + info.getNomeOriginale() + " su filesystem");
+                        String idfile = String.valueOf(response.getChiave());
+                        esito.append(unidocClient.postFileUploadRaw(penale, idfile));
+                        if (!(esito.toString().equals("OK"))) {
+                            log.error("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
+                            System.out.println("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
+                            return esito.toString();
+                        }
+                    } else {
+                        messaggioErrore = response.getEsito().getDettaglioMessagio();
+                        log.error("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + messaggioErrore);
+                        System.out.println("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + messaggioErrore);
+                        return messaggioErrore;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            log.error("ERR_46: " + e.getMessage());
+            messaggioErrore = "ERR_46: " + e.getMessage();
+        }
+        return messaggioErrore;
+    }
+
+    public String UploadEstratto(byte[] estratto, VeriData veriData, String codiceIndividuale, StringBuilder esito) {
         FileRequest request = new FileRequest();
         String messaggioErrore = "";
         FileMetatag info = new FileMetatag();
@@ -139,7 +233,7 @@ public class ElaborazioneCaricamentiUnidoc {
         List<Metadato> lMeta = new ArrayList<>();
         FileResponse response = null;
         try {
-            request.setIdTipoDocumento(2);
+            request.setIdTipoDocumento(unidoctype.ESTRATTO_DI_NASCITA.ordinal());
             request.setRefIdFile(0);
             info.setTipoDocumento("ESTRATTO DI NASCITA");
             lMeta.add(transformationFile.createMetaDato("INTESTATARIO-COD_IND", codiceIndividuale));
@@ -178,7 +272,8 @@ public class ElaborazioneCaricamentiUnidoc {
             arrayOfArrayOfUnidocsMetadata.setArrayOfUnidocsMetadata(arrayOfUnidocsMetadataList);
             FileResponseList resFiles = unidocClient.searchFiles(null, arrayOfUnidocTypes, arrayOfArrayOfUnidocsMetadata);
             if (resFiles.getListFiles() != null && resFiles.getListFiles().getFileResponse().size() != 0) {
-                Integer idFile = resFiles.getListFiles().getFileResponse().get(0).getMetatag().getIdFile();
+                int idprog = (resFiles.getListFiles().getFileResponse().size() - 1);
+                Integer idFile = resFiles.getListFiles().getFileResponse().get(idprog).getMetatag().getIdFile();
                 info.setRefIdPadre(idFile.toString());
                 info.setMajorVersion(2);
             }
@@ -200,8 +295,8 @@ public class ElaborazioneCaricamentiUnidoc {
                     if (response.getEsito().getEsito().toUpperCase().equals("OK")) {
                         log.info("salvo il file " + info.getNomeOriginale() + " su filesystem");
                         System.out.println("salvo il file " + info.getNomeOriginale() + " su filesystem");
-                        String idfile =String.valueOf(response.getChiave());
-                        esito.append(unidocClient.postFileUploadRaw(estratto,idfile));
+                        String idfile = String.valueOf(response.getChiave());
+                        esito.append(unidocClient.postFileUploadRaw(estratto, idfile));
                         if (!(esito.toString().equals("OK"))) {
                             log.error("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());
                             System.out.println("Il file con nome " + info.getNomeOriginale() + "  non è stato caricato motivo dettagli " + esito.toString());

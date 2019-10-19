@@ -165,7 +165,7 @@ public class UnidocClient extends WebServiceGatewaySupport {
                 content.append(inputLine);
             }
             int status = httpURLConnection.getResponseCode();
-            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString()).getUploadResponse();
+            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString());
             Reader streamReader = null;
             if (status > 299) {
                 streamReader = new InputStreamReader(httpURLConnection.getErrorStream());
@@ -217,7 +217,7 @@ public class UnidocClient extends WebServiceGatewaySupport {
             while ((inputLine = in.readLine()) != null) {
                 content.append(inputLine);
             }
-            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString()).getUploadResponse();
+            UploadResponse uploadResponse = ttransformation.convertXmltoUploadResponse(content.toString());
             Reader streamReader = null;
             if (status > 299) {
                 streamReader = new InputStreamReader(con.getErrorStream());

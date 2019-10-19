@@ -1,5 +1,6 @@
 package com.roma.elettorale.fascicoli;
 
+import com.roma.elettorale.fascicoli.service.ElaborazionePenali;
 import com.roma.elettorale.fascicoli.service.ElaborazioneRichieste;
 import com.roma.elettorale.fascicoli.service.ManageFiles;
 import org.slf4j.Logger;
@@ -37,6 +38,9 @@ public class FascicoliApplication {
     @Autowired
     ElaborazioneRichieste elaborazioneRichieste;
 
+    @Autowired
+    ElaborazionePenali elaborazionePenali;
+
 
     public static void main(String[] args) {
         SpringApplication.run(FascicoliApplication.class, args);
@@ -61,6 +65,8 @@ public class FascicoliApplication {
                 }
             }
             elaborazioneRichieste.createCertificato();
+          //  elaborazionePenali.caricaRichieste(env.getProperty(("rootpenali")));
+          //  elaborazionePenali.caricaFile();
         };
     }
 

@@ -6,7 +6,7 @@
 		   xmlns:mstns="http://tempuri.org/VERICOD_RESP.xsd" 
 		   xmlns:tc="http://tempuri.org/TipiBase.xsd" 
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:import namespace="http://tempuri.org/TipiBase.xsd" schemaLocation="C:\Users\AdminDSI\IdeaProjects\fascicoli\src\main\resources\xsd\TipiBase.xsd" />
+	<xs:import namespace="http://tempuri.org/TipiBase.xsd" />
 	<xs:element name="VERICOD_RESPONSE">
 		<xs:complexType>
 			<xs:sequence>
@@ -29,7 +29,15 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element minOccurs="0" maxOccurs="unbounded" name="Messaggi" type="tc:BaseMessaggioAnag" />
+				<xs:element minOccurs="0" maxOccurs="unbounded" name="Messaggi">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Codice" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Livello" type="xs:string" minOccurs="0" nillable="true" />
+							<xs:element name="Descrizione" type="xs:string" minOccurs="0" nillable="true" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
