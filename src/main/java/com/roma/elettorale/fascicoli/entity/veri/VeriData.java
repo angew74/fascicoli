@@ -1,6 +1,9 @@
 package com.roma.elettorale.fascicoli.entity.veri;
 
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
+import com.roma.elettorale.fascicoli.service.ElaborazioneCaricamentiUnidoc;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
@@ -18,7 +21,10 @@ public class VeriData {
     @Autowired
     TransformationFile transformationFile;
 
-    public static VeriData CreateVeriData(String vericodResp) {
+    private static final Logger log = LoggerFactory.getLogger(VeriData.class);
+
+
+    public VeriData CreateVeriData(String vericodResp) {
         VeriData vd = new VeriData();
         if (vericodResp.contains("CODFIS")) {
             String[] arr = vericodResp.split("§");
@@ -37,22 +43,43 @@ public class VeriData {
         return vd;
     }
 
+    public String ParsingTagInner(String tag, Document document) {
+        String r = "";
+        if (document.getElementsByTagName(tag) != null) {
+            if (document.getElementsByTagName(tag).getLength() > 0) {
+                r = document.getElementsByTagName(tag).item(0).getTextContent();
+            }
+        }
+        return r;
+    }
+
     public VeriData CreateVeriDataFromXml(Document document) {
         VeriData vd = new VeriData();
-        String codind = document.getElementsByTagName("CodiceIndiv").item(0).getTextContent();
-        if (codind != null) {
-            vd.setNome(transformationFile.ParsingTag("NomePersona", document));
-            vd.setCognome(transformationFile.ParsingTag("CognomePersona", document));
-            vd.setCodiceFiscale(transformationFile.ParsingTag("CodiceFiscale", document));
-            vd.setDataNascita(transformationFile.ParsingTag("DataDiNascitaPersona", document));
-            String xmlSring = transformationFile.ParsingTag("RawXml", document);
-            vd.setAttoNascita(new AttoNascita());
-            vd.getAttoNascita().Numero = readValueN("NATTNAS|",xmlSring, 5);
-            vd.getAttoNascita().Parte = readValueN("PATTNAS|",xmlSring, 1);
-            vd.getAttoNascita().Serie = readValueN("SATTNAS|",xmlSring, 1);
-            vd.getAttoNascita().Esponente = readValueN("EATTNAS|",xmlSring, 2);
-            vd.getAttoNascita().Anno = readValueN("AANAS|",xmlSring, 4);
-            vd.setTrovato(true);
+        try {
+            if (document != null) {
+                String codind = ParsingTagInner("CodiceIndiv", document);
+                if (!(codind.equals(""))) {
+                    vd.setNome(ParsingTagInner("NomePersona", document));
+                    vd.setCognome(ParsingTagInner("CognomePersona", document));
+                    vd.setCodiceFiscale(ParsingTagInner("CodiceFiscale", document));
+                    vd.setDataNascita(ParsingTagInner("DataDiNascitaPersona", document));
+                    vd.setCodiceIndividuale(codind);
+                    String xmlSring = ParsingTagInner("RawXml", document);
+                    vd.setAttoNascita(new AttoNascita());
+                    vd.getAttoNascita().Numero = readValueN("NATTNAS|", xmlSring, 5);
+                    vd.getAttoNascita().Parte = readValueN("PATTNAS|", xmlSring, 1);
+                    vd.getAttoNascita().Serie = readValueN("SATTNAS|", xmlSring, 1);
+                    vd.getAttoNascita().Esponente = readValueN("EATTNAS|", xmlSring, 2);
+                    vd.getAttoNascita().Anno = readValueN("AANAS|", xmlSring, 4);
+                    vd.setTrovato(true);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            log.error("ERR_46: " + ex.getMessage());
+            ex.printStackTrace();
+            throw ex;
         }
         return vd;
     }

@@ -7,7 +7,7 @@ public enum statusoperazione {
     CARICATO,
     ELABORATO,
     ERRORE,
-    NINETE,
+    FILE_NON_ESISTENTE,
     NIENTE,
     CITTADINO_NON_TROVATO,
     TROVATI_PIU_CITTADINI

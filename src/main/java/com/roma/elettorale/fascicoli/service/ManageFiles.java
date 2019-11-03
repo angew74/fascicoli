@@ -168,7 +168,8 @@ public class ManageFiles {
                     penaliService.Save(penale);
                 }
             }
-            File fileToDelete = new File(destDirRiepilogo);
+            c = casellarioService.findById(penale.getRefidcasellario());
+            File fileToDelete = new File(destDirRiepilogo + "\\" + c.getFilecaricamento());
             fileToDelete.delete();
             tuttapposto = true;
         }

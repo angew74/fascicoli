@@ -5,12 +5,11 @@ import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfStream;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.pdf.StringUtils;
+
 import com.itextpdf.tool.xml.XMLWorkerHelper;
 import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
 import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
 import com.roma.elettorale.fascicoli.entity.unidoc.Metadato;
-import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
 import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
 import com.roma.elettorale.fascicoli.entity.veri.*;
 import org.slf4j.Logger;
@@ -19,18 +18,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import javax.print.Doc;
 import javax.xml.bind.*;
 import javax.xml.namespace.QName;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMResult;
 import javax.xml.transform.dom.DOMSource;
@@ -42,7 +45,6 @@ import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Base64;
 import java.util.Locale;
 import java.util.Map;
 
@@ -55,7 +57,7 @@ public class TransformationFile {
     Environment env;
 
 
-    public Document convertStringToXMLDocument(String xmlString) {
+    public Document convertStringToXMLDocument(String xmlString) throws IOException, SAXException, ParserConfigurationException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setNamespaceAware(true);
         DocumentBuilder builder = null;
@@ -66,10 +68,10 @@ public class TransformationFile {
         } catch (Exception e) {
             e.printStackTrace();
             logger.debug("ERR_05: " + e.getMessage());
+            throw e;
         }
         return document;
     }
-
 
 
     static void recurse(NodeList list) {
@@ -100,9 +102,7 @@ public class TransformationFile {
     }
 
 
-
-    public UploadResponse convertXmltoUploadResponse(String xmlString)
-    {
+    public UploadResponse convertXmltoUploadResponse(String xmlString) {
         JAXBContext jaxbContext;
         UploadResponse uploadResponse = null;
         try {
@@ -130,7 +130,6 @@ public class TransformationFile {
         }
         return estrattoNascita;
     }
-
 
 
     public static String getParamsString(Map<String, String> params)
@@ -165,13 +164,13 @@ public class TransformationFile {
             marshaller.marshal(jaxbElement, sw);
             document = convertStringToXMLDocument(sw.toString());
             return document;
-        } catch (JAXBException e) {
+        } catch (JAXBException | IOException | SAXException | ParserConfigurationException e) {
             logger.debug("ERR_07: " + e.getMessage());
             throw new DataBindingException(e);
         }
     }
 
-    public String applyXSLToXml(Document xmlFile, String xslStyleSheet,Boolean IsEstratto) {
+    public String applyXSLToXml(Document xmlFile, String xslStyleSheet, Boolean IsEstratto) {
         String faticaFinale = "";
         try {
             File stylesheet = new File(xslStyleSheet);
@@ -186,10 +185,9 @@ public class TransformationFile {
             transformer.transform(xmlSource, console);
             // fine prova
             Document aff = (Document) result.getNode();
-            if(IsEstratto) {
+            if (IsEstratto) {
                 faticaFinale = modificaOutput(convertDocumentToString(aff));
-            }
-            else {
+            } else {
                 faticaFinale = convertDocumentToString(aff);
             }
         } catch (TransformerException e) {
@@ -208,11 +206,9 @@ public class TransformationFile {
         return m;
     }
 
-    public String getNomeCertificatoMetaDato(String codice)
-    {
+    public String getNomeCertificatoMetaDato(String codice) {
         String nomeCertificato = "";
-        switch (codice)
-        {
+        switch (codice) {
             case "C0001":
                 nomeCertificato = "NASCITA";
                 break;
@@ -230,26 +226,22 @@ public class TransformationFile {
                 break;
 
         }
-        return  nomeCertificato;
+        return nomeCertificato;
     }
 
-    public Document ConvertStringToXmlDocument(String xmlString)
-    {
+    public Document ConvertStringToXmlDocument(String xmlString) {
         //Parser that produces DOM object trees from XML content
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         //API to obtain DOM Document instance
         DocumentBuilder builder = null;
-        try
-        {
+        try {
             //Create DocumentBuilder with default configuration
             builder = factory.newDocumentBuilder();
             //Parse the content to Document object
             Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
             return doc;
-        }
-        catch (Exception e)
-        {
-            logger.error("ERR_22 dettagli: "  +e.getMessage() + " "+ e.getCause());
+        } catch (Exception e) {
+            logger.error("ERR_22 dettagli: " + e.getMessage() + " " + e.getCause());
             e.printStackTrace();
         }
         return null;
@@ -385,14 +377,35 @@ public class TransformationFile {
         return xmlContent;
     }
 
-    public static String ParsingTag(String tag, Document document) {
-        return document.getElementsByTagName(tag).item(0).getTextContent();
+    public String parsingAttribute(String tag, String attribute, Document document) {
+        String r = "";
+        if (document.getElementsByTagName(tag) != null) {
+            if (document.getElementsByTagName(tag).getLength() > 0) {
+                Node node = document.getElementsByTagName(tag).item(0);
+                if (node.hasAttributes()) {
+                    Attr attr = (Attr) node.getAttributes().getNamedItem(attribute);
+                    if (attr != null) {
+                        r = attr.getValue();
+                    }
+                }
+            }
+        }
+        return r;
     }
 
-    public String Decrypt(String str, String thePassword)
-    {
+    public String ParsingTag(String tag, Document document) {
+        String r = "";
+        if (document.getElementsByTagName(tag) != null) {
+            if (document.getElementsByTagName(tag).getLength() > 0) {
+                r = document.getElementsByTagName(tag).item(0).getTextContent();
+            }
+        }
+        return r;
+    }
+
+    public String Decrypt(String str, String thePassword) {
         String returnValue = null;
-        byte[] SALT = { 73,
+        byte[] SALT = {73,
                 118,
                 97,
                 110,
@@ -404,14 +417,13 @@ public class TransformationFile {
                 101,
                 100,
                 101,
-                118 };
-        try
-        {
-           // String thePassword = "%cFRm*F)N9Rq[6#5";
-            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(thePassword,SALT);
+                118};
+        try {
+            // String thePassword = "%cFRm*F)N9Rq[6#5";
+            PasswordDeriveBytes passwordDeriveBytes = new PasswordDeriveBytes(thePassword, SALT);
             byte[] encryptedData = DatatypeConverter.parseBase64Binary(str);
             byte[] key = passwordDeriveBytes.getBytes(32);
-            byte[] IV =  passwordDeriveBytes.getBytes(16);
+            byte[] IV = passwordDeriveBytes.getBytes(16);
             MessageDigest digest = MessageDigest.getInstance("MD5");
             SecretKeySpec password = new SecretKeySpec(digest.digest(thePassword.getBytes()), "AES");
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");

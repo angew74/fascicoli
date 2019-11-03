@@ -135,6 +135,7 @@ public class ElaborazioneCaricamentiUnidoc {
 
     public String UploadPenale(byte[] penale, penali p, StringBuilder esito) {
         FileRequest request = new FileRequest();
+        esito = new StringBuilder();
         FileMetatag info = new FileMetatag();
         Metadato metadato = new Metadato();
         List<Metadato> lMeta = new ArrayList<>();

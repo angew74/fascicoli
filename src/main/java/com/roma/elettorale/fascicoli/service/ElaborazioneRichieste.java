@@ -16,9 +16,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -56,10 +59,10 @@ public class ElaborazioneRichieste {
     @Autowired
     ElaborazioneCaricamentiUnidoc elaborazioneCaricamentiUnidoc;
 
-    public void createCertificato() {
+    public void createCertificato() throws ParserConfigurationException, SAXException, IOException {
         //   List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(0);
         // List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
-        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(),"ESN");
+        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
         String codiceindividuale = "";
         String codicecertificato = "";
         byte[] estratto = null;
@@ -207,7 +210,7 @@ public class ElaborazioneRichieste {
                         codiceCerti = "ESN";
                         estratto = elaborazioneEstratti.getEstrattoNascita(codiceindividuale, veriData, esito);
                         if (esito.toString().equals("")) {
-                            transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
+                           //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
                             elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito);
                             if (esito.toString().equals("OK")) {
                                 status = statusoperazione.ELABORATO.ordinal();

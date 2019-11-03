@@ -3,6 +3,7 @@ package com.roma.elettorale.fascicoli.service;
 
 import com.roma.elettorale.fascicoli.entity.veri.VeriData;
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
+import com.roma.elettorale.fascicoli.helpers.enumerators.decodificamessaggi;
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusoperazione;
 import com.roma.elettorale.fascicoli.sviluppo.entity.caricamento;
 import com.roma.elettorale.fascicoli.sviluppo.entity.penali;
@@ -53,7 +54,10 @@ public class ElaborazionePenali {
     TransformationFile transformationFile;
 
     @Autowired
-    ElaborazioneCaricamentiUnidoc  elaborazioneCaricamentiUnidoc;
+    ElaborazioneCaricamentiUnidoc elaborazioneCaricamentiUnidoc;
+
+    @Autowired
+    decodificamessaggi listadeocdificamessaggi;
 
     public void caricaRichieste(String directory) {
         File directoryRoot = new File(directory);
@@ -142,66 +146,115 @@ public class ElaborazionePenali {
             String stringDoc = "";
             int status = 0;
             for (penali p : penalis) {
-                if(p.getCodicefiscale() != null) {
+                if (p.getCodicefiscale() != null) {
                     stringDoc = anagrafeClient.GetVeriByCodFis(p.getCodicefiscale());
                     if (stringDoc != null && (!stringDoc.equals(""))) {
-                        Document doc = transformationFile.convertStringToXMLDocument(stringDoc);
-                        veriData = veriData.CreateVeriDataFromXml(doc);
-                        p.setCodiceindividuale(veriData.getCodiceIndividuale());
-                        p.setDatanascita(veriData.getDataNascita());
-                        File file = new File(p.getPathFile());
-                        byte[] fileContent = Files.readAllBytes(file.toPath());
-                        elaborazioneCaricamentiUnidoc.UploadPenale(fileContent,p,s);
-                        if (s.equals("")) {
-                            status = statusoperazione.ELABORATO.ordinal();
-                        } else if (s.toString().equals("OK")) {
-                            status = statusoperazione.ELABORATO.ordinal();
-                        } else {
-                            status = statusoperazione.ERRORE.ordinal();
+                        Document doc = null;
+                        doc = transformationFile.convertStringToXMLDocument(stringDoc);
+                        String codiceErrore = transformationFile.ParsingTag("Codice", doc);
+                        if(codiceErrore.equals("")) {
+                            veriData = veriData.CreateVeriDataFromXml(doc);
+                            p.setCodiceindividuale(veriData.getCodiceIndividuale());
+                            p.setDatanascita(veriData.getDataNascita());
+                            File file = new File(p.getPathFile());
+                            if (file.exists()) {
+                                byte[] fileContent = Files.readAllBytes(file.toPath());
+                                elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
+                                if (s.toString().equals("")) {
+                                    status = statusoperazione.ELABORATO.ordinal();
+                                    p.setDescrizioneerrore("");
+                                } else if (s.toString().equals("OK")) {
+                                    status = statusoperazione.ELABORATO.ordinal();
+                                    p.setDescrizioneerrore("");
+                                } else {
+                                    status = statusoperazione.ERRORE.ordinal();
+                                    p.setDescrizioneerrore(s.toString());
+                                }
+                                p.setFlgoperazione(status);
+                                p.setDataoperazione(LocalDateTime.now());
+                                penaliService.Save(p);
+                                file.delete();
+                                continue;
+                            } else {
+                                status = statusoperazione.FILE_NON_ESISTENTE.ordinal();
+                                p.setDescrizioneerrore("FILE NON ESISTENTE");
+                                p.setDataoperazione(LocalDateTime.now());
+                                p.setFlgoperazione(status);
+                                penaliService.Save(p);
+                                continue;
+                            }
                         }
-                        p.setFlgoperazione(status);
-                        p.setDataoperazione(LocalDateTime.now());
-                        penaliService.Save(p);
-                    }
-                    else {
+                        else {
+                            File file = new File(p.getPathFile());
+                            p.setFlgoperazione(statusoperazione.CARICATO.ordinal());
+                            p.setDescrizioneerrore("DA RIELABORARE");
+                            p.setDataoperazione(LocalDateTime.now());
+                            p.setCodicefiscale("");
+                            penaliService.Save(p);
+                            file.delete();
+                            continue;
+                        }
+                    } else {
+                        File file = new File(p.getPathFile());
                         p.setFlgoperazione(statusoperazione.CITTADINO_NON_TROVATO.ordinal());
+                        p.setDescrizioneerrore("CITTADINO NON TROVATO");
                         p.setDataoperazione(LocalDateTime.now());
                         penaliService.Save(p);
+                        file.delete();
+                        continue;
                     }
-                }
-                else
-                {
-                    stringDoc = anagrafeClient.GetVeriByDatiAnag(p.getNome(),p.getCognome());
+                } else {
+                    stringDoc = anagrafeClient.GetVeriByDatiAnag(p.getNome(), p.getCognome());
                     Document veriricResponse = transformationFile.convertStringToXMLDocument(stringDoc);
-                    Integer totale =Integer.parseInt(veriricResponse.getElementsByTagName("totale").item(0).getTextContent());
-                    if (totale > 1) {
-                        p.setFlgoperazione(statusoperazione.TROVATI_PIU_CITTADINI.ordinal());
-                        p.setDataoperazione(LocalDateTime.now());
-                        penaliService.Save(p);
-                    }
-                    else if(totale == 0)
-                    {
+                    String codiceErrore = transformationFile.ParsingTag("Codice", veriricResponse);
+                    //    String  descrizioneErrore = transformationFile.ParsingTag("Descrizione" ,veriricResponse);
+                    if (!codiceErrore.equals("")) {
                         p.setFlgoperazione(statusoperazione.CITTADINO_NON_TROVATO.ordinal());
+                        String descrizioneErrore = decodificamessaggi.getDict().get(codiceErrore);
+                        p.setDescrizioneerrore(descrizioneErrore);
                         p.setDataoperazione(LocalDateTime.now());
                         penaliService.Save(p);
-                    }
-                    else if (totale == 1) {
-                        p.setCodiceindividuale(veriricResponse.getElementsByTagName("CodiceIndiv").item(0).getTextContent());
-                        p.setCodicefiscale(veriricResponse.getElementsByTagName("CodiceFiscale").item(0).getTextContent());
-                        p.setDatanascita(veriricResponse.getElementsByTagName("DataDiNascitaPersona").item(0).getTextContent());
                         File file = new File(p.getPathFile());
-                        byte[] fileContent = Files.readAllBytes(file.toPath());
-                        elaborazioneCaricamentiUnidoc.UploadPenale(fileContent,p,s);
-                        if (s.equals("")) {
-                            status = statusoperazione.ELABORATO.ordinal();
-                        } else if (s.toString().equals("OK")) {
-                            status = statusoperazione.ELABORATO.ordinal();
-                        } else {
-                            status = statusoperazione.ERRORE.ordinal();
+                        file.delete();
+                    } else {
+                        String t = transformationFile.parsingAttribute("Elenco", "totale", veriricResponse);
+                        Integer totale = Integer.parseInt(t);
+                        if (totale > 1) {
+                            p.setFlgoperazione(statusoperazione.TROVATI_PIU_CITTADINI.ordinal());
+                            p.setDescrizioneerrore("PIU RITROVAMENTI");
+                            p.setDataoperazione(LocalDateTime.now());
+                            penaliService.Save(p);
+                            File file = new File(p.getPathFile());
+                            file.delete();
+                        } else if (totale == 0) {
+                            p.setFlgoperazione(statusoperazione.CITTADINO_NON_TROVATO.ordinal());
+                            p.setDescrizioneerrore("CITTADINO NON TROVATO");
+                            p.setDataoperazione(LocalDateTime.now());
+                            penaliService.Save(p);
+                            File file = new File(p.getPathFile());
+                            file.delete();
+                        } else if (totale == 1) {
+                            p.setCodiceindividuale(veriricResponse.getElementsByTagName("CodiceIndiv").item(0).getTextContent());
+                            p.setCodicefiscale(veriricResponse.getElementsByTagName("CodiceFiscale").item(0).getTextContent());
+                            p.setDatanascita(veriricResponse.getElementsByTagName("DataDiNascitaPersona").item(0).getTextContent());
+                            File file = new File(p.getPathFile());
+                            byte[] fileContent = Files.readAllBytes(file.toPath());
+                            elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
+                            if (s.toString().equals("")) {
+                                status = statusoperazione.ELABORATO.ordinal();
+                                p.setDescrizioneerrore("");
+                            } else if (s.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
+                                p.setDescrizioneerrore("");
+                            } else {
+                                status = statusoperazione.ERRORE.ordinal();
+                                p.setDescrizioneerrore(s.toString());
+                            }
+                            p.setFlgoperazione(status);
+                            p.setDataoperazione(LocalDateTime.now());
+                            penaliService.Save(p);
+                            file.delete();
                         }
-                        p.setFlgoperazione(status);
-                        p.setDataoperazione(LocalDateTime.now());
-                        penaliService.Save(p);
                     }
                 }
             }

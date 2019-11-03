@@ -1,7 +1,6 @@
 package com.roma.elettorale.fascicoli.sviluppo.repository;
 
 import com.roma.elettorale.fascicoli.sviluppo.entity.pacchetto;
-import net.bytebuddy.asm.Advice;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -16,6 +15,6 @@ public interface PacchettoDAO extends JpaRepository<pacchetto, Long> {
     pacchetto findById(Integer id);
     pacchetto findByNumero(String numero);
     List<pacchetto> findByDatacarimento(LocalDate data);
-    @Query("SELECT coalesce(max(ch.numero), 0) FROM pacchetto ch")
+    @Query("SELECT coalesce(max(ch.numero), 0) FROM pacchetto ch where id=(select max(id) from pacchetto)")
     Integer getMaxId();
 }

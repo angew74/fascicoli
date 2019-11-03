@@ -39,7 +39,6 @@ public class ElaborazioneEstratti {
         EstrattoNascita estratto = transformationFile.convertXmltoEstrattoNascita(estrattoDocument);
         if (IsEstrattoDisponibile(estratto))
         {
-            Document xdoc = null;
             String h = estratto.getHtml().replace("<br>", "<br />");
             // aggiunta valori "fissi"
             estratto.setSostituita(env.getProperty("sostituita"));

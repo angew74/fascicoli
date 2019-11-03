@@ -48,15 +48,16 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
             VERICOD.Ricerca ricerca = new VERICOD.Ricerca();
             JAXBElement<String> codElement = new JAXBElement<String>(new QName("CodFis"),
                     String.class, codicefiscale);
-            parametri.setCodInd(codElement);
+            parametri.setCodFis(codElement);
             ricerca.setParametri(parametri);
             ricerca.setTipoRicerca("2");
             ricerca.setTipoVerifica("VANA");
             ricerca.setFiltroPersone("");
             v.setRicerca(ricerca);
             String verifica = ttransformation.jaxbObjectToXMLVericod(v);
+            verifica += "#";
             String servizio = env.getProperty("servizioveri");
-            callMapper(verifica,servizio);
+            xmlRisposta = callMapper(verifica,servizio);
         } catch (Exception ex) {
             logger.error("ERR_33" + ex.getMessage());
         }
@@ -160,6 +161,7 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
             VERIRIC veriric = new VERIRIC();
             veriric.setRicerca(ricerca);
             String verifica = ttransformation.jaxbObjectToXMLVeriric(veriric);
+            verifica += "#";
             String servizio = env.getProperty("servizioeveriric");
            xmlRisposta = callMapper(verifica, servizio);
         } catch (Exception ex) {
