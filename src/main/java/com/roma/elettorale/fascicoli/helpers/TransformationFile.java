@@ -8,6 +8,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import com.itextpdf.tool.xml.XMLWorkerHelper;
 import com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita;
+import com.roma.elettorale.fascicoli.entity.anagrafe.GP25Document;
 import com.roma.elettorale.fascicoli.entity.anagrafe.RichiestaEstratto;
 import com.roma.elettorale.fascicoli.entity.unidoc.Metadato;
 import com.roma.elettorale.fascicoli.entity.unidoc.UploadResponse;
@@ -436,6 +437,20 @@ public class TransformationFile {
             e.printStackTrace();
         }
         return returnValue;
+    }
+
+    public GP25Document convertXmltoGP25(Document documentGP25) {
+        JAXBContext jaxbContext;
+        GP25Document gp25Document = null;
+        try {
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita.class);
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            gp25Document = (GP25Document) jaxbUnmarshaller.unmarshal(documentGP25);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            logger.error("ERR_36: " + e.getMessage());
+        }
+        return gp25Document;
     }
 }
 

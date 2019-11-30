@@ -1,5 +1,6 @@
 package com.roma.elettorale.fascicoli;
 
+import com.roma.elettorale.fascicoli.service.ElaborazioneGiudiciPopolari;
 import com.roma.elettorale.fascicoli.service.ElaborazionePenali;
 import com.roma.elettorale.fascicoli.service.ElaborazioneRichieste;
 import com.roma.elettorale.fascicoli.service.ManageFiles;
@@ -41,6 +42,9 @@ public class FascicoliApplication {
     @Autowired
     ElaborazionePenali elaborazionePenali;
 
+    @Autowired
+    ElaborazioneGiudiciPopolari elaborazioneGiudiciPopolari;
+
 
     public static void main(String[] args) {
         SpringApplication.run(FascicoliApplication.class, args);
@@ -63,9 +67,24 @@ public class FascicoliApplication {
                     f.delete();
                 }
             }
-            elaborazioneRichieste.createCertificato();
-          // elaborazionePenali.caricaRichieste(env.getProperty(("rootpenali")));
-          //  elaborazionePenali.caricaFile();
+            String folderingiudice = env.getProperty("folderingiudice");
+            String folderoutgiudice = env.getProperty("folderoutgiudice");
+            List<File> filesInFolderGiudice = Files.walk(Paths.get(folderingiudice))
+                    .filter(Files::isRegularFile)
+                    .map(Path::toFile)
+                    .collect(Collectors.toList());
+            for (File f : filesInFolderGiudice) {
+                Boolean ok = manageFiles.leggifileGiudiciPopolari(f);             //
+                if (ok) {
+                    f.renameTo
+                            (new File(folderoutgiudice + f.getName()));
+                    f.delete();
+                }
+            }
+          //elaborazioneRichieste.createCertificato();
+          //elaborazionePenali.caricaRichiestePenali(env.getProperty(("rootpenali")));
+          //elaborazionePenali.caricaFilePenali();
+          elaborazioneGiudiciPopolari.createFascicolo();
         };
     }
 

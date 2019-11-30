@@ -57,7 +57,7 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
             String verifica = ttransformation.jaxbObjectToXMLVericod(v);
             verifica += "#";
             String servizio = env.getProperty("servizioveri");
-            xmlRisposta = callMapper(verifica,servizio);
+            xmlRisposta = callMapper(verifica, servizio);
         } catch (Exception ex) {
             logger.error("ERR_33" + ex.getMessage());
         }
@@ -95,7 +95,7 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
     }
 
 
-    public String callMapper(String verifica,String servizio) throws MalformedURLException {
+    public String callMapper(String verifica, String servizio) throws MalformedURLException {
         String xmlRisposta = "";
         String dipartimento = env.getProperty("dipartimento");
         String password = env.getProperty("password");
@@ -125,6 +125,18 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
             xmlRisposta = callMapper(richiesta, servizio);
         } catch (Exception ex) {
             logger.error("ERR_14" + ex.getMessage());
+        }
+        return xmlRisposta;
+    }
+
+    public String GetGP25(Document doc) {
+        String servizio = env.getProperty("serviziogp25");
+        String xmlRisposta = "";
+        try {
+            String richiesta = ttransformation.convertDocumentToString(doc);
+            xmlRisposta = callMapper(richiesta, servizio);
+        } catch (Exception ex) {
+            logger.error("ERR_34" + ex.getMessage());
         }
         return xmlRisposta;
     }
@@ -163,10 +175,10 @@ public class AnagrafeClient extends WebServiceGatewaySupport {
             String verifica = ttransformation.jaxbObjectToXMLVeriric(veriric);
             verifica += "#";
             String servizio = env.getProperty("servizioeveriric");
-           xmlRisposta = callMapper(verifica, servizio);
+            xmlRisposta = callMapper(verifica, servizio);
         } catch (Exception ex) {
             logger.error("ERR_34" + ex.getMessage());
         }
-        return  xmlRisposta;
+        return xmlRisposta;
     }
 }

@@ -59,7 +59,7 @@ public class ElaborazionePenali {
     @Autowired
     decodificamessaggi listadeocdificamessaggi;
 
-    public void caricaRichieste(String directory) {
+    public void caricaRichiestePenali(String directory) {
         File directoryRoot = new File(directory);
         ArrayList<File> list = displayDirectoryContents(directoryRoot);
         String destDirRiepilogo = "";
@@ -72,19 +72,26 @@ public class ElaborazionePenali {
                     String zipFilePath = p.getAbsolutePath();
                     destDirRiepilogo = p.getParent() + "\\riepilogo";
                     unzip(zipFilePath, destDirRiepilogo);
+                    File filezipRiepilogo = new File(zipFilePath);
+                    filezipRiepilogo.delete();
                 }
                 if (p.getName().toLowerCase().contains("negativi.zip")) {
                     String zipFilePath = p.getAbsolutePath();
                     destDirNegativi = p.getParent() + "\\negativi";
                     unzip(zipFilePath, destDirNegativi);
+                    File filezipNegativi = new File(zipFilePath);
+                    filezipNegativi.delete();
                 }
                 if (p.getName().toLowerCase().contains("positivi.zip")) {
                     String zipFilePath = p.getAbsolutePath();
                     destDirPositivi = p.getParent() + "\\positivi";
                     unzip(zipFilePath, destDirPositivi);
+                    File filezipPositivi = new File(zipFilePath);
+                    filezipPositivi.delete();
                 }
             }
-            manageFiles.leggifilePenali(destDirRiepilogo, destDirNegativi, destDirPositivi);
+            if(!(destDirRiepilogo.equals("")))
+            {  manageFiles.leggifilePenali(destDirRiepilogo, destDirNegativi, destDirPositivi);}
         }
     }
 
@@ -138,7 +145,7 @@ public class ElaborazionePenali {
 
     }
 
-    public void caricaFile() {
+    public void caricaFilePenali() {
 
         try {
             List<penali> penalis = penaliService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
@@ -191,7 +198,6 @@ public class ElaborazionePenali {
                             p.setDataoperazione(LocalDateTime.now());
                             p.setCodicefiscale("");
                             penaliService.Save(p);
-                            file.delete();
                             continue;
                         }
                     } else {
@@ -238,17 +244,23 @@ public class ElaborazionePenali {
                             p.setCodicefiscale(veriricResponse.getElementsByTagName("CodiceFiscale").item(0).getTextContent());
                             p.setDatanascita(veriricResponse.getElementsByTagName("DataDiNascitaPersona").item(0).getTextContent());
                             File file = new File(p.getPathFile());
-                            byte[] fileContent = Files.readAllBytes(file.toPath());
-                            elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
-                            if (s.toString().equals("")) {
-                                status = statusoperazione.ELABORATO.ordinal();
-                                p.setDescrizioneerrore("");
-                            } else if (s.toString().equals("OK")) {
-                                status = statusoperazione.ELABORATO.ordinal();
-                                p.setDescrizioneerrore("");
-                            } else {
-                                status = statusoperazione.ERRORE.ordinal();
-                                p.setDescrizioneerrore(s.toString());
+                            if(file.exists()) {
+                                byte[] fileContent = Files.readAllBytes(file.toPath());
+                                elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
+                                if (s.toString().equals("")) {
+                                    status = statusoperazione.ELABORATO.ordinal();
+                                    p.setDescrizioneerrore("");
+                                } else if (s.toString().equals("OK")) {
+                                    status = statusoperazione.ELABORATO.ordinal();
+                                    p.setDescrizioneerrore("");
+                                } else {
+                                    status = statusoperazione.ERRORE.ordinal();
+                                    p.setDescrizioneerrore(s.toString());
+                                }
+                            }
+                            else {
+                                status = statusoperazione.FILE_NON_ESISTENTE.ordinal();
+                                p.setDescrizioneerrore("File non presente " + file.getName());
                             }
                             p.setFlgoperazione(status);
                             p.setDataoperazione(LocalDateTime.now());

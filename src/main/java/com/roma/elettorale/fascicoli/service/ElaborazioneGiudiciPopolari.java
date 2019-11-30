@@ -2,15 +2,13 @@ package com.roma.elettorale.fascicoli.service;
 
 
 import com.roma.elettorale.fascicoli.entity.certi.CertificatoType;
-import com.roma.elettorale.fascicoli.entity.pap.VerificaAnagrafica;
-import com.roma.elettorale.fascicoli.entity.pap.VerificaAnagraficaResponse;
-import com.roma.elettorale.fascicoli.entity.veri.VERICODRESPONSE;
 import com.roma.elettorale.fascicoli.entity.veri.VeriData;
 import com.roma.elettorale.fascicoli.helpers.MapperDeserializer;
 import com.roma.elettorale.fascicoli.helpers.TransformationFile;
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusoperazione;
-import com.roma.elettorale.fascicoli.sviluppo.contract.ICaricamentoService;
+import com.roma.elettorale.fascicoli.sviluppo.contract.ICaricamentoGiudiceService;
 import com.roma.elettorale.fascicoli.sviluppo.entity.caricamento;
+import com.roma.elettorale.fascicoli.sviluppo.entity.caricamentogiudice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +17,17 @@ import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Component
-public class ElaborazioneRichieste {
+public class ElaborazioneGiudiciPopolari {
 
-
-    Logger logger = LoggerFactory.getLogger(ElaborazioneRichieste.class);
+    Logger logger = LoggerFactory.getLogger(ElaborazioneGiudiciPopolari.class);
 
     @Autowired
-    ICaricamentoService caricamentoService;
+    ICaricamentoGiudiceService caricamentoGiudiceService;
 
     @Autowired
     VeriData veriData;
@@ -54,22 +48,26 @@ public class ElaborazioneRichieste {
     ElaborazioneEstratti elaborazioneEstratti;
 
     @Autowired
+    ElaborazioneGP25 elaborazioneGP25;
+
+    @Autowired
     ElaborazioneCertificati elaborazioneCertificati;
 
     @Autowired
     ElaborazioneCaricamentiUnidoc elaborazioneCaricamentiUnidoc;
 
-    public void createCertificato() throws ParserConfigurationException, SAXException, IOException {
-        //   List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(0);
-        // List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
-        List<caricamento> caricamentos = caricamentoService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
+
+    public void createFascicolo() throws ParserConfigurationException, SAXException, IOException {
+
+        List<caricamentogiudice> caricamentos = caricamentoGiudiceService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(),"GP25");
         String codiceindividuale = "";
         String codicecertificato = "";
         byte[] estratto = null;
+        byte[] modello= null;
         int status = 0;
         StringBuilder esito = new StringBuilder();
         VeriData veriData = new VeriData();
-        for (caricamento c : caricamentos) {
+        for (caricamentogiudice c : caricamentos) {
             esito = new StringBuilder();
             codicecertificato = c.getCodicecertificato();
             codiceindividuale = c.getCodiceindividuale();
@@ -86,7 +84,7 @@ public class ElaborazioneRichieste {
                     c.setFlgoperazione(status);
                     c.setDescrizioneerrore("CITTADINO NON TROVATO");
                     c.setDataoperazione(LocalDateTime.now());
-                    caricamentoService.Save(c);
+                    caricamentoGiudiceService.Save(c);
                 }
             }
             String codiceCerti = "";
@@ -97,7 +95,7 @@ public class ElaborazioneRichieste {
                         codiceCerti = "C0001";
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.equals("")) {
-                            String path = "FASCICOLO_ELETTORALE\\";
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito,path);
                             if (esito.equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
@@ -108,20 +106,20 @@ public class ElaborazioneRichieste {
                             }
                             c.setFlgoperazione(status);
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
                     case "CTD":
                         codiceCerti = "C0004";
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.toString().equals("")) {
-                            String path = "FASCICOLO_ELETTORALE\\";
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito,path);
                             if (esito.toString().equals("OK")) {
                                 status = statusoperazione.ELABORATO.ordinal();
@@ -130,20 +128,20 @@ public class ElaborazioneRichieste {
                             }
                             c.setFlgoperazione(status);
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
                     case "CTE":
                         codiceCerti = "C0005";
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.toString().equals("")) {
-                            String path = "FASCICOLO_ELETTORALE\\";
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito,path);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
@@ -154,20 +152,20 @@ public class ElaborazioneRichieste {
                             }
                             c.setFlgoperazione(status);
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
                     case "CRS":  //residenza
                         codiceCerti = "C0006";
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.toString().equals("")) {
-                            String path = "FASCICOLO_ELETTORALE\\";
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito,path);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
@@ -178,20 +176,20 @@ public class ElaborazioneRichieste {
                             }
                             c.setDataoperazione(LocalDateTime.now());
                             c.setFlgoperazione(status);
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
                     case "RSE":  //residenza AIRE
                         codiceCerti = "C0007";
                         certificatoType = elaborazioneCertificati.elaboraCertificato(codiceindividuale, codiceCerti, veriData, esito);
                         if (esito.toString().equals("")) {
-                            String path = "FASCICOLO_ELETTORALE\\";
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                             elaborazioneCaricamentiUnidoc.UpLoadCertificato(certificatoType, veriData, codiceindividuale, esito,path);
                             if (esito.toString().equals("")) {
                                 status = statusoperazione.ELABORATO.ordinal();
@@ -202,40 +200,68 @@ public class ElaborazioneRichieste {
                             }
                             c.setFlgoperazione(status);
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
-                    case "ESN":
-                        codiceCerti = "ESN";
-                        estratto = elaborazioneEstratti.getEstrattoNascita(codiceindividuale, veriData, esito);
-                        if (esito.toString().equals("")) {
-                           //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
-                            String path = "FASCICOLO_ELETTORALE\\";
-                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path);
-                            if (esito.toString().equals("OK")) {
-                                status = statusoperazione.ELABORATO.ordinal();
-                                c.setFlgoperazione(status);
-                                c.setDataoperazione(LocalDateTime.now());
-                                caricamentoService.Save(c);
+
+                        case "GP25":
+                            codiceCerti = "GP25";
+                            modello = elaborazioneGP25.getPDF(codiceindividuale, veriData, esito);
+                            if (esito.toString().equals("")) {
+                                //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
+                                String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
+                                elaborazioneCaricamentiUnidoc.UploadGP25(modello, veriData, codiceindividuale, esito,path);
+                                if (esito.toString().equals("OK")) {
+                                    status = statusoperazione.ELABORATO.ordinal();
+                                    c.setFlgoperazione(status);
+                                    c.setDataoperazione(LocalDateTime.now());
+                                    caricamentoGiudiceService.Save(c);
+                                } else {
+                                    status = statusoperazione.ERRORE.ordinal();
+                                    c.setFlgoperazione(status);
+                                    c.setDescrizioneerrore(esito.toString());
+                                    c.setDataoperazione(LocalDateTime.now());
+                                    caricamentoGiudiceService.Save(c);
+                                }
                             } else {
                                 status = statusoperazione.ERRORE.ordinal();
                                 c.setFlgoperazione(status);
                                 c.setDescrizioneerrore(esito.toString());
                                 c.setDataoperazione(LocalDateTime.now());
-                                caricamentoService.Save(c);
+                                caricamentoGiudiceService.Save(c);
+                            }
+                            break;
+                    case "ESN":
+                        codiceCerti = "ESN";
+                        estratto = elaborazioneEstratti.getEstrattoNascita(codiceindividuale, veriData, esito);
+                        if (esito.toString().equals("")) {
+                            //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
+                            String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
+                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path);
+                            if (esito.toString().equals("OK")) {
+                                status = statusoperazione.ELABORATO.ordinal();
+                                c.setFlgoperazione(status);
+                                c.setDataoperazione(LocalDateTime.now());
+                                caricamentoGiudiceService.Save(c);
+                            } else {
+                                status = statusoperazione.ERRORE.ordinal();
+                                c.setFlgoperazione(status);
+                                c.setDescrizioneerrore(esito.toString());
+                                c.setDataoperazione(LocalDateTime.now());
+                                caricamentoGiudiceService.Save(c);
                             }
                         } else {
                             status = statusoperazione.ERRORE.ordinal();
                             c.setFlgoperazione(status);
                             c.setDescrizioneerrore(esito.toString());
                             c.setDataoperazione(LocalDateTime.now());
-                            caricamentoService.Save(c);
+                            caricamentoGiudiceService.Save(c);
                         }
                         break;
                 }

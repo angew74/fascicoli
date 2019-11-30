@@ -1,14 +1,8 @@
 package com.roma.elettorale.fascicoli.service;
 
 import com.roma.elettorale.fascicoli.helpers.enumerators.statusoperazione;
-import com.roma.elettorale.fascicoli.sviluppo.contract.ICaricamentoService;
-import com.roma.elettorale.fascicoli.sviluppo.contract.ICasellarioService;
-import com.roma.elettorale.fascicoli.sviluppo.contract.IPacchettoService;
-import com.roma.elettorale.fascicoli.sviluppo.contract.IPenaliService;
-import com.roma.elettorale.fascicoli.sviluppo.entity.caricamento;
-import com.roma.elettorale.fascicoli.sviluppo.entity.casellario;
-import com.roma.elettorale.fascicoli.sviluppo.entity.pacchetto;
-import com.roma.elettorale.fascicoli.sviluppo.entity.penali;
+import com.roma.elettorale.fascicoli.sviluppo.contract.*;
+import com.roma.elettorale.fascicoli.sviluppo.entity.*;
 import org.apache.commons.collections4.iterators.NodeListIterator;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.slf4j.Logger;
@@ -46,6 +40,13 @@ public class ManageFiles {
 
     @Autowired
     IPacchettoService pacchettoService;
+
+    @Autowired
+    IPacchettoGiudiceService pacchettoGiudiceService;
+
+    @Autowired
+    ICaricamentoGiudiceService caricamentoGiudiceService;
+
     public Boolean leggifile(File filetoload)
     {
 
@@ -218,5 +219,72 @@ public class ManageFiles {
             logger.debug(destDirRiepilogo);
         }
         return riepiloghiNodes;
+    }
+
+    public Boolean leggifileGiudiciPopolari(File filetoload)
+    {
+        Boolean tuttapposto = false;
+        List<caricamentogiudice> l = new ArrayList<caricamentogiudice>();
+        String codiceindividuale = "";
+        String certificato ="";
+        pacchettogiudice p = null;
+        int contatore =0;
+        try {
+            caricamentogiudice a = new caricamentogiudice();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(filetoload);
+            NodeList certificatiNodes = doc.getElementsByTagName("certificati-xml");
+            for(int i=0; i<certificatiNodes.getLength(); i++)
+            {
+                Node certificatoNode = certificatiNodes.item(i);
+                if(certificatoNode.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    p = new pacchettogiudice();
+                    p.setFilecaricamento(filetoload.getName());
+                    Integer n = pacchettoGiudiceService.maxNumero();
+                    n++;
+                    p.setNumero(n.toString());
+                    LocalDate dat = LocalDate.now();
+                    p.setDatacarimento(dat);
+                    Element certificatiElement = (Element) certificatoNode;
+                    NodeList listCertificati = certificatiElement.getElementsByTagName("certificato");
+                    int totale = listCertificati.getLength();
+                    p.setNumerocodici(totale);
+                    pacchettoGiudiceService.save(p);
+                    for(int k=0; k<listCertificati.getLength();k++) {
+                        Element certificatoElement = (Element) listCertificati.item(k);
+                        String codind = certificatoElement.getElementsByTagName("codind").item(0).getTextContent();
+                        NodeList tipoCerti = certificatoElement.getElementsByTagName("tipoCerti");
+                        for (int z = 0; z < tipoCerti.getLength(); z++) {
+                            a = new caricamentogiudice();
+                            a.setCodiceindividuale(codind);
+                            a.setRefidpacchetto(Integer.parseInt(p.getNumero().toString()));
+                            Element codiceCertificatoElement = (Element) tipoCerti.item(z);
+                            String codiceCertificato = codiceCertificatoElement.getTextContent();
+                            a.setCodicecertificato(codiceCertificato);
+                            a.setProgrammaelaborazione("CARICAMENTO");
+                            a.setFlgoperazione(0);
+                            LocalDateTime now = LocalDateTime.now();
+                            a.setDataoperazione(now);
+                            caricamentoGiudiceService.Save(a);
+                            contatore++;
+                        }
+                    }
+                }
+            }
+            p.setNumerorecord(contatore);
+            pacchettoGiudiceService.save(p);
+            tuttapposto = true;
+
+        }
+        catch (Exception ex)
+        {
+            logger.debug(ex.getMessage());
+            logger.debug(certificato);
+            logger.debug(codiceindividuale);
+            return tuttapposto;
+        }
+        return  tuttapposto;
     }
 }

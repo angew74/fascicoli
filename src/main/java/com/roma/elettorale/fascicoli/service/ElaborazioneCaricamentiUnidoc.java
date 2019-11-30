@@ -31,7 +31,7 @@ public class ElaborazioneCaricamentiUnidoc {
     UnidocClient unidocClient;
 
 
-    public String UpLoadCertificato(CertificatoType certificatoType, VeriData veriData, String codiceIndividuale, StringBuilder esito) {
+    public String UpLoadCertificato(CertificatoType certificatoType, VeriData veriData, String codiceIndividuale, StringBuilder esito, String path) {
 
         FileRequest request = new FileRequest();
         FileMetatag info = new FileMetatag();
@@ -55,7 +55,6 @@ public class ElaborazioneCaricamentiUnidoc {
 
             info.setNomeOriginale(nomeCertificato + "_COD-IND." + codiceIndividuale + ".pdf");
             info.setUtenteInserimento("SYSTEMJ");
-            String path = "FASCICOLO_ELETTORALE\\";
             info.setPathFolder(path + codiceIndividuale);
             ArrayOfMetadato arrayOfMetadato = new ArrayOfMetadato();
             arrayOfMetadato.setMetadato(lMeta);
@@ -226,7 +225,7 @@ public class ElaborazioneCaricamentiUnidoc {
         return messaggioErrore;
     }
 
-    public String UploadEstratto(byte[] estratto, VeriData veriData, String codiceIndividuale, StringBuilder esito) {
+    public String UploadEstratto(byte[] estratto, VeriData veriData, String codiceIndividuale, StringBuilder esito,String path) {
         FileRequest request = new FileRequest();
         String messaggioErrore = "";
         FileMetatag info = new FileMetatag();
@@ -247,7 +246,6 @@ public class ElaborazioneCaricamentiUnidoc {
 
             info.setNomeOriginale("ESTRATTO_NASCITA_COD-IND." + codiceIndividuale + ".pdf");
             info.setUtenteInserimento("SYSTEMJ");
-            String path = "FASCICOLO_ELETTORALE\\";
             info.setPathFolder(path + codiceIndividuale);
             ArrayOfMetadato arrayOfMetadato = new ArrayOfMetadato();
             arrayOfMetadato.setMetadato(lMeta);
@@ -317,6 +315,9 @@ public class ElaborazioneCaricamentiUnidoc {
         }
         return messaggioErrore;
 
+    }
+
+    public void UploadGP25(byte[] modello, VeriData veriData, String codiceindividuale, StringBuilder esito, String path) {
     }
 }
 
