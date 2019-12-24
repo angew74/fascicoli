@@ -12,5 +12,5 @@ public interface CaricamentoGiudiceDAO extends JpaRepository<caricamentogiudice,
 
     List<caricamentogiudice> findFirst1000ByFlgoperazione(int flg);
     List<caricamentogiudice> findFirst1000ByFlgoperazioneAndProgrammaelaborazione(int flg,String pgm);
-    List<caricamentogiudice> findFirst1000ByFlgoperazioneAndCodicecertificato(int flg,String codice);
+    List<caricamentogiudice> findFirst10000ByFlgoperazioneAndCodicecertificato(int flg,String codice);
 }

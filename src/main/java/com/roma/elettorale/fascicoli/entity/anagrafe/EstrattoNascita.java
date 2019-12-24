@@ -10,8 +10,6 @@ import java.io.Serializable;
 public class EstrattoNascita
 {
 
-
-
     @XmlElement(name = "CodiceIndividuale", namespace = "http://tempuri.org/EstrNas.xsd", required = true)
     private String CodiceIndividuale;
 

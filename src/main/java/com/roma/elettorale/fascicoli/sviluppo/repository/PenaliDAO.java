@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface PenaliDAO extends JpaRepository<penali, Long> {
 
-    List<penali> findFirst1000ByFlgoperazione(int flg);
+    List<penali> findFirst5000ByFlgoperazione(int flg);
     List<penali> findFirst1000ByFlgoperazioneAndProgrammaelaborazione(int flg,String pgm);
     List<penali> findFirst1000ByCodicefiscale(String codice);
 }

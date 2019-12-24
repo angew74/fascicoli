@@ -59,7 +59,7 @@ public class ElaborazioneGiudiciPopolari {
 
     public void createFascicolo() throws ParserConfigurationException, SAXException, IOException {
 
-        List<caricamentogiudice> caricamentos = caricamentoGiudiceService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(),"GP25");
+        List<caricamentogiudice> caricamentos = caricamentoGiudiceService.findFirst1000ByFlgoperazioneAndCodicecertificato(statusoperazione.CARICATO.ordinal(),"ESN");
         String codiceindividuale = "";
         String codicecertificato = "";
         byte[] estratto = null;
@@ -209,15 +209,14 @@ public class ElaborazioneGiudiciPopolari {
                             caricamentoGiudiceService.Save(c);
                         }
                         break;
-
                         case "GP25":
                             codiceCerti = "GP25";
                             modello = elaborazioneGP25.getPDF(codiceindividuale, veriData, esito);
+                       //     transformationFile.wrtiteToDisk("c:/certificati/gp25.pdf", modello);
                             if (esito.toString().equals("")) {
-                                //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
                                 String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
                                 elaborazioneCaricamentiUnidoc.UploadGP25(modello, veriData, codiceindividuale, esito,path);
-                                if (esito.toString().equals("OK")) {
+                                if (esito.toString().equals("OK") || esito.toString().equals("")) {
                                     status = statusoperazione.ELABORATO.ordinal();
                                     c.setFlgoperazione(status);
                                     c.setDataoperazione(LocalDateTime.now());
@@ -243,7 +242,7 @@ public class ElaborazioneGiudiciPopolari {
                         if (esito.toString().equals("")) {
                             //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
                             String path = "FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\";
-                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path);
+                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path, 3, "_GP");
                             if (esito.toString().equals("OK")) {
                                 status = statusoperazione.ELABORATO.ordinal();
                                 c.setFlgoperazione(status);
@@ -267,7 +266,11 @@ public class ElaborazioneGiudiciPopolari {
                 }
             } catch (Exception ex) {
                 logger.error("ERR_99: " + ex.getMessage());
-
+                status = statusoperazione.ERRORE.ordinal();
+                c.setFlgoperazione(status);
+                c.setDescrizioneerrore(ex.getMessage());
+                c.setDataoperazione(LocalDateTime.now());
+                caricamentoGiudiceService.Save(c);
             }
         }
 

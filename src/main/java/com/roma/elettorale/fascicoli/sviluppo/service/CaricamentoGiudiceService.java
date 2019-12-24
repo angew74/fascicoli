@@ -27,7 +27,7 @@ public class CaricamentoGiudiceService implements ICaricamentoGiudiceService {
 
     @Override
     public List<caricamentogiudice> findFirst1000ByFlgoperazioneAndCodicecertificato(int flg, String codice) {
-        return caricamentoGiudiceDAO.findFirst1000ByFlgoperazioneAndCodicecertificato(flg,codice);
+        return caricamentoGiudiceDAO.findFirst10000ByFlgoperazioneAndCodicecertificato(flg,codice);
     }
 
     @Override

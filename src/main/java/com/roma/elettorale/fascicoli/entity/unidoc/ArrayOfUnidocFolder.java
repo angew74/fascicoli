@@ -66,4 +66,11 @@ public class ArrayOfUnidocFolder {
         return this.unidocFolder;
     }
 
+    public void setUnidocFolder(List<UnidocFolder> list) {
+        if (unidocFolder == null) {
+            unidocFolder = new ArrayList<UnidocFolder>();
+        }
+        unidocFolder = list;
+    }
+
 }

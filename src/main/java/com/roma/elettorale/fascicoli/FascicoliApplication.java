@@ -81,10 +81,11 @@ public class FascicoliApplication {
                     f.delete();
                 }
             }
-          //elaborazioneRichieste.createCertificato();
-          //elaborazionePenali.caricaRichiestePenali(env.getProperty(("rootpenali")));
-          //elaborazionePenali.caricaFilePenali();
-          elaborazioneGiudiciPopolari.createFascicolo();
+       elaborazioneRichieste.createCertificato();
+        // elaborazionePenali.caricaRichiestePenali(env.getProperty(("rootpenali")));
+         // elaborazionePenali.caricaFilePenali("FASCICOLO_ELETTORALE\\" , "");
+        //   elaborazionePenali.caricaFilePenali("FASCICOLO_ELETTORALE_GIUDICE_POPOLARE\\", "_GP");
+        // elaborazioneGiudiciPopolari.createFascicolo();
         };
     }
 

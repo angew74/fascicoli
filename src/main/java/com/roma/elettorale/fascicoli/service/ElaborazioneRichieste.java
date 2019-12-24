@@ -217,7 +217,7 @@ public class ElaborazioneRichieste {
                         if (esito.toString().equals("")) {
                            //  transformationFile.wrtiteToDisk("c:/certificati/prova.pdf", estratto);
                             String path = "FASCICOLO_ELETTORALE\\";
-                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path);
+                            elaborazioneCaricamentiUnidoc.UploadEstratto(estratto, veriData, codiceindividuale, esito,path, 1, "");
                             if (esito.toString().equals("OK")) {
                                 status = statusoperazione.ELABORATO.ordinal();
                                 c.setFlgoperazione(status);

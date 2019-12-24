@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface CaricamentoDAO extends JpaRepository<caricamento, Long> {
 
-    List<caricamento> findFirst1000ByFlgoperazione(int flg);
+    List<caricamento> findFirst5000ByFlgoperazione(int flg);
     List<caricamento> findFirst1000ByFlgoperazioneAndProgrammaelaborazione(int flg,String pgm);
     List<caricamento> findFirst1000ByFlgoperazioneAndCodicecertificato(int flg,String codice);
 

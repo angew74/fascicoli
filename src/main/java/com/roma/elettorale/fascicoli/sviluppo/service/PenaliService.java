@@ -19,7 +19,7 @@ public class PenaliService implements IPenaliService {
 
     @Override
     public List<penali> findFirst1000ByFlgoperazione(int flg) {
-        return penaliDAO.findFirst1000ByFlgoperazione(flg);
+        return penaliDAO.findFirst5000ByFlgoperazione(flg);
     }
 
     @Override

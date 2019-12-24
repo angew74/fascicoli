@@ -145,7 +145,7 @@ public class ElaborazionePenali {
 
     }
 
-    public void caricaFilePenali() {
+    public void caricaFilePenali(String path,String tipo) {
 
         try {
             List<penali> penalis = penaliService.findFirst1000ByFlgoperazione(statusoperazione.CARICATO.ordinal());
@@ -166,11 +166,11 @@ public class ElaborazionePenali {
                             File file = new File(p.getPathFile());
                             if (file.exists()) {
                                 byte[] fileContent = Files.readAllBytes(file.toPath());
-                                elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
-                                if (s.toString().equals("")) {
+                               String msg =  elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s,path, tipo);
+                                if ((msg.equals(""))) {
                                     status = statusoperazione.ELABORATO.ordinal();
                                     p.setDescrizioneerrore("");
-                                } else if (s.toString().equals("OK")) {
+                                } else if (msg.equals("OK")) {
                                     status = statusoperazione.ELABORATO.ordinal();
                                     p.setDescrizioneerrore("");
                                 } else {
@@ -246,7 +246,7 @@ public class ElaborazionePenali {
                             File file = new File(p.getPathFile());
                             if(file.exists()) {
                                 byte[] fileContent = Files.readAllBytes(file.toPath());
-                                elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s);
+                                elaborazioneCaricamentiUnidoc.UploadPenale(fileContent, p, s,path, tipo);
                                 if (s.toString().equals("")) {
                                     status = statusoperazione.ELABORATO.ordinal();
                                     p.setDescrizioneerrore("");

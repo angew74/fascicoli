@@ -6,210 +6,153 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "GP25")
+@XmlRootElement(name = "GP25", namespace = "http://tempuri.org/GP25.xsd")
 @XmlAccessorType(XmlAccessType.PROPERTY)
 public class GP25Document {
 
-    @XmlElement(name = "CodiceIndividuale", required = true)
+    @XmlElement(name = "CodiceIndividuale",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private String CodiceIndividuale;
 
-    @XmlElement(name = "verbaleCEC", required = true)
-    private  String verbaleCEC;
+    @XmlElement(name = "verbaleCEC",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String VerbaleCEC;
 
-    @XmlElement(name = "dataVerbaleCEC", required = true)
-    private  String dataVerbaleCEC;
+    @XmlElement(name = "dataVerbaleCEC",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String DataVerbaleCEC;
 
-    @XmlElement(name = "MunicipioRoma", required = true)
+    @XmlElement(name = "MunicipioRoma",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String MunicipioRoma;
 
-    @XmlElement(name = "Municipio", required = true)
+    @XmlElement(name = "Municipio",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String Municipio;
 
-    @XmlElement(name = "CognomeNome", required = true)
+    @XmlElement(name = "CognomeNome",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String CognomeNome;
 
-    @XmlElement(name = "GiornoNascita", required = true)
+    @XmlElement(name = "GiornoNascita",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String GiornoNascita;
 
-    @XmlElement(name = "MesaNascita", required = true)
+    @XmlElement(name = "MesaNascita",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String MesaNascita;
 
-    @XmlElement(name = "AnnoNascita", required = true)
+    @XmlElement(name = "AnnoNascita",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String AnnoNascita;
 
-    @XmlElement(name = "Paternita", required = true)
+    @XmlElement(name = "Paternita",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String Paternita;
 
-    @XmlElement(name = "sezioneElettorale", required = true)
-    private  String sezioneElettorale;
+    @XmlElement(name = "sezioneElettorale",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String SezioneElettorale;
 
-    @XmlElement(name = "numeroAtto", required = true)
-    private  String numeroAtto;
+    @XmlElement(name = "numeroAtto",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String NumeroAtto;
 
-    @XmlElement(name = "parteAtto", required = true)
-    private  String parteAtto;
+    @XmlElement(name = "annoAtto",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String AnnoAtto;
 
-    @XmlElement(name = "serieAtto", required = true)
-    private  String serieAtto;
+    @XmlElement(name = "parteAtto",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String ParteAtto;
 
-    @XmlElement(name = "comuneNascita", required = true)
-    private  String comuneNascita;
+    @XmlElement(name = "serieAtto",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String SerieAtto;
 
-    @XmlElement(name = "indirizzoResidenza", required = true)
-    private  String indirizzoResidenza;
+    @XmlElement(name = "comuneNascita",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String ComuneNascita;
 
-    @XmlElement(name = "Firma", required = true)
+    @XmlElement(name = "indirizzoResidenza",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String IndirizzoResidenza;
+
+    @XmlElement(name = "Firma",namespace = "http://tempuri.org/GP25.xsd", required = true)
     private  String Firma;
 
-    @XmlElement(name = "titoloStudio", required = true)
-    private  String titoloStudio;
+    @XmlElement(name = "titoloStudio",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String TitoloStudio;
 
-    @XmlElement(name = "annoTitoloStudio", required = true)
-    private  String annoTitoloStudio;
+    @XmlElement(name = "annoTitoloStudio",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String AnnoTitoloStudio;
 
-    @XmlElement(name = "dataNomina", required = true)
-    private  String dataNomina;
+    @XmlElement(name = "dataNomina",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String DataNomina;
 
-    @XmlElement(name = "dataCancellazione", required = true)
-    private  String dataCancellazione;
+    @XmlElement(name = "dataCancellazione",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String DataCancellazione;
 
-    @XmlElement(name = "motivoCancellazione", required = true)
-    private  String motivoCancellazione;
+    @XmlElement(name = "motivoCancellazione",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String MotivoCancellazione;
 
-    @XmlElement(name = "descrizioneCorte", required = true)
-    private  String descrizioneCorte;
-    @XmlElement(name = "istitutoTitoloStudio", required = true)
-    private String istitutoTitoloStudio;
+    @XmlElement(name = "descrizioneCorte",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private  String DescrizioneCorte;
+    @XmlElement(name = "istitutoTitoloStudio",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private String IstitutoTitoloStudio;
 
-    @XmlElement(name = "professione", required = true)
-    private String professione;
+    @XmlElement(name = "professione",namespace = "http://tempuri.org/GP25.xsd", required = true)
+    private String Professione;
 
     public String getCodiceIndividuale() {
         return CodiceIndividuale;
-    }
-
-    public void setCodiceIndividuale(String codiceIndividuale) {
-        CodiceIndividuale = codiceIndividuale;
-    }
-
-    public String getVerbaleCEC() {
-        return verbaleCEC;
-    }
-
-    public void setVerbaleCEC(String verbaleCEC) {
-        this.verbaleCEC = verbaleCEC;
-    }
-
-    public String getDataVerbaleCEC() {
-        return dataVerbaleCEC;
-    }
-
-    public void setDataVerbaleCEC(String dataVerbaleCEC) {
-        this.dataVerbaleCEC = dataVerbaleCEC;
     }
 
     public String getMunicipioRoma() {
         return MunicipioRoma;
     }
 
-    public void setMunicipioRoma(String municipioRoma) {
-        MunicipioRoma = municipioRoma;
-    }
-
     public String getMunicipio() {
         return Municipio;
-    }
-
-    public void setMunicipio(String municipio) {
-        Municipio = municipio;
     }
 
     public String getCognomeNome() {
         return CognomeNome;
     }
 
-    public void setCognomeNome(String cognomeNome) {
-        CognomeNome = cognomeNome;
-    }
-
     public String getGiornoNascita() {
         return GiornoNascita;
-    }
-
-    public void setGiornoNascita(String giornoNascita) {
-        GiornoNascita = giornoNascita;
     }
 
     public String getMesaNascita() {
         return MesaNascita;
     }
 
-    public void setMesaNascita(String mesaNascita) {
-        MesaNascita = mesaNascita;
-    }
-
     public String getAnnoNascita() {
         return AnnoNascita;
-    }
-
-    public void setAnnoNascita(String annoNascita) {
-        AnnoNascita = annoNascita;
     }
 
     public String getPaternita() {
         return Paternita;
     }
 
+    public void setCodiceIndividuale(String codiceIndividuale) {
+        CodiceIndividuale = codiceIndividuale;
+    }
+
+    public void setMunicipioRoma(String municipioRoma) {
+        MunicipioRoma = municipioRoma;
+    }
+
+    public void setMunicipio(String municipio) {
+        Municipio = municipio;
+    }
+
+    public void setCognomeNome(String cognomeNome) {
+        CognomeNome = cognomeNome;
+    }
+
+    public void setGiornoNascita(String giornoNascita) {
+        GiornoNascita = giornoNascita;
+    }
+
+    public void setMesaNascita(String mesaNascita) {
+        MesaNascita = mesaNascita;
+    }
+
+    public void setAnnoNascita(String annoNascita) {
+        AnnoNascita = annoNascita;
+    }
+
     public void setPaternita(String paternita) {
         Paternita = paternita;
     }
 
-    public String getSezioneElettorale() {
-        return sezioneElettorale;
-    }
-
-    public void setSezioneElettorale(String sezioneElettorale) {
-        this.sezioneElettorale = sezioneElettorale;
-    }
-
-    public String getNumeroAtto() {
-        return numeroAtto;
-    }
-
-    public void setNumeroAtto(String numeroAtto) {
-        this.numeroAtto = numeroAtto;
-    }
-
-    public String getParteAtto() {
-        return parteAtto;
-    }
-
-    public void setParteAtto(String parteAtto) {
-        this.parteAtto = parteAtto;
-    }
-
-    public String getSerieAtto() {
-        return serieAtto;
-    }
-
     public void setSerieAtto(String serieAtto) {
-        this.serieAtto = serieAtto;
-    }
-
-    public String getComuneNascita() {
-        return comuneNascita;
-    }
-
-    public void setComuneNascita(String comuneNascita) {
-        this.comuneNascita = comuneNascita;
-    }
-
-    public String getIndirizzoResidenza() {
-        return indirizzoResidenza;
-    }
-
-    public void setIndirizzoResidenza(String indirizzoResidenza) {
-        this.indirizzoResidenza = indirizzoResidenza;
+        this.SerieAtto = serieAtto;
     }
 
     public String getFirma() {
@@ -220,67 +163,136 @@ public class GP25Document {
         Firma = firma;
     }
 
+
+    public String getVerbaleCEC() {
+        return VerbaleCEC;
+    }
+
+    public void setVerbaleCEC(String verbaleCEC) {
+        VerbaleCEC = verbaleCEC;
+    }
+
+    public String getDataVerbaleCEC() {
+        return DataVerbaleCEC;
+    }
+
+    public void setDataVerbaleCEC(String dataVerbaleCEC) {
+        DataVerbaleCEC = dataVerbaleCEC;
+    }
+
+    public String getSezioneElettorale() {
+        return SezioneElettorale;
+    }
+
+    public void setSezioneElettorale(String sezioneElettorale) {
+        SezioneElettorale = sezioneElettorale;
+    }
+
+    public String getNumeroAtto() {
+        return NumeroAtto;
+    }
+
+    public void setNumeroAtto(String numeroAtto) {
+        NumeroAtto = numeroAtto;
+    }
+
+    public String getParteAtto() {
+        return ParteAtto;
+    }
+
+    public void setParteAtto(String parteAtto) {
+        ParteAtto = parteAtto;
+    }
+
+    public String getSerieAtto() {
+        return SerieAtto;
+    }
+
+    public String getComuneNascita() {
+        return ComuneNascita;
+    }
+
+    public void setComuneNascita(String comuneNascita) {
+        ComuneNascita = comuneNascita;
+    }
+
+    public String getIndirizzoResidenza() {
+        return IndirizzoResidenza;
+    }
+
+    public void setIndirizzoResidenza(String indirizzoResidenza) {
+        IndirizzoResidenza = indirizzoResidenza;
+    }
+
     public String getTitoloStudio() {
-        return titoloStudio;
+        return TitoloStudio;
     }
 
     public void setTitoloStudio(String titoloStudio) {
-        this.titoloStudio = titoloStudio;
-    }
-
-    public String getAnnoTitoloStudio() {
-        return annoTitoloStudio;
-    }
-
-    public void setAnnoTitoloStudio(String annoTitoloStudio) {
-        this.annoTitoloStudio = annoTitoloStudio;
-    }
-
-    public String getDataNomina() {
-        return dataNomina;
-    }
-
-    public void setDataNomina(String dataNomina) {
-        this.dataNomina = dataNomina;
-    }
-
-    public String getDataCancellazione() {
-        return dataCancellazione;
-    }
-
-    public void setDataCancellazione(String dataCancellazione) {
-        this.dataCancellazione = dataCancellazione;
-    }
-
-    public String getMotivoCancellazione() {
-        return motivoCancellazione;
-    }
-
-    public void setMotivoCancellazione(String motivoCancellazione) {
-        this.motivoCancellazione = motivoCancellazione;
-    }
-
-    public String getDescrizioneCorte() {
-        return descrizioneCorte;
-    }
-
-    public void setDescrizioneCorte(String descrizioneCorte) {
-        this.descrizioneCorte = descrizioneCorte;
-    }
-
-    public String getIstitutoTitoloStudio() {
-        return istitutoTitoloStudio;
-    }
-
-    public void setIstitutoTitoloStudio(String istitutoTitoloStudio) {
-        this.istitutoTitoloStudio = istitutoTitoloStudio;
+        TitoloStudio = titoloStudio;
     }
 
     public String getProfessione() {
-        return professione;
+        return Professione;
     }
 
     public void setProfessione(String professione) {
-        this.professione = professione;
+        Professione = professione;
+    }
+
+    public String getAnnoTitoloStudio() {
+        return AnnoTitoloStudio;
+    }
+
+    public void setAnnoTitoloStudio(String annoTitoloStudio) {
+        AnnoTitoloStudio = annoTitoloStudio;
+    }
+
+    public String getDataNomina() {
+        return DataNomina;
+    }
+
+    public void setDataNomina(String dataNomina) {
+        DataNomina = dataNomina;
+    }
+
+    public String getDataCancellazione() {
+        return DataCancellazione;
+    }
+
+    public void setDataCancellazione(String dataCancellazione) {
+        DataCancellazione = dataCancellazione;
+    }
+
+    public String getMotivoCancellazione() {
+        return MotivoCancellazione;
+    }
+
+    public void setMotivoCancellazione(String motivoCancellazione) {
+        MotivoCancellazione = motivoCancellazione;
+    }
+
+    public String getDescrizioneCorte() {
+        return DescrizioneCorte;
+    }
+
+    public void setDescrizioneCorte(String descrizioneCorte) {
+        DescrizioneCorte = descrizioneCorte;
+    }
+
+    public String getIstitutoTitoloStudio() {
+        return IstitutoTitoloStudio;
+    }
+
+    public void setIstitutoTitoloStudio(String istitutoTitoloStudio) {
+        IstitutoTitoloStudio = istitutoTitoloStudio;
+    }
+
+    public String getAnnoAtto() {
+        return AnnoAtto;
+    }
+
+    public void setAnnoAtto(String annoAtto) {
+        AnnoAtto = annoAtto;
     }
 }

@@ -18,7 +18,7 @@ public class CaricamentoService implements ICaricamentoService {
 
     @Override
     public List<caricamento> findFirst1000ByFlgoperazione(int flg) {
-        return caricamentoDAO.findFirst1000ByFlgoperazione(flg);
+        return caricamentoDAO.findFirst5000ByFlgoperazione(flg);
     }
 
     @Override

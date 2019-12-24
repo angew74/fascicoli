@@ -443,7 +443,7 @@ public class TransformationFile {
         JAXBContext jaxbContext;
         GP25Document gp25Document = null;
         try {
-            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.anagrafe.EstrattoNascita.class);
+            jaxbContext = JAXBContext.newInstance(com.roma.elettorale.fascicoli.entity.anagrafe.GP25Document.class);
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             gp25Document = (GP25Document) jaxbUnmarshaller.unmarshal(documentGP25);
         } catch (JAXBException e) {
